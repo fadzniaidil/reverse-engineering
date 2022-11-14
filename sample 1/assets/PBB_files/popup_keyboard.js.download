@@ -1,0 +1,29 @@
+function PopupVirtualKeyboard() {
+  var _i = document.getElementById("iframe1");
+  var _f = (_i != null) ? true : false;
+  var _dc = (_f) ?  _i.contentWindow.document : document;
+  var _d = $( "#dialog-keyboard" );
+
+  this.openKeyBoard=function(){
+	try {
+		vosKBForm = _dc.LoginForm;
+		randomizeKeys(); 
+		openVosKB('password'); 		
+		_d.dialog({
+			title : "On-Screen Keyboard",
+			modal: true,
+			width:'auto',
+			height:'auto',
+			resizable: false
+		}).show();
+	 	_d.css('zIndex',9999);
+	  $(".ui-dialog-titlebar").show();
+	} catch (e) {
+		alert("KeyBoard Error" + "\n" + e.message );
+	}
+   }
+
+  this.closeKeyBoard = function(){
+	_d.dialog('close');
+  }
+};

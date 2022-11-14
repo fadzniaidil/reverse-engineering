@@ -1,0 +1,56 @@
+.label-header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 48px;
+    left: 0;
+    background-color: #004b92;
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.4);
+    color: #fff;
+    line-height: 50px;
+    font-size: 16px;
+    z-index: 9;
+}
+
+.body-label-header {
+    margin-top: 60px;
+}
+
+form.form *>td {
+    vertical-align: middle !important;
+}
+
+form.form *>td:first-child {
+    width: 35%;
+}
+
+form.form *>td::last-child {
+    width: 65%;
+}
+
+form.form > table .form-control, form.form >* table .form-control {
+    border: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+form.form>* input:disabled select.disabled {
+    padding: 10px !important;
+}
+
+form.form>p {
+    color: #777;
+    font-weight: bold;
+}
+
+form.form>.btn {
+    padding-top: 8px;
+    padding-bottom: 7px;
+    font-weight: bold;
+}
+
+.word-break {
+    word-break: break-all;
+}

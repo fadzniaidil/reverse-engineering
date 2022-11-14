@@ -1,0 +1,137 @@
+s/* here you can put your own css to customize and override the theme */
+
+
+  
+         h4, td, div {font-family: "Lucida Grande","Saysettha OT", Geneva, Arial, Helvetica, sans-serif; font-size:13px; color:#000000;}
+
+         .orange {color:#3D3D3D; font-family: "Lucida Grande", Geneva, Arial, Helvetica, sans-serif; font-size:12px;}
+
+         .orange strong {color:#ED1C24; font-family: "Lucida Grande", Geneva, Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; text-decoration:none;}
+
+         .grey {background-color: #DDDDDD; border-right: 1px solid #C2C2C2;}
+
+         .orangeborder {background-color: #FFFFFF; border: 1px solid #AAACAE;}
+
+         .strong2 {color:#666666; font-family: "Lucida Grande", Geneva, Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold;}
+
+         .strong3 {color:#666666; font-family: "Lucida Grande", Geneva, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; text-decoration:underline;}
+
+         .divided {border-right: 1px solid #AAACAE;}
+
+         .greenborder {
+
+         border-right: 2px solid #88C850;
+
+         padding-left: 5px;
+
+         }
+
+         .details {
+
+         color: #ffffff;
+
+         font-size: 16px;
+
+         background-color:#cc001e;
+
+         font-weight: bold;
+
+         border-bottom: 1px solid #B4B4B4;
+
+         }
+
+         .bold {
+
+         font-weight: bold;
+
+         font-size:12px;
+
+         }
+
+         .dotted {
+
+         /*border-bottom: 1px dotted #666666;*/
+
+         }
+
+         .style2 {font-size: 18px; font-weight: bold; color: #FF0000;}
+
+         .style3 {	color: #FF0000; font-weight: bold; }
+
+         .style4 {color: #FF0000}
+
+         .moreBtn
+        {
+        	border:1px solid #eeeeee;
+        	background:#cc0000;
+        	color: #ffffff;
+        	font-size:9px;
+        	width:50px;
+        }
+
+        .watermark
+        {
+          background-image: url("login_bg_pbb.gif");          
+          background-repeat: no-repeat;
+        }
+
+        .noLineBtn
+        {
+          /*
+
+        	border:1px solid #0099cc;
+
+        	background:#0099cc;	
+
+        	color:#ffffff;
+
+        	height:19px;
+
+        	font-size:9px;
+
+        	width:55px
+
+        	*/
+         	border:1px solid #eeeeee;
+         	background:#cc0000;
+         	color: #ffffff;
+         	font-size:9px;
+         	width:50px;
+        }
+
+        .countSec
+        {	/*color:#0099cc;*/
+        	color:#cc0000;
+        	font-weight: bold;
+        	font-size:11px;
+        	float:right;
+        	position:absolute;
+        	margin-left:5px;
+        	margin-top:4px
+        }
+
+        .countSecW
+        {
+        	/*color:#0099cc;*/
+        	color:#383838;
+        	font-weight: bold;
+        	font-size:13px;	
+        }        
+
+        .normalBtn
+        {
+          	font-size:9px;
+          	width:55px;
+          	height:19px;     	
+         	font-family: "Lucida Grande",Geneva,Verdana,Arial,Helvetica,sans-serif;
+		padding-bottom: 3px;
+        }
+
+        .errMsg
+        {
+          	font-size:12px;
+          	color:red;
+          	font-weight: bold;
+		margin-left:10px;
+		margin-right:10px;
+        }

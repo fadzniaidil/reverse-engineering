@@ -1,0 +1,155 @@
+var letterArray=new Array("q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m");
+var capsLetterArray=new Array("Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M");
+var numArray=new Array(0,1,2,3,4,5,6,7,8,9);
+var spcArray=new Array("`","~","!","@","$","%","^","*","_","=","+","\[","\]","|",";",":",".","/","?");
+var letterCount=letterArray.length;
+var numCount=numArray.length;
+var spcCount=spcArray.length;
+var capsOn = false;
+
+function parseValue(str)
+{
+  if(str == "&amp;") 
+    return "&";
+  else
+    return str;
+}
+
+function doHideKeys()
+{
+  var tempAllDIV = document.getElementsByTagName("DIV");
+  for (i=0; i<tempAllDIV.length; i++)
+  {
+    if(tempAllDIV[i].className=="vosKBkey")
+    {
+      tempAllDIV[i].className="vosKBkeyHide";
+    } 
+  }
+}
+
+function doShowKeys()
+{
+  var tempAllDIV = document.getElementsByTagName("DIV");
+  for (i=0; i<tempAllDIV.length; i++)
+  {
+    if(tempAllDIV[i].className=="vosKBkeyHide")
+    {
+      tempAllDIV[i].className="vosKBkey";
+    }
+  }
+}
+
+function removeNum(id)
+{
+  var temp=new Array();
+  for (j=0;j<numArray.length;j++)
+  {
+    if(id!=j)
+    {
+      temp[temp.length]=numArray[j];
+    }
+  }
+  numArray=temp;
+}
+
+function doCapsLock()
+{
+  if (capsOn)
+  {
+    capsOn = false;
+    for (i=0;i< letterCount;i++)
+    {
+      document.getElementById("vosKB_letter_" + i).innerHTML = letterArray[i];
+    } 
+  }  
+  else
+  {
+    capsOn = true;
+    for (i=0;i< letterCount;i++)
+    {
+      document.getElementById("vosKB_letter_" + i).innerHTML = capsLetterArray[i];
+    }  
+  } 
+}
+
+function removespcChar(id)
+{
+  var temp=new Array();
+  for (j=0;j<spcArray.length;j++)
+  {
+    if(id!=j)
+    {
+      temp[temp.length]=spcArray[j];
+    }
+  }
+  spcArray=temp;
+}
+
+function randomizeKeys()
+{
+
+  var tempnumArray=new Array();
+  var tempspcArray=new Array();
+  var numChar="";
+  var spcChar="";
+ 
+  if (capsOn)
+  {
+    for (i=0;i< letterCount;i++)
+    {
+      document.getElementById("vosKB_letter_" + i).innerHTML = capsLetterArray[i];
+    }  
+  }
+  else
+  {
+    for (i=0;i< letterCount;i++)
+    {
+      document.getElementById("vosKB_letter_" + i).innerHTML = letterArray[i];
+    } 
+  }
+  
+  for (i=0;i<numCount;i++)
+  {
+    var now = new Date();
+    var secs = now.getSeconds();
+    rnd = Math.random(secs);
+    rnd = Math.round(rnd * (numArray.length));
+    
+    if (rnd == numArray.length)
+    {
+      rnd = 0;
+    }
+    tempnumArray[i]=numArray[rnd];
+    numChar+=tempnumArray[i]+", ";
+    removeNum(rnd);
+  }
+ 
+  for (i=0;i<spcCount;i++)
+  {
+    var now = new Date();
+    var secs = now.getSeconds();
+    rnd = Math.random(secs);
+    rnd = Math.round(rnd * (spcArray.length));
+
+    if (rnd == spcArray.length)
+    {
+      rnd = 0;
+    }
+    tempspcArray[i]=spcArray[rnd];
+    spcChar+=tempspcArray[i]+", ";
+    removespcChar(rnd);
+  }
+
+  numArray=tempnumArray;
+  spcArray=tempspcArray;
+ 
+  for (i=0;i<spcCount;i++)
+  {
+    document.getElementById("vosKB_spc_" + i).innerHTML = spcArray[i];
+  }
+ 
+  for (i=0;i<numCount;i++)
+  {
+    document.getElementById("vosKB_num_" + i).innerHTML = numArray[i];
+  }
+}

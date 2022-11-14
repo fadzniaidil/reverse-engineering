@@ -1,0 +1,1576 @@
+/***
+
+Responsive Theme. 
+
+Based on http://getbootstrap.com/css/#responsive-utilities-classes
+
+***/
+
+
+
+/***
+
+Form Medium Devices Up To Large Devices
+
+***/
+
+@media (min-width: 1400px) and (max-width: 1920px) {  
+
+	
+
+	.header-inner{
+
+		width:1480px;
+
+		margin:0 auto;
+
+	}
+
+	.page-container{
+
+		width:1280px;
+
+		margin:0 auto;
+
+		min-height:900px;
+
+	}
+
+	.page-center{
+
+	margin: 0 auto;
+
+	width:1280px;
+
+	}
+
+	.page-content { 
+
+  		margin-left: 0px; 
+
+		margin-top: 0px;
+
+		padding: 25px 20px 20px 20px;
+
+		margin-right: 0px;
+
+	}
+
+	.page-content-full { 
+
+  		margin-left: 0px; 
+
+		margin-top: 0px;
+
+		padding: 25px 20px 20px 20px;
+
+		margin-right: 0px;
+
+	}
+
+	.tile {
+
+  height: 230px;
+
+  width: 230px !important;
+
+	}
+
+	.dashboard-menu{
+
+		width:1280px;
+
+		margin:0 auto;
+
+	}
+
+	.dashboard-menu-login{
+
+		width:auto;
+
+		margin:0 auto;
+
+	}
+
+	.footer-size{
+
+		width:1280px;
+
+		margin:0 auto;
+
+	}
+
+	.function-icon{
+
+	width:200px;
+
+	}
+
+
+
+}
+
+
+
+@media (min-width: 1300px) and (max-width: 1400px){ 
+
+
+
+.tile {
+
+  height: 205px;
+
+  width: 205px !important;
+
+
+
+}
+
+
+
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1400px) {  
+
+
+
+	.page-boxed .header .dropdown .username {
+
+		display: none;
+
+	}	
+
+	.page-center{
+
+		margin-left: 100px;
+
+		margin-right: 100px;
+
+	}
+
+}
+
+
+
+
+
+/***
+
+From Medium Devices Up To Larger Devices
+
+***/
+
+
+
+@media (min-width: 992px) { 
+
+
+
+	
+
+	  	/***
+
+  	Header
+
+  	***/
+
+	.header .navbar-brand img {
+
+ 	 margin-left: 100px;
+
+	}
+
+	.header .navbar-nav {
+
+  	margin-right: 100px;
+
+	}
+
+
+
+	.header .navbar-nav > li.dropdown .dropdown-toggle {
+
+  	margin-left: 100px;
+
+	}
+
+ 	/***
+
+ 	Page sidebar
+
+ 	***/
+
+ 	.page-sidebar {
+
+		position: absolute;
+
+ 		width: 225px;
+
+  	}
+
+
+
+  	.page-sidebar.navbar-collapse {
+
+  		max-height: none !important;
+
+  	}
+
+
+
+	.page-sidebar-fixed .page-sidebar {
+
+	  	position: fixed !important;
+
+	 	top: 41px;
+
+	}
+
+
+
+	.page-sidebar-fixed ul.page-sidebar-menu > li.last {
+
+		margin-bottom: 15px !important;
+
+	}
+
+
+
+	.page-sidebar-fixed.page-sidebar-hover-on .page-sidebar {
+
+		z-index: 10000;		
+
+		width: 35px;		
+
+	}
+
+
+
+	.page-sidebar-fixed.page-sidebar-hover-on .page-sidebar .selected {
+
+		display: none;
+
+	}
+
+
+
+	.page-sidebar-fixed.page-sidebar-hover-on .page-content .page-content-full {
+
+		margin-left: 35px;
+
+	}
+
+	.page-sidebar-fixed.page-sidebar-hover-on .footer {
+
+		margin-left: 35px;
+
+	}
+
+
+
+	.page-sidebar-fixed .page-sidebar-closed .page-sidebar .sidebar-search .submit,
+
+	.page-sidebar-fixed .page-sidebar .sidebar-toggler {
+
+		-webkit-transition: all  0.3s ease;
+
+	     -moz-transition: all  0.3s ease;
+
+	       -o-transition: all  0.3s ease;
+
+	          transition: all  0.3s ease;
+
+	}
+
+
+
+	.page-sidebar-hovering {
+
+		overflow: hidden !important;
+
+	}
+
+
+
+	.page-sidebar-hovering .sub-menu,
+
+	.page-sidebar-hovering span.title,
+
+	.page-sidebar-hovering span.arrow {		  
+
+		display: none !important;
+
+	}
+
+
+
+	.page-sidebar-hovering .submit {
+
+		opacity: 0;
+
+		width: 0 !important;
+
+		height: 0 !important;
+
+	}
+
+
+
+  	/***
+
+  	Page content
+
+  	***/
+
+	.page-container{
+
+		margin-top:0px;
+
+		width: 100%;
+
+	}
+
+  	.page-content { 
+
+  		margin-left: 225px; 
+
+		margin-top: 0px;
+
+		min-height: 600px; 
+
+		padding: 20px 20px 20px 20px;
+
+	}
+
+	
+
+	.page-content-full { 
+
+  		margin-left: 0px; 
+
+		margin-top: 0px;
+
+		min-height: 600px; 
+
+		padding: 20px 20px 20px 20px;
+
+	}
+
+
+
+	.page-sidebar-fixed .page-content {
+
+		min-height: 600px; 
+
+	}
+
+	.page-sidebar-fixed .page-content-full {
+
+		min-height: 600px; 
+
+	}
+
+	.page-content.no-min-height {
+
+		min-height: auto;
+
+	}
+
+
+
+	/***
+
+	Footer
+
+	***/
+
+
+
+	/* fixed sidebar */
+
+	.page-footer-fixed .footer {
+
+	  position: fixed;
+
+	  left: 0;
+
+	  right: 0;
+
+	  z-index: 10000;
+
+	  bottom: 0;
+
+	}
+
+
+
+	.page-footer-fixed .page-container {
+
+	  margin-bottom: 32px;
+
+	}
+
+
+
+	.page-footer-fixed.page-sidebar-fixed .footer {
+
+	  margin-left: 0 !important;
+
+	}
+
+	/* end: fixed footer */
+
+
+
+	.page-boxed .footer {
+
+  		padding: 8px 0 5px 0; 
+
+	}
+
+
+
+	.page-sidebar-fixed .footer {
+
+	  margin-left: 225px;
+
+	  background-color: #fff;
+
+	  padding: 8px 20px 5px 20px;
+
+	}
+
+
+
+	.page-sidebar-fixed .footer .footer-inner {
+
+	  color: #333;
+
+	}
+
+
+
+	.page-sidebar-fixed.page-sidebar-closed .footer {
+
+	  margin-left: 35px;
+
+	}
+
+
+
+	.page-sidebar-fixed .footer .footer-tools .go-top { 
+
+	  background-color: #666;
+
+	}
+
+
+
+	.page-sidebar-fixed .footer .footer-tools .go-top i {
+
+	  color: #ddd;
+
+	}
+
+
+
+	/* boxed layout */
+
+	.page-boxed	.header .navbar-brand {
+
+  		margin-left: 0px !important;
+
+  		width: 226px;
+
+	}
+
+
+
+	.page-boxed .header .navbar-brand img {
+
+		margin-left: 10px;
+
+	}
+
+
+
+	.page-boxed .header .navbar-nav {
+
+	  margin-right: 0px;
+
+	}
+
+	
+
+
+
+}
+
+
+
+/***
+
+Up To Medium Devices
+
+***/
+
+
+
+@media (max-width:991px) { 
+
+	
+
+	/***
+
+ 	Page header
+
+ 	***/
+
+ 	.header {
+
+ 		padding: 0 20px 0 20px;
+
+ 		position: relative;
+
+ 		clear: both;
+
+ 	}
+
+
+
+ 	.header .navbar-toggle {
+
+ 		display: inline-block;
+
+ 	}
+
+
+
+ 	.page-sidebar.navbar-collapse {
+
+  		max-height: 340px;
+
+  	}
+
+
+
+ 	.page-sidebar.navbar-collapse.collapse {
+
+	    display: none !important;
+
+	}
+
+
+
+	.page-sidebar.navbar-collapse.in {	 	
+
+	 	overflow: hidden !important;
+
+	 	overflow-y: auto !important;
+
+	 }
+
+
+
+	.header .nav li.dropdown i {
+
+		display: inline-block;
+
+		position: relative;
+
+		top:1px;
+
+		right:0px;
+
+	}
+
+
+
+	.header .navbar-nav {
+
+		display: block;
+
+		margin-bottom: 0px !important;
+
+	}
+
+
+
+	.header .navbar-nav .open .dropdown-menu  {
+
+		position: absolute;
+
+	}
+
+
+
+	.header .navbar-nav {
+
+		display: inline-block;
+
+    	float: right;
+
+    	margin-left: 0;
+
+  	}
+
+  
+
+ 	.header .navbar-nav > li {
+
+    	float: left;
+
+  	}
+
+
+
+	.header .navbar-brand {
+
+  		margin-left: 0px !important;
+
+  		padding-left: 0px !important; 
+
+	}
+
+
+
+	.header .navbar-brand img {
+
+		margin-left: 4px !important;
+
+	}
+
+
+
+	/***
+
+	Page container
+
+	***/
+
+	.page-container {
+
+		margin: 0 !important;
+
+		padding: 0 !important;
+	}
+
+
+
+	/***
+
+  	Page content
+
+  	***/
+
+  	.page-content {
+
+  		margin: 0px !important;
+
+  		padding: 20px 20px 20px 20px !important;  		
+
+		min-height: 280px; 
+
+  	}
+
+	
+
+	.page-content-full {
+
+  		margin: 0px !important;
+
+  		padding: 20px 20px 20px 20px !important;  		
+
+		min-height: 280px; 
+
+  	}
+
+	
+
+	/***
+
+	Page sidebar
+
+	***/
+
+	.page-sidebar {
+
+		border-top: 0 !important;
+
+		margin: 20px;
+
+	}
+
+
+
+	.page-sidebar.in {
+
+		border-top: 0 !important;
+
+		margin: 20px;
+
+		position: relative;
+
+		z-index: 5;
+
+	}
+
+
+
+	.page-sidebar .sidebar-toggler {
+
+		display: none;
+
+	}
+
+
+
+	.page-sidebar ul {
+
+		margin-top:0px;
+
+		width:100%;
+
+		background: #ffffff;
+
+	}
+
+
+
+	.page-sidebar .selected {
+
+		display: none !important;
+
+	}
+
+
+
+	.page-sidebar .sidebar-search .input-box {
+
+	  width: 220px;
+
+	}
+
+
+
+	/***
+
+	Styler panel
+
+	***/
+
+	.styler-panel {
+
+		top:55px;
+
+		right:20px;
+
+	}
+
+
+
+	/***
+
+	Boxed Layout
+
+	***/
+
+ 	.page-boxed .header > .container,
+
+ 	.page-boxed .footer > .container,
+
+ 	.page-boxed > .container {
+
+ 		max-width: none !important;
+
+ 		margin: 0 !important;
+
+ 		padding: 0 !important;
+
+ 	}
+
+	.login-form{
+
+		margin-left:20px;
+
+	}
+
+	.security{
+
+		margin-left:10px;
+
+		margin-right:10px;
+
+	}
+
+	.dashboard-menu-login{
+
+		margin-left:10px;
+
+		margin-right:10px;
+
+	}
+
+	
+
+	.navbar-nav > li > .dropdown-menu {
+
+  margin-left: 0px;
+
+}
+
+	.security-notice{
+
+	margin-top:10px;
+
+}
+
+		
+
+}
+
+
+
+/***
+
+From Small Devices Up To Medium Devices
+
+***/
+
+
+
+@media (min-width: 768px) and (max-width: 991px) { 
+
+
+
+	/***
+
+	Body
+
+	***/
+
+	body {
+
+	 	padding-top: 0px;
+
+	}
+
+
+
+	/***
+
+	Page sidebar
+
+	***/
+
+	.page-sidebar .btn-navbar.collapsed .arrow { 
+
+		display: none;
+
+	}	
+
+
+
+	.page-sidebar .btn-navbar .arrow {
+
+	  position: absolute;
+
+	  right: 25px;
+
+	  width: 0; 
+
+	  height: 0;
+
+	  top:50px;
+
+	  border-bottom: 15px solid #5f646b;
+
+	  border-left: 15px solid transparent; 
+
+	  border-right: 15px solid transparent; 
+
+	}
+
+	
+
+	.footer {
+
+  padding: 8px 0px 5px 5px; 
+
+  font-size: 9px;
+
+  background: #f1f9fa;
+
+}
+
+	.tile {
+
+  height: 170px;
+
+  width: 250px !important;
+
+
+
+}
+
+	.tile-selection {
+
+		width: 730px;
+
+		height: 50px;
+
+	}
+
+} 
+
+ 
+
+/***
+
+Extra Small Devices Only
+
+***/
+
+
+
+@media (max-width: 767px) { 
+
+	
+
+	/***
+
+	Page header
+
+	***/
+
+	
+
+	.header {
+
+ 		padding: 0 10px 0 10px;
+
+ 	}
+
+
+
+	.header .top-nav .nav{  
+
+	 	margin-top: 0px;
+
+	 	margin-right: 5px;
+
+	}
+
+	
+
+	.header .navbar-brand{
+
+		margin-top:0px;
+
+	}
+
+	.header{
+
+		min-height: 60px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.notification:after, 
+
+	.header .nav > li > .dropdown-menu.notification:before {
+
+		margin-right: 180px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.notification {
+
+  		margin-right: -180px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.inbox:after, 
+
+	.header .nav > li > .dropdown-menu.inbox:before {
+
+		margin-right: 140px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.inbox {
+
+  		margin-right: -140px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.tasks:after, 
+
+	.header .nav > li > .dropdown-menu.tasks:before {
+
+		margin-right: 90px;
+
+	}
+
+
+
+	.header .nav > li > .dropdown-menu.tasks {
+
+  		margin-right: -90px;
+
+	}
+
+	
+
+
+
+  	/* Header logo */
+
+	.header .navbar-brand {
+
+  		margin-left: 0px !important;
+
+  		width: 110px;
+
+	}
+
+	
+
+	/***
+
+	Page content
+
+	***/
+
+	.page-content {
+
+		padding: 20px 10px 10px 10px !important;
+
+		overflow: hidden;
+
+	}
+
+
+
+	/***
+
+	Page title
+
+	***/
+
+	.page-title {
+
+		margin-bottom: 20px;
+
+		font-size: 18px;
+
+	}
+
+
+
+	.page-title small {
+
+		font-size: 13px;
+
+		padding-top: 3px;
+
+	}
+
+	
+
+	/***
+
+	Styler pagel
+
+	***/
+
+	.styler-panel {
+
+		top:58px;
+
+		right:12px;
+
+	}	
+
+
+
+	/***
+
+	Page breadcrumb
+
+	***/
+
+	.breadcrumb {
+
+		padding-left: 10px;
+
+  		padding-right: 10px;
+
+	}
+
+
+
+	/***
+
+	Portlet form action
+
+	***/
+
+	.portlet-body.form .form-actions{
+
+	  padding-left: 0px;	
+
+	} 
+
+
+
+
+
+	/***
+
+	Form input validation states
+
+	***/
+
+	.input-icon .input-error, 
+
+	.input-icon .input-warning, 
+
+	.input-icon .input-success { 
+
+		top:-27px;
+
+		float: right;
+
+		right:10px !important;
+
+	}	
+
+
+
+	/***
+
+	Advance tables
+
+	***/
+
+	.table-advance tr td.highlight:first-child a {
+
+		margin-left: 8px;
+
+	}
+
+
+
+	/***
+
+	Footer	
+
+	***/	
+
+	.footer {
+
+		padding-left: 10px;
+
+		padding-right: 10px;		
+
+	}	
+
+	
+
+	.footer .go-top {  
+
+		float: right;
+
+		display: block;
+
+		margin-right: 0px;
+
+	}
+
+
+
+	/***
+
+	Vertical inline menu
+
+	***/
+
+	.ver-inline-menu li.active:after {
+
+		display: none;
+
+	}
+
+
+
+	/***
+
+	Form controls
+
+	***/
+
+	.form-horizontal .form-actions {
+
+  		padding-left: 180px; 	
+
+  	}
+
+
+
+  	.portlet .form-horizontal .form-actions {
+
+  		padding-left: 190px; 	
+
+  	}
+
+	
+
+	.tile {
+
+  height: 210px;
+
+  width: 155px !important;
+
+	}
+
+		
+
+
+
+
+
+}
+
+
+
+@media (min-width: 500px) and (max-width: 760px) { 
+
+.header .navbar-nav > li.dropdown, 
+
+	.header .navbar-nav > li.dropdown > a {
+
+	padding-left: 14px; 
+
+	padding-right: 4px;
+
+	top: -5px;
+
+	}
+
+}
+
+
+
+/***
+
+The Most Extra Small Devices Landscape Mode Only
+
+***/
+
+
+
+@media (max-width: 480px) {
+
+
+
+	/***
+
+	Header navbar
+
+	***/
+
+
+
+	.header .navbar-nav {
+
+		display: block !important;
+
+		margin-top: 0px !important;
+
+	}
+
+
+
+	.header .navbar-nav > li.dropdown .dropdown-toggle {
+
+  		margin-top:-1px;
+
+  		padding-left: 8px;
+
+	  	padding-right: 0px;
+
+		margin-left: 15px;
+
+	}
+
+
+
+	.header .navbar-nav > li.dropdown.user .dropdown-toggle,
+
+	.header .navbar-nav > li.dropdown.language .dropdown-toggle {
+
+		padding-right: 6px;
+
+		padding-left: 6px;
+
+	}
+
+
+
+  	.header .navbar-nav li.dropdown .dropdown-toggle .badge {
+
+  		top: 8px;
+
+  	}
+
+
+
+  	/***
+
+	Page sidebar
+
+	***/
+
+	.page-sidebar,
+
+	.page-sidebar.in {
+
+		margin: 0 10px 10px 10px;
+
+	}
+
+
+
+	/***
+
+	Page title
+
+	***/
+
+	.page-title small {
+
+		display: block;
+
+		clear: both;
+
+	}
+
+
+
+	/***
+
+	Forms
+
+	***/
+
+  	.portlet .form-horizontal .form-actions {
+
+  		padding-left: 10px; 	
+
+  	}
+
+
+
+	/***
+
+	Dashboard date range panel
+
+	***/
+
+	.page-content .breadcrumb .dashboard-date-range  {
+
+		padding-bottom: 8px;
+
+	} 
+
+
+
+	.page-content .breadcrumb .dashboard-date-range span {
+
+		display: none;
+
+	}	
+
+
+
+  	.page-content .breadcrumb > .btn-group span {
+
+  		display: none;
+
+  	}
+
+
+
+  	.page-content .breadcrumb > .btn-group > .btn {
+
+  		padding-left: 7px;
+
+  		padding-right: 7px;
+
+  	}
+
+
+
+	/***
+
+	Hidden phone
+
+	***/
+
+	.hidden-480 {
+
+		display: none !important;
+
+	}
+
+	.footer .footer-tools {
+
+ 	float: left;
+
+  	display: inline-block;
+
+  	margin-left: -15px;
+
+  	margin-top:20px;
+
+	}
+
+	.footer .footer-tools span {
+
+ 	position: absolute;
+
+	top: -15px;
+
+	left: 20px;
+
+	}
+
+	
+
+	.navbar-nav > li > .dropdown-menu {
+
+  margin-left: 10px;
+
+}
+
+			.tile-selection {
+
+		width: 320px;
+
+		height: 50px;
+
+	}
+
+
+
+	.tile-selection .tile-selection-body h3,
+
+.tile-selection .tile-selection-body h4 {
+
+  font-size: 14px;
+
+}
+
+
+
+}
+
+
+
+
+
+/***
+
+The Most Extra Small Devices Portrait Mode Only
+
+***/
+
+
+
+@media (max-width: 320px) {
+
+
+
+	/***
+
+	Hidden phone
+
+	***/
+
+	.hidden-320 {
+
+		display: none;
+
+	}
+
+
+
+	.header .navbar-brand {
+
+		width: 100px;
+
+	}	
+
+	.tile {
+
+  height: 200px;
+
+  width: 135px !important;
+
+}
+
+	.tile-selection {
+
+		width: 280px;
+
+		height: 50px;
+
+	}
+
+
+
+	.tile .tile-body h3,
+
+.tile .tile-body h4 {
+
+	margin-top:5px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  margin-bottom: 5px;
+
+}
+
+	.tile-selection .tile-selection-body h3,
+
+.tile-selection .tile-selection-body h4 {
+
+  font-size: 14px;
+
+  line-height: 14px;
+
+}
+
+	.navbar-nav > li > .dropdown-menu {
+
+  margin-left: 10px;
+
+}
+
+
+
+}

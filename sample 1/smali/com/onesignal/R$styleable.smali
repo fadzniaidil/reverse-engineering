@@ -1,0 +1,259 @@
+.class public final Lcom/onesignal/R$styleable;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/onesignal/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "styleable"
+.end annotation
+
+
+# static fields
+.field public static final CardView:[I
+
+.field public static final CardView_android_minHeight:I = 0x1
+
+.field public static final CardView_android_minWidth:I = 0x0
+
+.field public static final CardView_cardBackgroundColor:I = 0x2
+
+.field public static final CardView_cardCornerRadius:I = 0x3
+
+.field public static final CardView_cardElevation:I = 0x4
+
+.field public static final CardView_cardMaxElevation:I = 0x5
+
+.field public static final CardView_cardPreventCornerOverlap:I = 0x6
+
+.field public static final CardView_cardUseCompatPadding:I = 0x7
+
+.field public static final CardView_contentPadding:I = 0x8
+
+.field public static final CardView_contentPaddingBottom:I = 0x9
+
+.field public static final CardView_contentPaddingLeft:I = 0xa
+
+.field public static final CardView_contentPaddingRight:I = 0xb
+
+.field public static final CardView_contentPaddingTop:I = 0xc
+
+.field public static final CoordinatorLayout:[I
+
+.field public static final CoordinatorLayout_Layout:[I
+
+.field public static final CoordinatorLayout_Layout_android_layout_gravity:I = 0x0
+
+.field public static final CoordinatorLayout_Layout_layout_anchor:I = 0x1
+
+.field public static final CoordinatorLayout_Layout_layout_anchorGravity:I = 0x2
+
+.field public static final CoordinatorLayout_Layout_layout_behavior:I = 0x3
+
+.field public static final CoordinatorLayout_Layout_layout_dodgeInsetEdges:I = 0x4
+
+.field public static final CoordinatorLayout_Layout_layout_insetEdge:I = 0x5
+
+.field public static final CoordinatorLayout_Layout_layout_keyline:I = 0x6
+
+.field public static final CoordinatorLayout_keylines:I = 0x0
+
+.field public static final CoordinatorLayout_statusBarBackground:I = 0x1
+
+.field public static final FontFamily:[I
+
+.field public static final FontFamilyFont:[I
+
+.field public static final FontFamilyFont_android_font:I = 0x0
+
+.field public static final FontFamilyFont_android_fontStyle:I = 0x2
+
+.field public static final FontFamilyFont_android_fontVariationSettings:I = 0x4
+
+.field public static final FontFamilyFont_android_fontWeight:I = 0x1
+
+.field public static final FontFamilyFont_android_ttcIndex:I = 0x3
+
+.field public static final FontFamilyFont_font:I = 0x5
+
+.field public static final FontFamilyFont_fontStyle:I = 0x6
+
+.field public static final FontFamilyFont_fontVariationSettings:I = 0x7
+
+.field public static final FontFamilyFont_fontWeight:I = 0x8
+
+.field public static final FontFamilyFont_ttcIndex:I = 0x9
+
+.field public static final FontFamily_fontProviderAuthority:I = 0x0
+
+.field public static final FontFamily_fontProviderCerts:I = 0x1
+
+.field public static final FontFamily_fontProviderFetchStrategy:I = 0x2
+
+.field public static final FontFamily_fontProviderFetchTimeout:I = 0x3
+
+.field public static final FontFamily_fontProviderPackage:I = 0x4
+
+.field public static final FontFamily_fontProviderQuery:I = 0x5
+
+.field public static final LoadingImageView:[I
+
+.field public static final LoadingImageView_circleCrop:I = 0x0
+
+.field public static final LoadingImageView_imageAspectRatio:I = 0x1
+
+.field public static final LoadingImageView_imageAspectRatioAdjust:I = 0x2
+
+.field public static final SignInButton:[I
+
+.field public static final SignInButton_buttonSize:I = 0x0
+
+.field public static final SignInButton_colorScheme:I = 0x1
+
+.field public static final SignInButton_scopeUris:I = 0x2
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    const/16 v0, 0xd
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lcom/onesignal/R$styleable;->CardView:[I
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lcom/onesignal/R$styleable;->CoordinatorLayout:[I
+
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Lcom/onesignal/R$styleable;->CoordinatorLayout_Layout:[I
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lcom/onesignal/R$styleable;->FontFamily:[I
+
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lcom/onesignal/R$styleable;->FontFamilyFont:[I
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_5
+
+    sput-object v1, Lcom/onesignal/R$styleable;->LoadingImageView:[I
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_6
+
+    sput-object v0, Lcom/onesignal/R$styleable;->SignInButton:[I
+
+    return-void
+
+    :array_0
+    .array-data 4
+        0x101013f
+        0x1010140
+        0x7f03005e
+        0x7f03005f
+        0x7f030060
+        0x7f030061
+        0x7f030062
+        0x7f030063
+        0x7f0300a3
+        0x7f0300a4
+        0x7f0300a5
+        0x7f0300a6
+        0x7f0300a7
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x7f030133
+        0x7f030211
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x10100b3
+        0x7f030138
+        0x7f030139
+        0x7f03013a
+        0x7f030166
+        0x7f03016f
+        0x7f030170
+    .end array-data
+
+    :array_3
+    .array-data 4
+        0x7f0300fc
+        0x7f0300fd
+        0x7f0300fe
+        0x7f0300ff
+        0x7f030100
+        0x7f030101
+    .end array-data
+
+    :array_4
+    .array-data 4
+        0x1010532
+        0x1010533
+        0x101053f
+        0x101056f
+        0x1010570
+        0x7f0300fa
+        0x7f030102
+        0x7f030103
+        0x7f030104
+        0x7f030274
+    .end array-data
+
+    :array_5
+    .array-data 4
+        0x7f03007e
+        0x7f03011f
+        0x7f030120
+    .end array-data
+
+    :array_6
+    .array-data 4
+        0x7f030059
+        0x7f030095
+        0x7f0301f1
+    .end array-data
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

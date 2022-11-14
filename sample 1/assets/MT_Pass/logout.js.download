@@ -1,0 +1,55 @@
+function autoLogout(){
+	//auto logout when user close timeout window
+	console.log("autoLogout");
+	markLogout();
+	markAutoLogout();
+	proceedToFpx();
+}
+
+function manualLogout() {
+	//manual logout when user click cancel 
+	console.log("manualLogout");
+	markLogout();
+	proceedToFpx();
+}
+
+function autoLogoutTimeout(){
+	//auto logout when user wont click OK button (no action) and still at Login page
+	console.log("autoLogoutTimeout");
+	markLogout();
+	markAutoLogoutTimeout();
+	proceedToFpx();
+}
+
+function markLogout() {
+	console.log("markLogout");
+	if (document.getElementById("logout"))
+		document.getElementById("logout").value = "true";
+}
+
+function markAutoLogout() {
+	console.log("markAutoLogout");
+	if (document.getElementById("autoLoggedOut"))
+		document.getElementById("autoLoggedOut").value = "true";
+}
+
+function markAutoLogoutTimeout() {
+	console.log("markAutoLogoutTimeout");
+	if (document.getElementById("autoLoggedOutTimeout")){
+		document.getElementById("autoLoggedOutTimeout").value = "true";
+	}
+}
+
+function proceedToFpx() {
+	console.log("proceedToFpx");
+	var toFPX = document.getElementsByName("_toFPX");
+	if (toFPX[0] != null && toFPX[0].value == 'receiptPage')
+		toFPX[0].form.submit();
+	else
+		toFPX[0].click();
+}
+
+
+
+
+

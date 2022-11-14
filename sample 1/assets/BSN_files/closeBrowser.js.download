@@ -1,0 +1,25 @@
+var flag = false;
+
+	function toCancel() {
+	flag = true;
+    }
+
+    function toSubmit() {
+	flag = true;
+    }
+
+window.onbeforeunload = function() {
+
+			if(!flag){
+				var cancelUrl = '/fpxb/RIB/closeBrowser.html';
+			    var xmlhttp;
+			    // code for IE7+, Firefox, Chrome, Opera, Safari
+			    if (window.XMLHttpRequest) {
+			      xmlhttp = new XMLHttpRequest();
+			    } else { // code for IE6, IE5
+			      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			    }
+			    xmlhttp.open("GET", cancelUrl, false);
+			    xmlhttp.send();
+			}
+}	

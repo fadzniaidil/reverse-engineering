@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:mrl_rippleAlpha="0.2" app:mrl_rippleColor="@color/ripple_color" app:mrl_rippleHover="true" app:mrl_rippleOverlay="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@color/white" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/category_image" android:layout_width="54.0dip" android:layout_height="54.0dip" android:src="@drawable/ic_loading" />
+        <LinearLayout android:orientation="vertical" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_toRightOf="@id/category_image" android:layout_centerVertical="true" android:layout_marginStart="6.0dip" android:layout_toEndOf="@id/category_image">
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/category_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Menu name" />
+            <TextView android:id="@id/product_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$15 USD" />
+        </LinearLayout>
+    </RelativeLayout>
+</com.balysv.materialripple.MaterialRippleLayout>

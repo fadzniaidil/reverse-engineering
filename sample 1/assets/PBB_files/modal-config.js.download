@@ -1,0 +1,410 @@
+function ModalConfigObjects() {
+	this.config=function(num){
+		return {"conf-pbb" : [
+        {
+				"navi-modal" : "securitypolicy_dialog",
+				"navi-icon" : "includes/images/icon_security_policy.png",
+				"navi-title" : "Online <br /> Security",
+				"modal-title" : "Online Security",
+				"modal-description" : "We are committed to respecting and protecting the confidentiality of your personal, business and banking information. <a href=\"https://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security.aspx\" target='_blank' id='privacy_policy'>Click here for our Privacy Policy</a>",
+				"modal-href" : "https://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security.aspx"
+				},
+				{
+				"navi-modal" : "about_dialog",
+				"navi-icon" : "includes/images/icon_about.png",
+				"navi-title" : "About<br/>PBe",
+				"modal-title" : "About PBe",
+				"modal-description" : "PBeBank.com Internet Banking provides easy and convenient banking services at your fingertips. " +
+							 "Find out more about these services by <a href=\"http://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Services-Available.aspx\" target='_blank' id='about_pbebank'\">clicking here</a>.",
+				"modal-href" : "http://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Services-Available.aspx"
+				},
+				{
+				"navi-modal" : "securityadvisory_dialog",
+				"navi-icon" : "includes/images/ico_security_advisory.png",
+				"navi-title" : "Security <br /> Policy",
+				"modal-title" : "Security Policy",
+				"modal-description" : "All users are strongly advised to exercise caution in dealing with fraudulent e-mails / websites. " +
+							 "<a href=\"javascript:MM_openBrWindow('https://www2.pbebank.com/SecurityWriteUpPopUp.htm','Help','scrollbars=yes,width=580,height=480,left=50,top=20')\" id=\"security_advisory\"> Click here for our Security Advisory.</a> " +
+							 "For Security Tips, <a href=\"javascript:MM_openBrWindow('https://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Security-Policy.aspx','Help','scrollbars=yes,width=780,height=600')\" id=\"security_tips\">please click here</a>.",
+				"modal-href" : "https://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Security-Policy.aspx"
+				},
+				{
+				"navi-modal" : "privacypolicy_dialog",
+				"navi-icon" : "includes/images/icon_privacy_policy.png",
+				"navi-title" : "Privacy <br /> Policy",
+				"modal-title" : "Privacy Policy",
+				"modal-description" : "The security of your personal banking information is of utmost concern to us. " +
+							 "We practice strong security measures to prevent unauthorised access and interference of transactions and data. " +
+							 "<a href=\"https://www.pbebank.com/Others/Privacy.aspx\" target='_blank' id=\"security_policy\">Click here for our Security Policy</a>.",
+				"modal-href" : "https://www.pbebank.com/Others/Privacy.aspx"
+				},
+				{
+				"navi-modal" : "assistance_dialog",
+				"navi-icon" : "includes/images/icon_help.png",
+				"navi-title" : "Seek <br /> Assistance",
+				"modal-title" : "Seek Assistance",
+				"modal-description" : this.seekAssistanceTable()["assist" + num],
+				"modal-href" : ""
+				}		
+				],
+			"conf-cp" : [
+				{
+				"navi-modal" : "about_dialog",
+				"navi-icon" : "includes/images/icon_about.png",
+				"navi-title" : "About <br />CPBebank.com",
+				"modal-title" : "About CPBebank.com",
+				"modal-description" : "CPBebank.com Internet Banking provides easy and convenient banking services at your fingertips. " +
+							 "Find out more about these services by <a href=\"https://www.cpbebank.com/en/en_content/info/about.html\" target='_blank' id='about_pbebank'\">clicking here</a>.",
+				"modal-href" : "http://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Services-Available.aspx"										
+				},
+				{
+				"navi-modal" : "securityadvisory_dialog",
+				"navi-icon" : "includes/images/ico_security_advisory.png",
+				"navi-title" : "Security <br /> Advisory",
+				"modal-title" : "Security Advisory",
+				"modal-description" : "All users are strongly advised to exercise caution in dealing with fraudulent e-mails / websites. " +
+							 "<a href=\"javascript:MM_openBrWindow('https://www2.cpbebank.com/SecurityWriteUpPopUp.htm','Help','scrollbars=yes,width=580,height=480,left=50,top=20')\" id=\"security_advisory\"> Click here for our Security Advisory.</a> " +
+							 "For Security Tips, <a href=\"javascript:MM_openBrWindow('http://www.cpbebank.com/en/en_content/faq/pb_faq3.html','Help','scrollbars=yes,width=780,height=600')\" id=\"security_tips\">please click here</a>.",
+				"modal-href" : "http://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security.aspx#c2"	
+				},
+				{
+				"navi-modal" : "privacypolicy_dialog",
+				"navi-icon" : "includes/images/icon_privacy_policy.png",
+				"navi-title" : "Privacy <br /> Policy",
+				"modal-title" : "Privacy Policy",
+				"modal-description" : "The security of your personal banking information is of utmost concern to us. " +
+							 "We practice strong security measures to prevent unauthorised access and interference of transactions and data. " +
+							 "<a href=\"https://www.cpbebank.com/en/en_content/info/security.html\" target='_blank' id=\"security_policy\">Click here for our Security Policy</a>.",
+				"modal-href" : "http://www.pbebank.com/Others/Privacy.aspx?sl=/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security"
+				},
+				{
+				"navi-modal" : "securitypolicy_dialog",
+				"navi-icon" : "includes/images/icon_security_policy.png",
+				"navi-title" : "Security <br /> Policy",
+				"modal-title" : "Security Policy",
+				"modal-description" : "We are committed to respecting and protecting the confidentiality of your personal, business and banking information. <a href=\"https://www.cpbebank.com/en/en_content/info/privacy.html\" target='_blank' id='privacy_policy'>Click here for our Privacy Policy</a>",
+				"modal-href" : "http://www.pbebank.com/Others/Security.aspx?sl=/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security"
+				},
+				{
+				"navi-modal" : "assistance_dialog",
+				"navi-icon" : "/includes/images/icon_help.png",
+				"navi-title" : "Seek <br /> Assistance",
+				"modal-title" : "Seek Assistance",
+				"modal-description" : this.seekAssistanceTable()["assist" + num],
+				"modal-href" : ""
+				}
+				],
+			"conf-pbl" : [
+				{
+				"navi-modal" : "about_dialog",
+				"navi-icon" : "includes/images/icon_about.png",
+				"navi-title" : "About <br />PBLebank.com",
+				"modal-title" : "About PBLebank.com",
+				"modal-description" : "PBLebank.com Internet Banking provides easy and convenient banking services at your fingertips. " +
+							 "Find out more about these services by <a href=\"https://www.pblebank.com/en/en_content/info/about.html\" target='_blank' id='about_pbebank'\">clicking here</a>.",
+				"modal-href" : "https://www.pblebank.com/Corporate-Profile/About-Us"
+				},
+				{
+				"navi-modal" : "securityadvisory_dialog",
+				"navi-icon" : "includes/images/ico_security_advisory.png",
+				"navi-title" : "Security <br /> Advisory",
+				"modal-title" : "Security Advisory",
+				"modal-description" : "All users are strongly advised to exercise caution in dealing with fraudulent e-mails / websites. " +
+							 "<a href=\"javascript:MM_openBrWindow('https://www2.pblebank.com/SecurityWriteUpPopUp.htm','Help','scrollbars=yes,width=580,height=480,left=50,top=20')\" id=\"security_advisory\"> Click here for our Security Advisory.</a> " +
+							 "For Security Tips, <a href=\"javascript:MM_openBrWindow('http://www.pblebank.com/en/en_content/faq/pb_faq3.html','Help','scrollbars=yes,width=780,height=600')\" id=\"security_tips\">please click here</a>.",
+				"modal-href" : "http://www.pbebank.com/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security.aspx#c2"
+				},
+				{
+				"navi-modal" : "privacypolicy_dialog",
+				"navi-icon" : "includes/images/icon_privacy_policy.png",
+				"navi-title" : "Privacy <br /> Policy",
+				"modal-title" : "Privacy Policy",
+				"modal-description" : "The security of your personal banking information is of utmost concern to us. " +
+							 "We practice strong security measures to prevent unauthorised access and interference of transactions and data. " +
+							 "<a href=\"https://www.pblebank.com/en/en_content/info/security.html\" target='_blank' id=\"security_policy\">Click here for our Security Policy</a>.",
+				"modal-href" : "https://www.pblebank.com/Miscellaneous/Others/Privacy"
+				},
+				{
+				"navi-modal" : "securitypolicy_dialog",
+				"navi-icon" : "includes/images/icon_security_policy.png",
+				"navi-title" : "Security <br /> Policy",
+				"modal-title" : "Security Policy",
+				"modal-description" : "We are committed to respecting and protecting the confidentiality of your personal, business and banking information. <a href=\"https://www.pblebank.com/en/en_content/info/privacy.html\" target='_blank' id='privacy_policy'>Click here for our Privacy Policy</a>",
+				"modal-href" : "https://www.pblebank.com/Miscellaneous/Others/Security"
+				},
+				{
+				"navi-modal" : "assistance_dialog",
+				"navi-icon" : "includes/images/icon_help.png",
+				"navi-title" : "Seek <br /> Assistance",
+				"modal-title" : "Seek Assistance",
+				"modal-description" : this.seekAssistanceTable()["assist" + num],
+				"modal-href" : ""
+				}
+				],
+        "conf-lpb" : [
+			
+				]
+
+		};
+	}
+
+	this.seekAssistanceTable = function(){
+		return {
+			"assist-1" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td valign=\"top\" style=\"border-right:1px solid #ddd\">Customer Support</td>" +
+			       "       <td>+603-2179 5000<br><a href=\"mailto:customersupport@publicbank.com.my\">customersupport@publicbank.com.my</a></td>" +
+			       "       <td>6 am - 12 midnight daily <br />12 midnight - 6 am daily, for deactivation of IDs</td>" +
+				"	</tr>" +
+				"</table>" +
+ 			   	"</table>"
+			,
+			"assist0" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td valign=\"top\" style=\"border-right:1px solid #ddd\">Customer Support</td>" +
+			       "       <td>+603-2179 5000<br><a href=\"mailto:customersupport@publicbank.com.my\">customersupport@publicbank.com.my</a></td>" +
+			       "       <td>6 am - 12 midnight daily <br />12 midnight - 6 am daily, for deactivation of IDs</td>" +
+				"	</tr>" +
+				"</table>" +
+ 			   	"</table>"
+			,
+			"assist1" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Person In Charge</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>Mr Teh Choon Siang</td>" +
+			       "       <td>603-21767526</td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>Mr Selvakumar A/A Subramaniam</td>" +	
+			       "       <td>603-21767458</td>" +
+				"	<tr>" +
+			       " 	<tr>" +
+			       "       <td>Ms Soh Ai Lin</td>" +	
+			       "       <td>603-21767452</td>" +
+				"	<tr>" +
+				"</table> <br />" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Email:</span></td>" +
+				"	</tr>" +
+				"	<tr> " +
+			       "           <td valign=\"top\">" +
+				"<a href=\"mailto:alsoh@publicbank.com.my\">alsoh@publicbank.com.my</a>" +
+			       "           </td>" +
+			       "  </tr>" +
+ 			   	"</table>"
+				,
+			"assist3" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td rowspan=4 valign=\"top\" style=\"border-right:1px solid #ddd\">Activation of eDTS ID</td>" +
+			       "       <td>603-21767098<br><a href=\"mailto:shahrulnizam@publicbank.com.my\">shahrulnizam@publicbank.com.my</a></td>" +
+			       "       <td>Monday to Thursday:<br>8.45 a.m. to 5.45 p.m.</td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>603-21767097<br><a href=\"mailto:liawsheauyen@publicbank.com.my\">liawsheauyen@publicbank.com.my</a></td>" +
+			       "       <td>Friday:<br>8.45 a.m. to 4.45 p.m.</td>" +
+				"	<tr>" +
+			       " 	<tr>" +
+			       "       <td> 603-21766949<br><a href=\"mailto:yapsiewfah@publicbank.com.my\">yapsiewfah@publicbank.com.my</a></td>" +
+			       "       <td>Excluding Public holidays</td>" + 
+				"	<tr>" +
+				"</table> <br />" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Online Hours for Electronic Disbursement Tracking System (eDTS):</span></td>" +
+				"	</tr>" +
+				"	<tr> " +
+			       "           <td valign=\"top\" align=\"center\">" +
+			       "           <table align=\"center\">" +
+			       "           <tr>" +
+			       "           <td>Sunday to Friday</td>" +
+			       "           <td width=\"5px\" align=\"right\">:</td>" +
+			       "           <td>7.00 a.m. to 9.00 p.m.</td>" +
+			       "           </tr>"  +
+			       "           <tr>" +
+			       "           <td>Saturday</td>" +
+			       "           <td width=\"5px\" align=\"right\">:</td>" +
+			       "           <td>7.00 a.m. to 4.00 p.m.</td>" +
+			       "           </tr>" +
+			       "           </table>" +
+			       "           </td>" +
+			       "  </tr>" +
+ 			   	"</table>"
+				,
+			"assist4" :  "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td rowspan=3 valign=\"top\" style=\"border-right:1px solid #ddd\"><br>CPBeBank.com</td>" +
+			       "       <td>(855) 23 999 688 / (855) 23 998 896 / (855) 23 428 100</td>" +
+			       "       <td><br>6 am - 12 midnight daily <br />12 midnight - 6 am daily (including Public Holidays)</td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>(855) 23 986 428 / (855) 23 986 429  <br><a href=\"mailto:ATM_ebanking@campubank.com.kh\">ATM_ebanking@campubank.com.kh</a></td>" +
+			       "       <td></td>" +
+				"	<tr>" +
+				"</table>"				
+			,
+			"assist5" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td valign=\"top\" style=\"border-right:1px solid #ddd\">PBLeBank.com</td>" +
+			       "       <td valign=\"top\" style=\"border-right:1px solid #ddd\">6087-422091 <a href=\"mailto:pbll@publicbank.com.my \">pbll@publicbank.com.my </a></td>" +
+			       "       <td valign=\"top\">9 am - 6 pm, Monday to Thursday <br /> 9 am - 5 pm, Friday excluding public holidays in Labuan </td>" +
+				"	</tr>" +
+				"</table>" +
+ 			   	"</table>"
+				,
+			"assist6" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Service</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone / Email</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Office Hours</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td valign=\"top\" style=\"border-right:1px solid #ddd\">Customer Support</td>" +
+			       "       <td>+603-2179 5000<br><a href=\"mailto:customersupport@publicbank.com.my\">customersupport@publicbank.com.my</a></td>" +
+			       "       <td>6 am - 12 midnight daily <br />12 midnight - 6 am daily, for deactivation of IDs</td>" +
+				"	</tr>" +
+				"</table>" +
+ 			   	"</table>"
+			,
+			"assist7" : "<table width=\"100%\"  border=\"0\" cellpadding=\"5\" cellspacing=\"0\" class=\"orangeborder\">" +
+				 "<tr>" +
+				"<td class=\"details\">Need Assistance? Send an email or contact us: </td>" +
+			 	"</tr>" +
+				"</table>" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Person In Charge</span></td>" +
+				"		<td valign=\"top\"><span class=\"strong2\">Telephone</span></td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>Mr Goh</td>" +
+			       "       <td>603-XXXXXXXXX</td>" +
+				"	</tr>" +
+				"	<tr>" +
+			       "       <td>Mr Kuan</td>" +	
+			       "       <td>603-XXXXXXXXX</td>" +
+				"	<tr>" +
+			       " 	<tr>" +
+			       "       <td>Ms Loong</td>" +	
+			       "       <td>603-XXXXXXXXX</td>" +
+				"	<tr>" +
+				"</table> <br />" +
+				"<table width=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"5\">" +
+				"	<tr width=\"209\" bgcolor=\"#f4f4f4\">" +
+				"		<td valign=\"top\"><span class=\"strong2\">Email:</span></td>" +
+				"	</tr>" +
+				"	<tr> " +
+			       "           <td valign=\"top\">" +
+				"<a href=\"mailto:xxxx@publicbank.com.my\">xxxx@publicbank.com.my</a>" +
+			       "           </td>" +
+			       "  </tr>" +
+ 			   	"</table>"
+		};
+	}
+
+	this.securityAlert = function(){
+		return {
+				"alert-pbb" :{
+          "alert-description" : "<a href=\"https://www.pbebank.com/Personal-Banking/Promo/login_newbanner01.aspx\" target=\"_blank\"><img src=\"https://www.pbebank.com/images/securedpromo/login_newbanner01.aspx\" class=\"img-responsive\" /></a>"
+					},
+				"alert-cp" :{
+					"alert-icon" : "includes/images/icon_alert.png",
+					"alert-title" : "Security Alert",
+					"alert-description" : "<p>Please note that it has <span class=\"text-bold-red\">NEVER</span> been Public Bank's policy to request for personal/account information/ID and password/PAC numbers or any other security related information from customers via e-mail/letter or through telephone. </p>" +
+					"<p>You should <span class=\"text-bold-red\">NEVER</span> access the website via a hyperlink from an e-mail. </p>" +
+					"<p>Always <span class=\"text-bold-red\">ENTER</span> the correct website address, which is either <span class=\"text-bold-red\">www2.cpbebank.com</span>, <span class=\"text-bold-red\">www.cpbebank.com</span> or <span class=\"text-bold-red\">www.cpbebank.com.my</span></p>" +
+					"<p>Read carefully and be alert to the PAC SMS received on your registered mobile phone.</p>"
+					},
+				"alert-pbl" :{
+					"alert-icon" : "includes/images/icon_alert.png",
+					"alert-title" : "Security Alert",
+					"alert-description" : "<p>Please note that it has <span class=\"text-bold-red\">NEVER</span> been Public Bank's policy to request for personal/account information/ID and password/PAC numbers or any other security related information from customers via e-mail/letter or through telephone. </p>" +
+					"<p>You should <span class=\"text-bold-red\">NEVER</span> access the website via a hyperlink from an e-mail. </p>" +
+					"<p>Always <span class=\"text-bold-red\">ENTER</span> the correct website address, which is either <span class=\"text-bold-red\">www2.pblebank.com</span>, <span class=\"text-bold-red\">www.pblebank.com</span> or <span class=\"text-bold-red\">www.pblebank.com.my</span></p>" +
+					"<p>Read carefully and be alert to the PAC SMS received on your registered mobile phone.</p>"
+					},
+        "alert-lpb" :{
+          "alert-description" : "<a href=\"https://www.publicbank.com.la/login02.html\" target=\"_blank\"><img src=\"https://www.publicbank.com.la/images/login02.jpg\" class=\"img-responsive\" /></a>"
+					}
+			};
+	}
+
+}
+
+
+function PopUpObjects(){
+	this.config=function(){
+		return {
+				"popup-pbb" :{
+					"popup-title" : "Important Notice",
+					"popup-description" : "<img src=\"/includes/images/PopUp-RemoveClassicPBe.jpg\" width=\"630px\" height=\"338px\" border=\"0\" usemap=\"#Map\" />" +
+								 "<map name=\"Map\" id=\"Map\">" +
+								 "<area shape=\"rect\" coords=\"257,310,372,328\" onMouseOver=\"this.style.cursor='hand'\" onMouseOut=\"this.style.cursor='auto';this.style.cursor='pointer'\" href=\"#\" onClick=\"closePopUpDialog();\" />" +
+								 "</map>"
+					}
+			};
+	}
+}

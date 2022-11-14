@@ -1,0 +1,131 @@
+var isCancel = false;
+
+function printReceipt() {
+	myWindow = window.open("/fpxb/RIB/paymentReceipt.html", "myWindow",
+			"width=600, height=600");
+
+}
+
+function printInvoice() {
+	myWindow = window.open("/fpxb/RIB/paymentInvoice.html", "myWindow",
+			"width=600, height=600");
+
+}
+
+function validateId() {
+	if(!isCancel){
+		var idLength = document.enterId.loginId.value.length;
+		resetErrorMsg();
+
+		if (document.getElementById('returnFPX').value == "true") {
+			return true;
+		} else if (idLength < 8) {
+
+			var reqIdLength1 = document.getElementById("errorMsgReqIdLength1").value;
+			var reqIdLength2 = document.getElementById("errorMsgReqIdLength2").value;
+
+			document.getElementById("errorMsgRow").style.display = '';
+			document.getElementById('errorMsgLength').innerHTML = reqIdLength1
+					+ ' ' + idLength + ' ' + reqIdLength2;
+			if (document.enterId.loginId.value == "") {
+				var reqId = document.getElementById("errorMsgReqId").value;
+				document.getElementById('errorMsgRequired').innerHTML = ' ' + reqId;
+			}
+			return false;
+		}
+	}
+	return true;
+}
+
+function validatePassword() {
+	if(!isCancel){
+		var passwordLength = document.enterPw.password.value.length;
+		resetErrorMsg();
+
+		if (passwordLength < 8) {
+			var reqPwLength1 = document.getElementById("errorMsgReqPwLength1").value;
+			var reqPwLength2 = document.getElementById("errorMsgReqPwLength2").value;
+
+			document.getElementById("errorMsgRow").style.display = '';
+			document.getElementById('errorMsgLength').innerHTML = reqPwLength1
+					+ ' ' + passwordLength + ' ' + reqPwLength2;
+
+			if (document.enterPw.password.value == "") {
+				var reqPw = document.getElementById("errorMsgReqPw").value;
+				document.getElementById('errorMsgRequired').innerHTML = ' ' + reqPw;
+			}
+			return false;
+		}
+	}
+	return true;
+}
+
+counter = 0;
+function validatePaymentDetails() {
+	if (!isCancel){
+		var reqGeneral = document.getElementById('errorMsgReqGeneral').value;
+		var paymentAcc = document.getElementById('paymentAcc');
+		var tac = document.getElementById('pymtTxnAuthCode');
+		var back = document.getElementById('back');
+		var clickedRequestTac = document.getElementById('clickedRequestTac');
+		var logout = document.getElementById('logout');
+
+		if (back.value == "true" || logout.value == "true" || clickedRequestTac.value == "true") {
+			document.getElementById("clickedRequestTac").value = "false";
+			return true;
+		} else if (paymentAcc != null && paymentAcc.value == "") {
+			document.getElementById('errorMsgPayFromAcc').innerHTML = reqGeneral;
+			return false;
+		} else if (tac != null && tac.value == "") {
+			document.getElementById('errorMsgTac').innerHTML = reqGeneral;
+			return false;
+		} else {
+			checkDuplicateSubmit();
+		}
+	} else{
+		return true;
+	}
+}
+
+function checkDuplicateSubmit(){
+	counter++;
+	if (counter > 1) {
+		return false;
+	}
+	return true;
+}
+
+function resetId() {
+	document.getElementById("errorMsgRow").style.display = 'none';
+	document.enterId.loginId.value = "";
+}
+
+function resetPw() {
+	document.getElementById("errorMsgRow").style.display = 'none';
+	document.enterPw.password.value = "";
+}
+
+function resetErrorMsg() {
+	document.getElementById('errorMsgLength').innerHTML = '';
+	document.getElementById('errorMsgRequired').innerHTML = '';
+}
+
+function backToPaymentInput() {
+	document.getElementById("back").value = "true";
+	window.location = "paymentInputPage.html";
+}
+
+function requestTacInput() {
+	document.getElementById("clickedRequestTac").value = "true";
+}
+
+function backToUsernameInput() {
+	document.getElementById("back").value = "true";
+	window.location = "usernameInputPage.html";
+}
+
+function setIsCancel(flag){
+	isCancel = flag;
+}
+
+

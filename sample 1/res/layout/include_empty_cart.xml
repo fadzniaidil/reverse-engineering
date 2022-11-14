@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_empty_cart" android:tint="@color/green" />
+    <TextView android:textSize="18.0sp" android:id="@id/no_item_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/empty_cart" />
+    <com.balysv.materialripple.MaterialRippleLayout android:background="@color/colorAccent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" app:mrl_rippleAlpha="0.2" app:mrl_rippleColor="@color/ripple_color" app:mrl_rippleHover="true" app:mrl_rippleOverlay="true">
+        <Button android:textStyle="bold" android:textColor="@color/white" android:id="@id/btn_continue" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btn_continue_shopping" />
+    </com.balysv.materialripple.MaterialRippleLayout>
+</LinearLayout>

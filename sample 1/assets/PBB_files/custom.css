@@ -1,0 +1,320 @@
+/* here you can put your own css to customize and override the theme */
+.text-bold-red {	color: #FF0000; font-weight: bold; }
+.text-red {color: #FF0000;}
+.text-green {color: #80B43A;}
+
+.ui-dialog-titlebar-close { visibility: hidden; }
+.ui-dialog-titlebar { background: #d84a38; color: white; }
+
+.page-header.navbar {
+    /* Header container */
+    /* Mega menu */
+    position: relative;
+}
+.page-header.navbar {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    margin: 0;
+    border: 0px;
+    padding: 0px;
+    box-shadow: none;
+    height: 88px;
+    /* min-height: 60px; */
+    filter: none;
+    background-image: none;
+    /* Fixed header */
+    /* Header logo */
+    /* Search box */
+    /* Menu Toggler */
+    /* Top menu */
+}
+.page-header.navbar .page-logo {
+	float: left;
+	display: block;
+	position: relative;
+	top: 5px;
+	width: 150px;
+	height: 34px;
+	background: url(../images/pbb.svg) center center no-repeat;
+}
+.page-header.navbar .pbenterprise {
+	float: right;
+	display: block;
+	position: relative;
+	top: 5px;
+	width: 150px;
+	height: 34px;
+	background: url(../images/pbenterprise.svg) center center no-repeat;
+}
+/*
+.page-center.loginPage {
+	margin-left:15%;
+	margin-right:15%;
+}
+*/
+.loginForm-border {
+	background-color: rgba(0, 0, 0, 0.5);
+	min-height: 500px;
+	width:380px;
+	position: relative;
+}
+.login-page-form {
+	padding: 10px 15px;
+}
+h3#login-title {
+	background: #006699;
+	padding: 5px;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #ccc;
+	margin-top: 0px;
+	text-align: center;
+	margin-bottom: 20px;
+	text-shadow: #003550 1pt 1pt;
+}
+.loginPage .form-control{
+	padding: 6px 5px;
+}
+.loginPage .control-label{
+	text-shadow: black 0.1em 0.1em 0.2em;
+	color: white;
+}
+.form-horizontal .control-label {
+	padding-top: 7px;
+	margin-bottom: 0;
+	text-align: left;
+}
+.form-control {
+	font-size: 12px !important;
+	height: 30px !important;
+}
+
+input[type="text"], input[type="password"], input[type="phone"],  textarea {
+    font-size:14px;
+}
+#errMessage {
+    background: #ffffff;
+    padding: 2px 7px 7px;
+    margin-left: 0px !important;
+    margin-right: 0px!important;
+    width:100%;
+}
+#tempPass > .voskblink{
+    color: white;
+    font-size: 11px;
+	padding-left: 15px;
+}
+#tempPass > .voskblink > a {
+    color: yellow;
+    font-size: 11px;
+}
+#plp p, #plp .countSec b{
+    color: white;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#plp .countSec b {
+    position: relative;
+    top: -2.8px;
+}
+#plp > div{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.inner-note {
+	background: #f1f9fa;
+	padding: 10px 15px 10px 0px;
+	margin-top: 0px;
+	border: 1px solid #ACA8A8;
+	font-size:12px;
+}
+#topheader {
+	border-top: 5px solid #Ed1c24;
+	position:relative;
+	top:2px;
+}
+#bank-logo1{
+    width: 150px;
+    height: 34px;
+}
+#ebanking-logo1{
+    width: 110px;
+    height: 34px;
+}
+.page-header-inner {
+	height: 70px;
+	min-height: 60px;
+	padding: 10px 17px;
+	margin: 0 10px; /* As per intern's sidebar margin setting */
+}
+.homepage-image {
+    background-image: url(../images/PBbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    max-width: 1080px;
+    margin: auto !important;
+}
+.col-md-12 > .container-context{
+    padding-right:0px;
+}
+#plp > div img{
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.control-label.normalLogin{
+    color:white!important;
+}
+.control-label.normalLogin > b{
+    font-weight: normal!important;
+}
+
+.assist-guide{
+	background:#eee;
+	padding:6px 10px;
+	border: 1px solid white;
+    font-size:12px;
+}
+.assist-guide > a{
+	color:black;
+}
+.form-group {
+    margin-bottom: 7px;
+}
+.btn.grey {
+	color: black;
+	background-color: #d3d4da;
+	border-color: #bfbfbf;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.btn.grey:hover,
+.btn.grey:focus,
+.btn.grey:active,
+.btn.grey.active,
+.btn.grey.disabled {
+	color: white;
+	background-color: #8c8989;
+	border-color: #bfbfbf;
+	outline: none;
+}
+.assist-guide {
+	background: #eee;
+	padding: 5px 8px;
+	border: 1px solid white;
+	clear: both;
+	position: absolute;
+	bottom: 0;
+}
+
+.assist-guide > p {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.assist-guide > p.subTitle {
+	font-weight:bold;
+	color:red;
+}
+.assist-guide > a, .assist-guide > p > a {
+	color: black;
+	text-decoration: underline;
+}
+.borderBottom{
+    border-bottom:5px solid #Ed1c24;
+}
+.dropdown1 > a{
+    cursor:default;
+}
+.page-container > .page-center{
+    min-height:90vh;
+}
+/*.row.menaraPB{
+    min-height:500px;
+    max-width:1080px;
+    margin:auto;
+}*/
+.background-Transparency{
+    background-color:rgba(0, 0, 0, 0.25);
+}
+.background-Column{
+    padding-left:0px;
+    padding-right:0px;
+    min-height: 405px;
+}
+.assist-division{
+    border:0.5px solid #ccc;
+    padding-left:0;
+    padding-right:0;
+}
+.assist-division > .assist-guide{
+    min-height:95px;
+}
+.assist-division > .assist-guide > p.need-assistance{
+    font-weight:bold;
+    color:red;
+    font-size:13px;
+}
+.row.secondRow{
+    margin-top:10px;
+    max-width:1080px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.no-padding {
+	padding: 0;
+}
+.padding-right-0 {
+	padding-right:0;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+.notice-title {
+	font-size: 16px;
+	background-color: #006699;
+	line-height: 1.8;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 0px;
+}
+.padding-left-right-30{
+    padding-left:30px!important;
+    padding-right:30px!important;
+}
+.banner-container {
+	padding-right: 0px;
+}
+
+@media (max-width: 414px) {
+	.page-header.navbar .page-logo {
+		width: 110px;
+	}
+	.page-header.navbar .pbenterprise {
+		width: 110px;
+	}
+	.loginPage {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.homepage-image {
+		background-image: url(../images/PBbackground.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: right -82px;
+		max-width: 1080px;
+		margin: auto !important;
+	}
+	.loginForm-border {
+		width: auto;
+	}
+	.login-page-form {
+		height: 580px;
+	}
+	.banner-container {
+		padding: 10px 0px 10px 0px;
+	}
+	#tempPass > .voskblink{
+		display:none;
+	}
+}

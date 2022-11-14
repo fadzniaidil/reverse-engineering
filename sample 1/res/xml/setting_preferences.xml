@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_group_profile">
+        <EditTextPreference android:title="@string/pref_title_name" android:key="@string/pref_title_name" android:summary="@string/default_your_name" android:defaultValue="@string/default_your_name" />
+        <EditTextPreference android:title="@string/pref_title_email" android:key="@string/pref_title_email" android:summary="@string/default_your_email" android:defaultValue="@string/default_your_email" />
+        <EditTextPreference android:title="@string/pref_title_phone" android:key="@string/pref_title_phone" android:summary="@string/default_your_phone" android:defaultValue="@string/default_your_phone" android:inputType="phone" />
+        <EditTextPreference android:title="@string/pref_title_address" android:key="@string/pref_title_address" android:summary="@string/default_your_address" android:defaultValue="@string/default_your_address" />
+    </PreferenceCategory>
+</PreferenceScreen>

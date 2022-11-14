@@ -1,0 +1,39 @@
+var timerAlertSessionExp;
+var timerSessionLogout;
+var popupWindow;
+	
+function initSessionExpiredTimer(isLoginPage) {
+	var now = new Date();
+	// sessionExpiredTime in milliseconds
+	var sessionExpiredTime = document.getElementById("sessionExpiredTime").value;
+	var timeLogout = sessionExpiredTime - now.getTime();
+	var timeAlert = timeLogout-5000;
+	
+	console.log("timeAlert:"+ timeAlert);
+	console.log("timeLogout:"+ timeLogout);
+	
+	clearTimeout(timerAlertSessionExp);
+	clearTimeout(timerSessionLogout);
+	
+	if(timeAlert > -3) 
+		timerAlertSessionExp = setTimeout("alertSessionTimeout();", timeAlert);
+	if(timeLogout > -3) 
+		if(isLoginPage)
+			timerSessionLogout = setTimeout("autoLogoutTimeout();", timeLogout);
+		else
+			timerSessionLogout = setTimeout("autoLogout();", timeLogout);
+}
+
+function alertSessionTimeout() {
+	popupWindow = timeoutPopup('sessionTimeOut.html');
+}
+
+function timeoutPopup(url) {
+	return window
+			.open(
+					url,
+					'popUpWindow',
+					'height=150,width=400,left=100,top=100,resizable=false,scrollbars=false,toolbar=false,menubar=false,location=no,directories=no, status=yes');
+
+}
+

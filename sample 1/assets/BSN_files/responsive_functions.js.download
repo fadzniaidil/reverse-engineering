@@ -1,0 +1,83 @@
+function showAccordion() {
+  var accBG = document.getElementById('accordion_bg');
+  accBG.removeEventListener('click', showAccordion);
+
+  var element = document.getElementById('accordian');
+  if (element.classList.contains('in')) {
+    element.classList.remove('in');
+  } else {
+    element.classList.add('in');
+
+    // setTimeout to prevent click event calling immediately
+    setTimeout(function () {
+      accBG.addEventListener('click', showAccordion);
+    }, 0);
+  }
+}
+
+// function showSecTips() {
+//   var modalOverlay = document.getElementById('modal-overlay');
+//   modalOverlay.removeEventListener('click', showSecTips);
+
+//   var element = document.getElement('#table-form td:nth-child(2)');
+//   if (element.classList.contains('in')) {
+//     modalOverlay.style.visibility = 'hidden';
+//     element.classList.remove('in');
+//   } else {
+//     element.classList.add('in');
+
+//     if (window.innerWidth < 871.98) {
+//       modalOverlay.style.visibility = 'visible';
+//     }
+
+//     // setTimeout to prevent click event calling immediately
+//     setTimeout(function () {
+//       modalOverlay.addEventListener('click', showSecTips);
+//     }, 0);
+//   }
+// }
+
+function toggleAddInfo() {
+  var addInfo = document.getElementsByClassName('additional-toggle')[0];
+
+  if (addInfo.classList.contains('hide')) {
+    addInfo.classList.remove('hide');
+  } else {
+    addInfo.classList.add('hide');
+  }
+}
+
+function toggleTooltip() {
+  var tooltip = document.getElementsByClassName('tooltip')[0];
+
+  if (tooltip.classList.contains('hidden')) {
+    tooltip.classList.remove('hidden');
+
+    setTimeout(function () {
+      window.addEventListener('click', toggleTooltip);
+    });
+  } else {
+    tooltip.classList.add('hidden');
+
+    setTimeout(function () {
+      window.removeEventListener('click', toggleTooltip);
+    });
+  }
+}
+
+function toAccTypeChange() {
+  var favArray = document.getElementsByClassName('for-fav');
+  var newArray = document.getElementsByClassName('for-new');
+
+  if (document.getElementById('toAccType').value === 'fav') {
+    for (var i = 0; i < favArray.length; i++) {
+      favArray[i].style.display = 'table-row';
+      newArray[i].style.display = 'none';
+    };
+  } else {
+    for (var i = 0; i < favArray.length; i++) {
+      favArray[i].style.display = 'none';
+      newArray[i].style.display = 'table-row';
+    };
+  }
+};

@@ -1,0 +1,23 @@
+.step-section-div{
+	margin-bottom: 50px;
+}
+
+.step-section{
+	float: right !important;
+	background-color: white;
+	border-width: medium;
+	border-color: #004b92;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.step-clear{
+	clear: both;
+}
+
+.btn-cancel{
+	float: right !important;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 3px;
+}

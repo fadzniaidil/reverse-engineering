@@ -1,0 +1,329 @@
+function printReceipt() {
+	myWindow = window.open("/fpxb/RIB/paymentReceipt.html", "_self",
+			"width=765, height=450");
+
+}
+
+function validateId() {
+	if (document.getElementById('returnFPX').value == "true") {
+		return true;
+	} else if (document.getElementById('loginId').value == '') {
+		var reqId = document.getElementById("errorMsgReqId").value;
+		document.getElementById('errorMsgId').innerHTML = '- ' + reqId;
+		document.getElementById('errorMsgId').style.display = 'block';
+
+		return false;
+	} else {
+		document.getElementById('loginIdEnc').value = encrypt(document
+				.getElementById('loginId').value);
+		document.getElementById('loginId').disabled = true;
+		return true;
+	}
+
+}
+
+function validateImage() {
+	var password = document.getElementById('password');
+	if (!document.getElementById("chosenImage").checked) {
+		password.disabled = true;
+	} else {
+		password.disabled = false;
+		$('#password').focus();
+	}
+}
+
+function validatePassword() {
+	if (document.getElementById('back').value == "true") {
+		return false;
+	} else if (document.getElementById('returnFPX').value == "true") {
+		return true;
+	} else if (document.getElementById('password').value == "") {
+		var reqPw = document.getElementById("errorMsgReqPw").value;
+		document.getElementById('errorMsgPassword').innerHTML = '- ' + reqPw;
+		document.getElementById('errorMsgPassword').style.display = 'block';
+		document.getElementById('labelPassword').style.color = "#d21f3e";
+		$('#password').focus();
+		return false;
+	} else {
+		document.getElementById('passwordEnc').value = encrypt(document
+				.getElementById('password').value);
+		document.getElementById('password').disabled = true;
+		return true;
+	}
+}
+function validateChallenge(){
+	if (document.getElementById('answer').value == "") {
+		var reqAnswer = document.getElementById("errorMsgReqAnswer").value;
+		document.getElementById('errorMsgAnswer').innerHTML = '- ' + reqAnswer;
+		document.getElementById('errorMsgAnswer').style.display = 'block';
+		$('#answer').focus();
+		return false;}
+	else
+		return true;
+}
+counter = 0;
+function validatePaymentDetails() {
+	var reqGeneral = document.getElementById('errorMsgReqGeneral').value;
+	var paymentAcc = document.getElementById('paymentAcc');
+	var tac = document.getElementById('pymtTxnAuthCode');
+	var back = document.getElementById('back');
+	var logout = document.getElementById('logout');
+	var requestTac = document.getElementById('reqTac');
+	var returnFPX = document.getElementById('returnFPX');
+	if (back.value == "true" || requestTac.value == "true"
+			|| logout.value == "true" || (returnFPX && returnFPX.value == "true")) {
+		return true;
+	} else if (paymentAcc != null && paymentAcc.value == "") {
+		document.getElementById('errorMsgPayFromAcc').innerHTML = reqGeneral;
+		document.getElementById('errorMsgPayFromAcc').style.display = 'block';
+		return false;
+	} else if (tac != null && tac.value == "") {
+		var requestTacButton = document.getElementById('requestTAC').style.visibility;
+		document.getElementById('errorMsgTac').innerHTML = reqGeneral;
+		document.getElementById('divErrorMsgTac').style.visibility = 'visible';
+		return false;
+	} else {
+		counter++;
+		if (counter > 1) {
+			return false;
+		}
+		return true;
+	}
+
+}
+
+function resetId() {
+	document.getElementById('loginId').value = '';
+}
+
+function returnFPX() {
+	document.getElementById("returnFPX").value = "true";
+}
+
+function cancel() {
+	document.getElementById("returnFPX").value = "true";
+}
+
+function backToUserNameInput() {
+	document.getElementById("back").value = "true";
+	window.location = "usernameInputPage.html";
+}
+
+function backToPaymentInput() {
+	document.getElementById("back").value = "true";
+	window.location = "paymentInputPage.html";
+}
+
+function backToPaymentAcknowlegment() {
+	document.getElementById("back").value = "true";
+	window.location = "paymentAcknowledgementPage.html";
+}
+
+function requestTacNumber() {
+	var tacRelatedMessage = document.getElementById('tacRelatedMessage');
+	var requestTacButton = document.getElementById('requestTAC');
+	var tacRequesting = document.getElementById('tacRequesting').value;
+	var tacHasBeenSend = document.getElementById('tacHasBeenSend').value;
+	var tacNotReceived = document.getElementById("tacNotReceived").value;
+	tacRelatedMessage.innerHTML = tacRequesting;
+	document.getElementById('errorMsgTacButton').innerHTML = '';
+	requestTacButton.style.visibility = 'hidden';
+	document.getElementById("reqTac").value = "true";
+	document.getElementById("pymtTxnAuthCode").value = '';
+}
+
+function onSelectFromAcc() {
+	var isStepUpRequired = document.getElementById('isStepUpRequired').value;
+
+	console.log("onSelectFromAcc isStepUpRequired: " + isStepUpRequired);
+	
+	if (isStepUpRequired == 'true') {
+		document.getElementById('tempFindAcc').name = "_toFindAccNo";
+		document.getElementById('paymentAcc').form.submit();
+	} else {
+		var tacRelatedMessage = document.getElementById('tacRelatedMessage');
+		var requestTacButton = document.getElementById('requestTAC');
+		var tacRequesting = document.getElementById('tacRequesting').value;
+		var paymentAcc = document.getElementById('paymentAcc');
+		if (paymentAcc != null && paymentAcc.value == "") {
+			tacRelatedMessage.innerHTML = '';
+			requestTacButton.style.visibility = 'hidden';
+			document.getElementById('errorMsgTacButton').innerHTML = '';
+			document.getElementById('reqTac').value = "false";
+			document.getElementById('divTacMsg').style.visibility = 'collapse';
+		} else {
+			requestTacNumber();
+			document.getElementById('tempFindAcc').name = "_toFindAccNo";
+			document.getElementById('paymentAcc').form.submit();
+		}
+	}
+
+}
+
+function onChangeUsername() {
+	if (document.getElementById('loginId').value == '') {
+		document.getElementById('btn-login').disabled = true;
+	} else {
+		document.getElementById('btn-login').disabled = false;
+	}
+}
+
+function onChangePassword() {
+	if (document.getElementById('password').value == '')
+		document.getElementById('btn-login').disabled = true;
+	else
+		document.getElementById('btn-login').disabled = false;
+}
+
+function onChangeTac() {
+
+	if (document.paymentDetails.pymtTxnAuthCode.value.length != '')
+		document.getElementById('btn-proceed').disabled = false;
+	else
+		document.getElementById('btn-proceed').disabled = true;
+
+}
+
+function isNumberKey(evt) {
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+		return false;
+	}
+	return true;
+}
+
+function countToMerchant() {
+	var bac = document.getElementById("backToMerc");
+	if (bac != null) {
+		var interval;
+		// count down for 15 seconds
+		var countDown = 15;
+		// back to merchant after 16 seconds
+		var wait = 16;
+		var countToBackMerc = document.getElementById("countToBackMerc");
+		var text1 = document.getElementById("backToMerc").value;
+		var text2 = "s)";
+		if (countToBackMerc != null && countToBackMerc.value == "true") {
+			setTimeout("autoLogout()", 1000 * wait);
+			interval = setInterval(function() {
+				var el = document.getElementsByName('_toFPX')[0];
+				el.innerHTML = text1 + countDown + text2;
+
+				countDown--;
+			}, 1000);
+		}
+	}
+}
+
+function showNoteCountToMerchantr() {
+	var interval;
+	// count down for 10 seconds
+	var countDown = 10;
+	// back to merchant after 11 seconds
+	var wait = 11;
+	var countToBackMerc = document.getElementById("countToBackMerc");
+	var text1 = document.getElementById("noteBackToMerc").value;
+	var text2 = " seconds)";
+	setTimeout("autoLogOutToFPX()", 1000 * wait);
+	interval = setInterval(function() {
+		var el = document.getElementById('noteTimeout');
+		el.innerHTML = text1 + countDown + text2;
+		countDown--;
+	}, 1000);
+}
+
+function autoLogOutToFPX() {
+	markLogout();
+	document.getElementById("autoLoggedOut").value = "true";
+	document.getElementsByName("_toFPX")[0].click();
+}
+
+function checkStepUp() {
+	console.log("toCheckStepUp");
+	$
+			.ajax(
+					"/fpxb/RIB",
+					{
+						data : {
+							'_toCheckStepUp' : ''
+						},
+						success : function(isApproved) {
+							if (isApproved == "APPROVED") {
+								document.getElementById('tempValidateStepUp').name = "_toDebitPayment";
+								document.getElementById('tempValidateStepUp').form
+										.submit();
+							} else if (isApproved == "EXPIRED"
+									|| isApproved == "REJECTED") {
+								document.getElementById('tempValidateStepUp').name = "_toStepUpExpired";
+								document.getElementById('tempValidateStepUp').form
+										.submit();
+							} else {
+								setTimeout("checkStepUp()", 5000);
+							}
+						}
+					});
+}
+
+function checkStepUpIsRequired() {
+
+	var isError = document.getElementById('isError').value;
+	var isStepUpRequired = document.getElementById('isStepUpRequired').value;
+	var isStepUpSent = document.getElementById('isStepUpSent').value;
+	var isStepUpApproved = document.getElementById('isStepUpApproved').value;
+	var stepupMsgType = document.getElementById('stepupMsgType').value;
+	var stepupLimit = document.getElementById('stepupLimit').value;
+	var stepupMsgHead = document.getElementById('stepupMsgHead').value;
+	var stepUpMsgAT = document.getElementById('stepUpMsgAT').value;
+	var stepUpMsgIB = document.getElementById('stepUpMsgIB').value;
+	var stepUpSuccessMsg = document.getElementById('stepUpSuccessMsg').value;
+	var stepUpFailedMsg = document.getElementById('stepUpFailedMsg').value;
+	var paymentAcc = document.getElementById('paymentAcc');
+	var stepUpTransactionId = document.getElementById('stepUpTransactionId').value;
+
+	console.log("isStepUpRequired: " + isStepUpRequired);
+	console.log("stepupMsgType: " + stepupMsgType);
+	console.log("isStepUpSent: " + isStepUpSent);
+	console.log("isStepUpApproved: " + isStepUpApproved);
+	console.log("stepUpTransactionId: " + stepUpTransactionId);
+
+	if (isStepUpRequired == "true") {
+		if (isError == "true") {
+			paymentAcc.disabled = true;
+			document.getElementById('cancelBtnDiv').style.display = '';
+			document.getElementById('cancelBtn2').disabled = true;
+			showNoteCountToMerchantr();
+		}
+	}
+	if (isStepUpSent == "true") {
+		document.getElementById('stepupDiv').style.display = '';
+		document.getElementById('stepupDivMsg').textContent = stepUpSuccessMsg;
+
+		if (isStepUpApproved != "true" && isStepUpApproved != "false") {
+			setTimeout("checkStepUp()", 3000);
+		}
+	}
+
+}
+
+function checkError() {
+	var isError = document.getElementById('isError').value;
+	var paymentAcc = document.getElementById('paymentAcc');
+	var pymtTxnAuthCode = document.getElementById('pymtTxnAuthCode');
+	var proceedBtn = document.getElementById('btn-proceed');
+	var cancelBtn = document.getElementById('btn-cancel');
+	var toFPX = document.getElementById('btn-toFPX');
+	
+	toFPX.style.visibility = 'hidden';
+	
+	console.log("checkError isError: " + isError);
+
+	if (isError == "true") {
+		paymentAcc.disabled = true;
+		pymtTxnAuthCode.disabled = true;
+		proceedBtn.disabled = true;
+		cancelBtn.disabled = true;
+		showNoteCountToMerchantr();
+		toFPX.style.visibility = 'visible';
+	}
+
+}

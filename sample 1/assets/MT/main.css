@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url('font/google-roboto.woff') format('woff');
+}
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #f2f2f2;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version*/
+}
+
+.actionbar {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 9;
+}
+
+.container {
+    padding: 10px 17px;
+    margin-bottom: 50px;
+}
+
+.actionbar_bg .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-align {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.root {
+    position: absolute;
+    top: 48px;
+    width: 100%;
+}
+
+.left,
+.right {
+    line-height: 2em;
+    position: fixed;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.actionbar_bg {
+    /*width: 360px;*/
+    height: 48px;
+    background-image: linear-gradient(to bottom, #ffffff, #efefef);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.actionbar_bg.blue {
+    background-image: none;
+    background-color: #004b92;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.actionbar_title {
+    width: 84px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #004b92;
+}
+
+.blue .actionbar_title {
+    color: #ffffff;
+}
+
+.logo_imuamalat {
+    height: 25px;
+}
+
+table {
+    border-radius: 1px;
+    background-color: #ffffff;
+    border: solid 1px #dbdde2;
+}
+
+.icon {
+    padding: 17px;
+    cursor: pointer;
+}
+
+.icon_back_dark {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+form {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.form .form-group {
+    margin: 10px 0;
+}
+
+.form label {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.form input.form-control[type="text"],
+.form input.form-control[type="password"] {
+    border-radius: 3px;
+    padding: 9px 15px;
+}
+
+form.form>.btn {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-weight: bold;
+}
+
+.form .btn-primary {
+    border-radius: 3px;
+    background-color: #004b92;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.form-control {
+    font-size: 12px;
+    height: 35px;
+}
+
+.cancel-btn {
+    padding-top: 10px;
+}
+
+.green-tick {
+    max-width: 10%;
+}
+
+.spacer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ul li.err{
+	color: #d21f3e;
+}

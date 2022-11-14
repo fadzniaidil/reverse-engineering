@@ -1,0 +1,119 @@
+var ms_IE = navigator.appName.indexOf("Microsoft") != -1;
+
+if(ms_IE)  
+{
+ // document.write('<LINK rel="stylesheet" type="text/css" href="../../images/vosKB_IE.css" />');
+ document.write('<LINK rel="stylesheet" type="text/css" href="images/vosKB_IE.css" />');
+}
+else
+{
+ // document.write('<LINK rel="stylesheet" type="text/css" href="../../images/vosKB_MF.css" />');
+ document.write('<LINK rel="stylesheet" type="text/css" href="images/vosKB_MF.css" />');
+}
+
+
+
+var vos_width = "437";
+var vos_height = "222";
+var vos_fheight = "230px";
+var vos_fwidth = "320px";
+var vos_button_width = "22px";
+var vos_button_height = "22px";
+
+if(ms_IE)
+{
+  vos_width = "414";
+  vos_height = "204";
+  vos_fheight = "200px";
+  vos_fwidth = "315px";
+}
+
+var win_IEInd = /Mozilla.*MSIE.*Windows.*/;
+
+if(win_IEInd.test(navigator.userAgent)) 
+{
+//  document.write('<IFRAME id="vosKBShim"  target="_parent" style="position:absolute; width:' + vos_fwidth + '; height:' + vos_fheight + ';left:120px; top:0px;visibility:hidden; z-index:100;" src="javascript:false;" frameBorder="0" scrolling="no"></IFRAME>');
+}
+else
+{
+  win_IE=false;
+}
+
+
+function noselect()
+{
+  if (navigator.userAgent.indexOf('MSIE')> 0) 
+  {
+    document.selection.clear();
+  }
+}
+
+
+function setKB(vos, pStart, pEnd)
+{   
+   	for (loop=pStart; loop < pEnd; loop++)
+   	{    
+        document.write('<TD><DIV ID=' + vos + loop + '  class="vosKBkey" onMouseDown="doHideKeys();doAdd(parseValue(this.innerHTML));" onMouseOut="doShowKeys();" onMouseUp="doShowKeys();" style="height:' + vos_button_height + '; width:' + vos_button_width + '"></DIV></TD>');
+   	}
+}
+
+
+function displayVOS()
+
+{
+ // document.write('<DIV id="vosKB" border="1" style="background-color:#676767;position:absolute; overflow:hidden; width:' + vos_width + '; height:' + vos_height + ';left:250px; top:100px; visibility:hidden; z-index:100; -moz-user-select:none; -khtml-user-select:none;" onSelectStart="noselect()">');
+  document.write('<DIV id="dialog-keyboard" style="display:none">');
+  document.write('<DIV id="vosKB" border="1" style="background-color:#D8D8D8; overflow:hidden; -moz-user-select:none; -khtml-user-select:none;" onSelectStart="noselect()">');
+ 
+  document.write('<TABLE width="410" cellpadding=0 cellspacing=0 border=0 bgcolor="#888888" style="cursor:default;">');
+
+  document.write('<TR valign=top><TD>');
+
+  document.write('<TABLE width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#888888">');
+
+  document.write('<TR><TD colspan=2><TABLE width="100%" cellpadding=3 cellspacing=0 border=1 bgcolor="#CCCCCC"><TR><TD class="vosKBtxt" colspan=4>Please enter your password using the mouse.</TD></TR>');
+
+  document.write('<TR><TD colspan=4><TABLE width="250" cellpadding=1 cellspacing=0 border=0 bgcolor="#CCCCCC"><TR><TD colspan=4>'); 
+
+  document.write('<TABLE cellpadding=1 cellspacing=0 border=0><TR>');     
+
+             setKB("vosKB_spc_", 0,19);                           
+
+  document.write('</TR></TABLE></TD></TR>');
+
+  document.write('<TR><TD valign=top><DIV class="vosKBfKey" onMouseDown="this.className=\'vosKBfKeyPress\';doShowKeys();doCapsLock();" onMouseOut="this.className=\'vosKBfKey\';doShowKeys();" onMouseUp="this.className=\'vosKBfKey\';doShowKeys();" style="width:45px; height: 35px">Caps Lock</DIV></TD><TD valign=top>');
+
+  document.write('<TABLE cellpadding=0 cellspacing=0 border=0><TR><TD valign=top><TABLE cellpadding=1 cellspacing=0 border=0><TR>');    
+
+              setKB("vosKB_letter_", 0, 10);              
+
+  document.write('</TR></TABLE></TD><TD>&nbsp;</TD><TD align="left" valign="center" width="90"><DIV class="vosKBfKey" onMouseDown="this.className=\'vosKBfKeyPress\';doShowKeys();doDelete();" onMouseOut="this.className=\'vosKBfKey\';doShowKeys();" onMouseUp="this.className=\'vosKBfKey\';doShowKeys();">&lt;-Backspace</DIV></TD></TR><TR><TD align=center>');           
+
+  document.write('<TABLE cellpadding=1 cellspacing=0 border=0><TR>');             
+
+              setKB("vosKB_letter_", 10, 19);                               
+
+  document.write('</TR><TR><TD>&nbsp;</TD>');       
+
+              setKB("vosKB_letter_", 19, 26);
+
+  document.write('</TR></TABLE></TD></TR></TABLE></TD><TD align=right>');
+
+  document.write('<TABLE cellpadding=1 cellspacing=0 border=0><TR>');                   
+
+              setKB("vosKB_num_", 0, 3);              
+
+  document.write('</TR><TR>');      
+
+              setKB("vosKB_num_", 3, 6);
+
+  document.write('</TR><TR>');                           
+
+              setKB("vosKB_num_", 6, 9);    
+
+  document.write('</TR><TR><TD colspan=3 align=center><DIV ID="vosKB_num_9" class="vosKBkey" onMouseDown="doHideKeys();doAdd(parseValue(this.innerHTML));" onMouseOut="doShowKeys();" onMouseUp="doShowKeys();" style="height:' + vos_button_height + '; width:' + vos_button_width + '"></DIV></TD></TR>');            
+
+  document.write('</TABLE></TD></TR></TABLE></TD></TR><TR><TD align=right valign=center colspan=4><input type=button class="btn grey" onclick="javascript:doClear(\'clear\');" value="Clear">&nbsp;<input type="button" class="btn red" onclick="javascript:doDone(); return false;" value="Done"></TD></TR>');
+
+  document.write('</TABLE></TD></TR></TABLE></TD></TR></TABLE></DIV></DIV>');
+}

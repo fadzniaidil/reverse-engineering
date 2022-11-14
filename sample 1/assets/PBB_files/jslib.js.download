@@ -1,0 +1,1506 @@
+/**** GLOBAL VARIABLE ****/                     
+var pbb_url_http = "https://www.pbebank.com";    
+var pbb_url_https = "https://www2.pbebank.com"; 
+var pble_url_http = "http://www.pblebank.com";  
+var cp_url_http = "http://www.cpbebank.com";
+var lpb_url_http = "https://www.publicbank.com.la";    
+var faqlink = "";                               
+var faqlink2 = "";                              
+var faqlink3 = "";                              
+var faqlink4 = "";
+var faqlink5 = ""; 
+var faqlink6 = ""; 
+var faqlink7 = "";  
+var faqlink8 = "";  
+var faqlink9 = "";  
+SetFAQLink();                                   
+/**** GLOBAL VARIABLE ****/
+                                                
+/******************[ RESIZE IFRAME ] ************************************/
+function resizeIframe(obj) {                                              
+	obj.style.height = (obj.contentWindow.document.body.scrollHeight + 20) + 'px';
+}                                                                               
+/******************[ RESIZE IFRAME ] ************************************/      
+/******************[ unknown purpose of code ] ************************************/
+
+try                                                                             
+{                                                                               
+	var szURL = parent.window.location.href;                                      
+}                                                                               
+catch(ex)                                                                       
+{                                                                               
+	var szURL = "";                                                               
+}                                                                               
+/**********************************************************************************/
+                                                                                    
+/*************************************[  Form Javascript ]*****************************************************************************/
+function MM_openBrWindow(theURL,winName,features)                                                                                       
+{
+  var win=window.open(theURL, '_blank');
+  win.focus();                          
+}                                       
+
+function getCurrentURL() {              
+  var url = "";
+  try
+  {
+    url = (window.parent == null || window.parent == undefined ? window.location.href : window.parent.location.href);
+  } 
+  catch(ex)
+  {
+    url = window.location.href;
+  }
+  if(url == null)
+  {
+    url = window.location.href;
+  }
+  return url.toLowerCase();                                                                                          
+}                                                                                                                    
+
+function SetFAQLink(){                                                                                               
+	var url = getCurrentURL();                                                                                         
+  if((url.indexOf('LNOD')>-1)||(url.indexOf('elnod')>-1)||(url.indexOf('LNODT')>-1)||(url.toUpperCase().indexOf('DTS')>-1))
+  {                                                                                                                        
+    // do nothing                                                                                                          
+  }                                                                                                                        
+  else                                                                                                                     
+  {                                                                                                                         
+
+    if((url.indexOf('campuebank')>-1)||(url.indexOf('cpeb')>-1)||(url.indexOf('cplogin')>-1)||(url.indexOf('cpmain')>-1)||(url.indexOf('CPB')>-1))
+    {                                                                                                                                             
+         faqlink = cp_url_http + "/cpeb/faq/pb_faq.html";                                                                                         
+         faqlink2 = cp_url_http + "/cpeb/faq/pb_faq2.html";                                                                                       
+         faqlink3 = cp_url_http + "/cpeb/contact.html";                                                                                           
+    }                                                                                                                                             
+    else if((url.indexOf('pblebank')>-1)||(url.indexOf('pbllogin')>-1)||(url.indexOf('pblmain')>-1)||(url.indexOf('PBL')>-1)||(url.indexOf('pblIBK')>-1)||(url.indexOf('apppbl')>-1))                     
+    {                                                                                                                                             
+         faqlink = pble_url_http + "/PBL/pb_faq.html";                                                                                            
+         faqlink2 = pble_url_http + "/PBL/pb_faq2.html";                                                                                          
+         faqlink3 = pble_url_http + "/PBL/contact.html";                                                                                          
+    }
+    else if((url.indexOf('laIBK')>-1)||(url.indexOf('appla')>-1))                     
+    {                                                                                                                                             
+         faqlink = lpb_url_http + "/faq.html";                                                                                            
+         faqlink2 = lpb_url_http + "/faq.html#firsttimelogin";                                                                                          
+         faqlink3 = lpb_url_http + "/contact-us.html";         
+         faqlink4 = lpb_url_http + "/onlinesecurity.html";
+         faqlink5 = lpb_url_http + "/onlinebanking.html";
+         faqlink6 = lpb_url_http + "/privacy.html";
+         faqlink7 = lpb_url_http + "/security.html";
+
+    }                                                                                                                                             
+    else                                                                                                                                          
+    {                                                                                                                                             
+         faqlink = pbb_url_http + "/Personal-Banking/FAQs/PBe-Online-Banking/Problems-Logging-In.aspx";
+         faqlink9 = pbb_url_http + "/forms/form-pbebank-userIDReactivate.aspx";
+         faqlink8 = pbb_url_http + "/forms/form-pbebank-resetpassword.aspx";
+         faqlink7 = pbb_url_http + "/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/PBe-Tutorials.aspx";
+         faqlink6 = pbb_url_http + "/Personal-Banking/Banking/E-Channel/PBe-Online-Banking/Pbe-Security.aspx";
+         faqlink5 = pbb_url_http + "/Personal-Banking/FAQs/PBe-Online-Banking/First-time-Login.aspx#q860";
+         faqlink2 = pbb_url_http + "/Personal-Banking/FAQs/PBe-Online-Banking/User-ID-and-Password.aspx#q656";
+         faqlink3 = pbb_url_http + "/Personal-Banking/FAQs/PBe-Online-Banking/About-PBeBank-com.aspx";        
+         faqlink4 = pbb_url_http + "/Contact/Contact-Us.aspx";                                                
+    }                                                                                                         
+  }                                                                                                           
+}
+                                                                                                              
+function DisplayFaq()
+{
+	var _display = "";
+  	_display += "<table width=320  border=0 cellspacing=0 cellpadding=1>";
+  	_display += "<tr><td valign=top>&nbsp;</td><td valign=top>&nbsp;</td><td>&nbsp;</td></tr>";		
+  	_display += "<tr><td valign=top><img src=./images/login_bullet_green.gif width=7 height=12></td>";
+  	_display += "<td valign=top>";
+  	_display += "<a href="+"javascript:MM_openBrWindow('" + faqlink + "','Help','scrollbars=yes,width=600,height=480,left=50,top=40')"+">";
+  	_display += "Problems with login</a></td>";
+	_display += "<td rowspan=5 valign='bottom'><a href=\"javascript:MM_openBrWindow('https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www2.pbebank.com&lang=en', 'VerisignWindow', 'toolbar=no,location=yes,directories=no,status=yes, menubar=yes,scrollbars=yes,resizable=yes,width=580,height=590')\" title='Click to Verify - This site has chosen an SSL Certificate to improve Web site security'><img src='images/norton_verisign.png' style='border:0' id='norton_verisign'/></a></td></tr>";
+  	_display += "<tr><td valign=top><img src=./images/login_bullet_green.gif width=7 height=12></td>";
+  	_display += "<td valign=top>";
+	_display += "<a href="+"javascript:MM_openBrWindow('" + faqlink + "#1','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">";
+  	_display += "Forgot your password</a></td>";
+  	_display += "<td>&nbsp;</td></tr>";
+  	_display += "<tr><td valign=top><img src=./images/login_bullet_green.gif width=7 height=12></td>";
+  	_display += "<td valign=top>";
+  	_display += "<a href="+"javascript:MM_openBrWindow('" + faqlink2 + "','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">";
+  	_display += "Frequently Asked Questions</a></td>";
+  	_display += "<td>&nbsp;</td></tr>";		
+  	_display += "<tr><td valign=top><img src=./images/login_bullet_green.gif width=7 height=12></td>";
+  	_display += "<td valign=top>Need Assistance? ";
+  	_display += "<a href="+"javascript:MM_openBrWindow('" + faqlink3 + "','Help','scrollbars=yes,width=700,height=480,left=50,top=20')"+">";
+  	_display += "Contact us</a>.</td>";
+  	_display += "<td>&nbsp;</td></tr>";        
+  	_display += "</table>";
+	$("#legacy-faq").html(_display);
+}
+
+function getQueryStringParameter(name)
+ {                                    
+	name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  	var regexS = "[\\?&]" + name + "=([^&#]*)";               
+  	var regex = new RegExp(regexS);                           
+  	var results = regex.exec(document.URL);                   	
+
+  	if(results == null)                                       
+    	return "";                                              
+  	else                                                      
+    	return decodeURIComponent(results[1].replace(/\+/g, " "));
+}                                                               
+
+function redirect()                                             
+{
+	window.open(pbb_url_http, '_top', 'height=200,width=400,status=yes,resizable=yes');
+}                                                                                    
+
+function change_case(_t)                                                             
+{                                                                                    
+	_t.value = _t.value.toUpperCase();                                                 
+}
+                                                                                         
+var next=0;                                                                          
+function doSubmit()                                                                  
+{
+  if (next==0)
+  {           
+  	if( !mandatoryChecking())
+		{      	                       
+			return false;          
+		} else {                 
+			document.LoginForm.user.value = document.LoginForm.user.value.replace(/^\s\s*/, '').replace(/\s\s*$/, '').toUpperCase();
+			document.LoginForm.user.disabled = true;                                                                                
+			var res = encodeURIComponent("'" + document.LoginForm.password.value);                                                  
+     document.LoginForm.password.value = res;
+     next=1;                                                                                                                  
+	      }
+        }
+        return true;
+}                   
+
+function clearInput(){
+	document.LoginForm.password.focus();
+	document.LoginForm.user.focus();	  
+}                                     
+
+function mandatoryChecking()          
+{                                     
+	if(trim(document.LoginForm.user.value) == "" || trim(document.LoginForm.user.value) == "User ID")
+	{                                                                                                
+		alert("User ID is required.");                                                                 
+		document.LoginForm.password.focus();                                                           
+		document.LoginForm.user.focus();	                                                             
+		return false;                                                                                  
+	}                                                                                                
+	else if(trim(document.LoginForm.password.value) == "" || trim(document.LoginForm.password.value) == "Password")
+	{                                                                                                              
+		alert("Password is required.");                                                                              
+		document.LoginForm.user.focus();	                                                                           
+		document.LoginForm.password.focus();
+		return false;                                                                                                
+	}                                                                                                              
+	else {                                                                                                         
+		return true;
+	}
+}
+
+function flagButton(_f){                          
+	document.LoginForm.user.disabled = _f;  
+	document.LoginForm.password.disabled = _f;
+  document.LoginForm.Clear.disabled = _f;   
+	document.LoginForm.btnLegacyLogin.disabled = _f;
+}
+
+
+
+function MM_openWindow()       
+{                              
+  window.open("https://www2.pbebank.com/SecurityWriteUpPopUp2.htm","securityMessage","scrollbars=yes,width=580,height=150,left=80,top=50");
+}                                                                                                                                          
+
+function change_url(_u)                                                                                                                    
+{                                                                                                                                          
+	document.location=_u;
+}                      
+
+function MM_findObj(n, d) {
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+	d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+
+}                                                                                     
+function MM_showHideLayers() { 
+
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+
+  if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+
+	obj.visibility=v; }
+
+}                                                                                     
+function cmx_showReferrerLayer(_u)                                                    
+{                                                                                     
+  if (_u.indexOf('Logout')>-1)                                                        
+  {                                                                                   
+	 location.href=getModalObjectConf("logout-page");                                   
+  }	                                                                                  
+}                                                                                     
+function setValues()                                                                  
+{                                                                                     
+	document.LoginForm.user.value = getQueryStringParameter("user").toUpperCase();      
+}                                                                                     
+function trim(inputString) {                                                          
+	return inputString.replace(/^\s+|\s+$/g, '');                                       
+}                                                                                     
+                                                                                      
+function _jCryption(){
+
+	  $("#LoginId").jCryption({
+
+         		getKeysURL:"/Public_Bank/oldLoginPBB.jsp?generateKeypair=true",
+
+			beforeEncryption : function() {
+
+                        return true;
+
+			},
+
+			encryptionFinished : function(encryptedString, objectLength) {
+
+			   return true;
+
+			}               
+	  });               
+}
+                      
+navigator.sayswho= (function(){
+
+    var ua= navigator.userAgent, tem, 
+
+    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if(/trident/i.test(M[1])){
+
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+
+        return 'IE '+(tem[1] || '');
+
+    }
+
+    if(M[1]=== 'Chrome'){
+
+        tem= ua.match(/\bOPR\/(\d+)/)
+
+        if(tem!= null) return 'Opera '+tem[1];
+
+    }
+
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+
+    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+
+    return M.join(' ');
+
+})();
+
+
+
+function handleKeyPress(evt){
+
+	var nbr;  
+
+	if (window.event) nbr = event.keyCode;
+
+	var e = window.event;
+
+	if(nbr==13){ 
+
+		if(!mandatoryChecking())
+
+       	{
+
+		  return false;
+
+	       } else{
+
+			return true;
+
+	       }
+
+       	return false;
+
+	} 
+
+	return true; 
+
+}
+
+
+
+function checkError()                                                         
+{
+	$.get("errorMessage.jsp?id=" + (new Date()), function(data){           
+
+	      	errorMessages(data); 
+
+	});
+
+}
+
+
+
+function errorMessages(_e){
+
+	var err1 = _e.toLowerCase();
+
+       if (err1.indexOf("account is disabled.")!=-1)
+
+	{	
+
+		location.href= getModalObjectConf("exceeded-login");	
+
+	}
+
+	else if (err1.indexOf("authentication failed.")>=0 || _e.search("HPDIA0200W")==true)
+
+       {
+
+	   err1 = "<b><font name=arial style='font-size:12px' color=red>" + _e + "</font></b><br />" +
+
+		   "<b><font name=arial style='font-size:11px' color=red>You have failed to login due to the following reason:</font></b>" +
+
+		   "<br><b><font name=arial style='font-size:11px' color=midnightblue> - you have used either an invalid User ID or Password</font></b>" +
+
+		   "<br><b><font name=arial style='font-size:11px' color=midnightblue>- you have not logged in for the first time within 30 days of obtaining your User ID / Password</font></b>";
+
+
+
+		var _ind =getModalObjectConf("index")
+
+		switch(_ind) {
+
+		case 4:
+
+			err1 += "<br><br><b><font name=arial style='font-size:11px' color=red>For more explanations on your login problems, please </b><a href="+"javascript:MM_openBrWindow('http://www.cpbebank.com/cpeb/faq/pb_faq.html','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">click here.</a></font>";
+
+			break;
+
+		case 5:
+
+			err1 += "<br><br><b><font name=arial style='font-size:11px' color=red>For more explanations on your login problems, please </b><a href="+"javascript:MM_openBrWindow('http://www.pblebank.com/PBL/pb_faq.html','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">click here.</a></font>";
+
+			break;
+      
+    case 9:
+
+			err1 += "<br><br><b><font name=arial style='font-size:11px' color=red>For more explanations on your login problems, please </b><a href="+"javascript:MM_openBrWindow('https://www.publicbank.com.la/faq.html','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">click here.</a></font>";
+
+			break;
+    
+    case 10:
+
+			err1 += "<br><br><b><font name=arial style='font-size:11px' color=red>For more explanations on your login problems, please </b><a href="+"javascript:MM_openBrWindow('http://www2.pbebank.com/pblIBK/pb_faq.html','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">click here.</a></font>";
+
+			break;
+
+		default :
+
+			err1 += "<br><br><b><font name=arial style='font-size:11px' color=red>For more explanations on your login problems, please </b><a href="+"javascript:MM_openBrWindow('http://www.pbebank.com/en/en_content/faq/pb_faq.html','Help','scrollbars=yes,width=600,height=480,left=50,top=20')"+">click here.</a></font>";			break;
+
+			break;
+
+		}
+
+		updateErrorMessage(err1);
+
+       }
+
+	else if (_e.search("HPDIA0119W")==true)
+
+       { 
+
+	   err1 = "<b><font name=arial style='font-size:12px' color=red>" + _e + "</font></b><br />" +
+
+		   "<b><font name=arial style='font-size:11px' color=red>HPDIA0119W Authentication Mechanism is not available. <br><br>The E-Banking system is experiencing some technical problems. Our technical staff is currently working to resolve this issue. Please try again later.</font></b>";
+
+    	   updateErrorMessage(err1);
+
+       }
+
+	else if (_e.search("HPDIA0309W")==true)
+
+       { 
+
+		location.href=getModalObjectConf("exceeded-login");
+
+       }
+
+	else if(_e!= "")
+
+       {
+
+		err1 = "<b><font name=arial style='font-size:12px' color=red>" + _e + "</font></b>";
+
+		updateErrorMessage(err1);
+
+       }
+
+}
+
+
+
+function updateErrorMessage(_m){
+
+  var prt = window.parent.document.getElementById("errMessage");
+
+  var obj  = prt == null || prt == undefined ? $("#errMessage") : window.parent.$("#errMessage");
+
+ 
+
+  obj.html(_m);
+
+  closePopUpDialog();
+
+}
+
+
+
+function getModalObjectConf(_k){
+
+	 var m_objModalDialog = new ModalDialogObjects();
+
+	 return m_objModalDialog.junctionType()[_k];
+
+}
+
+
+
+function closePopUpDialog(){
+
+   try {  
+
+	$("#popup-dialog").dialog( 'close' );
+
+   } catch(e){
+
+   } 
+
+}
+
+/*********************************************************************************************************************************************/
+
+/*************************************[  Browser Objects   ]*****************************************************************************/
+
+function BrowserObject(){
+
+	this.initializeBrowser=function(){
+
+		var IEorNetscape = "false";
+
+		var agt=navigator.userAgent.toLowerCase();
+
+		 if ((navigator.appName == "Netscape"))
+
+		 {
+
+			IEorNetscape = (navigator.appVersion.substring(0,3) < 4.5) ? "false" : "true";
+
+ 		 }
+
+	
+
+		 if ((navigator.appName == "Opera"))
+
+		 {
+
+			IEorNetscape =  (navigator.appVersion.substring(0,3) < 5.0) ? "false" : "true";
+
+		 }
+
+
+
+ 		if (navigator.appName == "Microsoft Internet Explorer")
+
+		{
+
+			IEorNetscape = "true";
+
+		}
+
+
+
+		if (agt.indexOf('mozilla')!=-1)
+
+		{
+
+			IEorNetscape = "true";
+
+		}
+
+
+
+		if (IEorNetscape == "false")
+
+		{
+
+		   location.href = location.href=getModalObjectConf("unable-login");
+
+		}
+
+	}
+
+}
+
+/*********************************************************************************************************************************************/
+
+/*************************************[  Form Layout Objects   ]*****************************************************************************/
+
+function FormObjects() {
+
+    this.initializeForm = function()
+
+    {
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();       
+
+    }
+
+
+    this.initializeLegacyNormalForm = function(_u){
+		cmx_showReferrerLayer(_u);
+		$.get( "includes/imports/legacy_normal_login.jsp?id=" + (new Date()), function( data ) {
+		  $( "#legacy-login" ).html( data );
+			setValues();
+			document.onkeydown= handleKeyPress
+			_jCryption();
+			checkError();
+	
+			var objDialog = (new ModalDialogObjects())
+			objDialog .focusInputText();
+      $("#ebanking-logo" ).attr( "src", objDialog .junctionType()["ebanking-logo"]);	
+		
+			switch (objDialog .junctionType()["index"]){
+				case 4: case 5: case 9: // CPB and PBL and LPB
+				  DisplayFaq();
+				  $("#ebanking-logo" ).attr( "width", "148");			  
+				  $("#ebanking-logo" ).attr( "height", "38");
+				  $("#verisign-row").hide();
+				break;
+			}
+		});
+
+		$('#LegacyLogin').click(function() {
+		  var msg="Login";
+		  $('#LL').val(msg);
+		});
+    }
+
+
+    this.initializeLegacyForm = function(_u)
+
+    {
+
+	cmx_showReferrerLayer(_u);
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();
+
+	
+
+	$.get( "includes/imports/legacy_login.jsp?id=" + (new Date()), function( data ) {
+
+	  $( "#legacy-login" ).html( data );
+
+		$.get( "includes/imports/login_assist.html?id=" + (new Date()), function( data ) {
+
+		  $( "#assist-login" ).html( data );
+
+		  setValues();
+
+		  document.onkeydown= handleKeyPress
+
+		 _jCryption();
+
+		  checkError();
+
+		  (new FormObjects()).setTitle( getModalObjectConf("login-title") );
+
+  		   (new ModalDialogObjects()).focusInputText ();
+
+		});	
+
+	});
+
+
+
+	$('#LegacyLogin').click(function() {
+
+	  var msg="Login";
+
+	  $('#LL').val(msg);
+
+	});
+
+    }
+
+
+
+    this.onload_header = function(){
+    //SMR2018-4238 - change to header.jsp
+    $.get( "includes/imports/header.jsp?id=" + (new Date()), function( data ) {
+
+	  $( "#header" ).html( data );
+
+	 (new FormObjects()).setHeader();
+
+	});	
+
+    }
+
+
+
+    this.onload_banner = function(){
+
+	$.get( "includes/imports/banner.html?id=" + (new Date()), function( data ) {
+
+	  $( "#tiles-banner" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.onload_footer = function(){
+
+	$.get( "includes/imports/footer.html?id=" + (new Date()), function( data ) {
+
+	  $( "#footer" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.setHeader=function(){                                                           
+	$( "#bank-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["bank-logo"]);
+	$( "#ebanking-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["ebanking-logo"]);
+	  $("#bank-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("bank-logo-href") + "'");
+    $("#pbe-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("pbe-logo-href") + "'");     
+    $( "#fpx-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["fpx-logo"]);//SMR2018-4238
+    }
+
+    
+
+    this.setTitle=function(_k){
+
+	$("#login-title").html(_k);
+
+	document.title = _k;
+
+    }
+
+}
+
+function LaosFormObjects() {
+
+    this.initializeForm = function()
+
+    {
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();       
+
+    }
+
+
+    this.initializeLegacyNormalForm = function(_u){
+		cmx_showReferrerLayer(_u);
+		$.get( "includes/imports/legacy_normal_login.jsp?id=" + (new Date()), function( data ) {
+		  $( "#legacy-login" ).html( data );
+			setValues();
+			document.onkeydown= handleKeyPress
+			_jCryption();
+			checkError();
+	
+			var objDialog = (new ModalDialogObjects())
+			objDialog .focusInputText();
+      $("#ebanking-logo" ).attr( "src", objDialog .junctionType()["ebanking-logo"]);	
+		
+			switch (objDialog .junctionType()["index"]){
+				case 4: case 5: case 9: // CPB and PBL and LPB
+				  DisplayFaq();
+				  $("#ebanking-logo" ).attr( "width", "148");			  
+				  $("#ebanking-logo" ).attr( "height", "38");
+				  $("#verisign-row").hide();
+				break;
+			}
+		});
+
+		$('#LegacyLogin').click(function() {
+		  var msg="Login";
+		  $('#LL').val(msg);
+		});
+    }
+
+
+    this.initializeLegacyForm = function(_u)
+
+    {
+
+	cmx_showReferrerLayer(_u);
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();
+
+	
+
+	$.get( "includes/imports/legacy_login.jsp?id=" + (new Date()), function( data ) {
+
+	  $( "#legacy-login" ).html( data );
+
+		$.get( "includes/imports/login_assist.html?id=" + (new Date()), function( data ) {
+
+		  $( "#assist-login" ).html( data );
+
+		  setValues();
+
+		  document.onkeydown= handleKeyPress
+
+		 _jCryption();
+
+		  checkError();
+
+		  (new LaosFormObjects()).setTitle( getModalObjectConf("login-title") );
+
+  		   (new ModalDialogObjects()).focusInputText ();
+
+		});	
+
+	});
+
+
+
+	$('#LegacyLogin').click(function() {
+
+	  var msg="Login";
+
+	  $('#LL').val(msg);
+
+	});
+
+    }
+
+
+
+    this.onload_header = function(){
+
+	$.get( "includes/imports/Laosheader.html?id=" + (new Date()), function( data ) {
+
+	  $( "#header" ).html( data );
+
+	 (new LaosFormObjects()).setHeader();
+
+	});	
+
+    }
+
+
+
+    this.onload_banner = function(){
+
+	$.get( "includes/imports/Laosbanner.html?id=" + (new Date()), function( data ) {
+
+	  $( "#tiles-banner" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.onload_footer = function(){
+
+	$.get( "includes/imports/Laosfooter.html?id=" + (new Date()), function( data ) {
+
+	  $( "#footer" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.setHeader=function(){                                                           
+	$( "#bank-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["bank-logo"]);
+	$( "#ebanking-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["ebanking-logo"]);
+	  $("#bank-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("bank-logo-href") + "'");
+    $("#pbe-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("pbe-logo-href") + "'");     
+
+    }
+
+    
+
+    this.setTitle=function(_k){
+
+	$("#login-title").html(_k);
+
+	document.title = _k;
+
+    }
+
+}
+
+function LabuanFormObjects() {
+
+    this.initializeForm = function()
+
+    {
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();       
+
+    }
+
+
+    this.initializeLegacyNormalForm = function(_u){
+		cmx_showReferrerLayer(_u);
+		$.get( "includes/imports/legacy_normal_login.jsp?id=" + (new Date()), function( data ) {
+		  $( "#legacy-login" ).html( data );
+			setValues();
+			document.onkeydown= handleKeyPress
+			_jCryption();
+			checkError();
+	
+			var objDialog = (new ModalDialogObjects())
+			objDialog .focusInputText();
+      $("#ebanking-logo" ).attr( "src", objDialog .junctionType()["ebanking-logo"]);	
+		
+			switch (objDialog .junctionType()["index"]){
+				case 4: case 5: case 9: // CPB and PBL and LPB
+				  DisplayFaq();
+				  $("#ebanking-logo" ).attr( "width", "148");			  
+				  $("#ebanking-logo" ).attr( "height", "38");
+				  $("#verisign-row").hide();
+				break;
+			}
+		});
+
+		$('#LegacyLogin').click(function() {
+		  var msg="Login";
+		  $('#LL').val(msg);
+		});
+    }
+
+
+    this.initializeLegacyForm = function(_u)
+
+    {
+
+	cmx_showReferrerLayer(_u);
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();
+
+	
+
+	$.get( "includes/imports/legacy_login.jsp?id=" + (new Date()), function( data ) {
+
+	  $( "#legacy-login" ).html( data );
+
+		$.get( "includes/imports/login_assist.html?id=" + (new Date()), function( data ) {
+
+		  $( "#assist-login" ).html( data );
+
+		  setValues();
+
+		  document.onkeydown= handleKeyPress
+
+		 _jCryption();
+
+		  checkError();
+
+		  (new LabuanFormObjects()).setTitle( getModalObjectConf("login-title") );
+
+  		   (new ModalDialogObjects()).focusInputText ();
+
+		});	
+
+	});
+
+
+
+	$('#LegacyLogin').click(function() {
+
+	  var msg="Login";
+
+	  $('#LL').val(msg);
+
+	});
+
+    }
+
+
+
+    this.onload_header = function(){
+
+	$.get( "includes/imports/PBLheader.html?id=" + (new Date()), function( data ) {
+
+	  $( "#header" ).html( data );
+
+	 (new LabuanFormObjects()).setHeader();
+
+	});	
+
+    }
+
+
+
+    this.onload_banner = function(){
+
+	$.get( "includes/imports/PBLbanner.html?id=" + (new Date()), function( data ) {
+
+	  $( "#tiles-banner" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.onload_footer = function(){
+
+	$.get( "includes/imports/PBLfooter.html?id=" + (new Date()), function( data ) {
+
+	  $( "#footer" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.setHeader=function(){                                                           
+	$( "#bank-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["bank-logo"]);
+	$( "#ebanking-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["ebanking-logo"]);
+	  $("#bank-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("bank-logo-href") + "'");
+    $("#pbe-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("pbe-logo-href") + "'");     
+
+    }
+
+    
+
+    this.setTitle=function(_k){
+
+	$("#login-title").html(_k);
+
+	document.title = _k;
+
+    }
+
+}
+
+function PBLFormObjects() {
+
+    this.initializeForm = function()
+
+    {
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();       
+
+    }
+
+
+    this.initializeLegacyNormalForm = function(_u){
+		cmx_showReferrerLayer(_u);
+		$.get( "includes/imports/legacy_normal_login.jsp?id=" + (new Date()), function( data ) {
+		  $( "#legacy-login" ).html( data );
+			setValues();
+			document.onkeydown= handleKeyPress
+			_jCryption();
+			checkError();
+	
+			var objDialog = (new ModalDialogObjects())
+			objDialog .focusInputText();
+      $("#ebanking-logo" ).attr( "src", objDialog .junctionType()["ebanking-logo"]);	
+		
+			switch (objDialog .junctionType()["index"]){
+				case 4: case 5: case 9: // CPB and PBL and LPB
+				  DisplayFaq();
+				  $("#ebanking-logo" ).attr( "width", "148");			  
+				  $("#ebanking-logo" ).attr( "height", "38");
+				  $("#verisign-row").hide();
+				break;
+			}
+		});
+
+		$('#LegacyLogin').click(function() {
+		  var msg="Login";
+		  $('#LL').val(msg);
+		});
+    }
+
+
+    this.initializeLegacyForm = function(_u)
+
+    {
+
+	cmx_showReferrerLayer(_u);
+
+	this.onload_header();
+
+	this.onload_banner();	
+
+	this.onload_footer();
+
+	
+
+	$.get( "includes/imports/legacy_login.jsp?id=" + (new Date()), function( data ) {
+
+	  $( "#legacy-login" ).html( data );
+
+		$.get( "includes/imports/login_assist.html?id=" + (new Date()), function( data ) {
+
+		  $( "#assist-login" ).html( data );
+
+		  setValues();
+
+		  document.onkeydown= handleKeyPress
+
+		 _jCryption();
+
+		  checkError();
+
+		  (new LaosFormObjects()).setTitle( getModalObjectConf("login-title") );
+
+  		   (new ModalDialogObjects()).focusInputText ();
+
+		});	
+
+	});
+
+
+
+	$('#LegacyLogin').click(function() {
+
+	  var msg="Login";
+
+	  $('#LL').val(msg);
+
+	});
+
+    }
+
+
+
+    this.onload_header = function(){
+
+	$.get( "includes/imports/PBLheader.html?id=" + (new Date()), function( data ) {
+
+	  $( "#header" ).html( data );
+
+	 (new LaosFormObjects()).setHeader();
+
+	});	
+
+    }
+
+
+
+    this.onload_banner = function(){
+
+	$.get( "includes/imports/PBLbanner.html?id=" + (new Date()), function( data ) {
+
+	  $( "#tiles-banner" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.onload_footer = function(){
+
+	$.get( "includes/imports/PBLfooter.html?id=" + (new Date()), function( data ) {
+
+	  $( "#footer" ).html( data );
+
+	});	
+
+    }
+
+
+
+    this.setHeader=function(){                                                           
+	$( "#bank-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["bank-logo"]);
+	$( "#ebanking-logo" ).attr( "src", (new ModalDialogObjects()).junctionType()["ebanking-logo"]);
+	  $("#bank-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("bank-logo-href") + "'");
+    $("#pbe-logo-href").attr("onclick", "parent.window.location='" + getModalObjectConf("pbe-logo-href") + "'");     
+
+    }
+
+    
+
+    this.setTitle=function(_k){
+
+	$("#login-title").html(_k);
+
+	document.title = _k;
+
+    }
+
+}
+
+function ModalDialogObjects() {
+    this.initializeModal = function()
+    {
+	var _d = this.junctionType();
+	var _ind = _d["index"];
+	var _flagPopUp = _d["popup-enable"];
+	var _modal = new ModalConfigObjects();	
+	var _popup = new PopUpObjects();
+	var _datajson = _modal.config(_ind);	
+	var _data;
+	var _datalength;
+	var _alert = _modal.securityAlert();
+	var _alertjson;
+	/******************************** GENERATE FORM LAYOUT ************************************************/
+ 	switch(_ind){
+		case -1: 
+			_data = _datajson["conf-pbb"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-pbb"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+		case 3: case 0: case 1: case 7: case 6:
+			_data = _datajson["conf-pbb"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-pbb"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+		case 4:
+			_data = _datajson["conf-cp"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-cp"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+		case 5:
+			_data = _datajson["conf-pbl"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-pbl"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+    case 9:
+			_data = _datajson["conf-lpb"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-lpb"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+    
+		default : // without assist button
+			_data = _datajson["conf-pbb"];
+			_datalength = _data.length - 1;
+			_alertjson= _alert["alert-pbb"];
+			_dataPopUp = _popup.config()["popup-pbb"];
+			break;
+	}
+	/******************************** GENERATE FORM POP UP ************************************************/	
+	if (_flagPopUp) {
+		var _pd = $( "#popup-dialog" );
+		$("#ui-dialog-titlebar").css( { "background": "red", "color": "white"} );
+		_pd.html(  _dataPopUp["popup-description"] );
+		_pd.dialog({ 
+			title : _dataPopUp["popup-title"],
+			modal: true,
+			resizable: false,
+			width:'auto',
+			height:'auto'
+		});
+		$('div#popup-dialog').bind('dialogclose', function(event) {
+  		   (new ModalDialogObjects()).focusInputText ();
+		 });
+	}
+	/******************************** GENERATE FORM POP UP ************************************************/
+	var _strNavi = ""	
+	var _strModal = ""
+	for(var i=0; i< _datalength ; i++){
+		_strNavi +=  "<a data-toggle=\"modal\" onclick=\"openHref('" + _data[i]["modal-href"]  + "')\" href=\"#\" class=\"btn red\" id=\"d" + i + "\"><div class=\"visual\">"+
+			  "<img src=\"" + _data[i]["navi-icon"] + "\" />" +
+		 	  "</div><div class=\"caption\">" +
+			  "	<span id=\"modal-" + _data[i]["navi-modal"] + "\">" + _data[i]["navi-title"] + "</span>" +
+			  "</div>" +
+              	  "</a>"
+		_strModal += "<div id=\"" + _data[i]["navi-modal"] + "\" tabindex=\"" + (i-1) + "\" style=\"display:none\"> " +
+			"			<div class=\"modal-header\">" +
+		       "                            <img src=\"includes/images/pbe_logo.png\" />" +
+			"				<h4 class=\"modal-title\">" +
+			"					<span id=\"dialog-" + _data[i]["navi-modal"] + "\">" + _data[i]["modal-title"] + "</span>" +
+			"				</h4>" +
+			"			</div>" +
+			"			<div class=\"modal-body\">" +
+			"				<p>" +	_data[i]["modal-description"] + "</p>" +
+			"			</div>" +
+			"			<div class=\"modal-footer\">" +
+			"				<button type=\"button\" class=\"btn default margin-left-20\" onclick=\"$('#" + _data[i]["navi-modal"] + "').dialog( 'close' );\">Proceed to login</button>" +
+			"			</div>" +
+			"</div>";	
+	}
+
+
+
+	_strNavi = "<div class=\"dashboard-menu-login\" >" +
+
+		"<div class=\"btn-group btn-group btn-group-justified\">" +
+
+		_strNavi + 
+
+		"</div>" +
+
+		"</div>";
+
+	this.setAlertSecurity(_alertjson);
+
+
+
+	$( "#menu-dialog" ).html( _strNavi + _strModal );
+
+	/******************************** GENERATE FORM LAYOUT ************************************************/
+
+    }
+
+    
+
+    this.focusInputText = function(){
+
+		try { 
+
+			var iframe = document.getElementById('iframe1');	
+
+			var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+			innerDoc.forms[0].tempusername.focus(); 
+
+		} catch (e) {
+
+			try{	
+
+				document.forms[0].tempuser.focus();
+
+			} catch(e) {
+
+				try{ document.forms[0].user.focus(); } catch (e){}
+
+			} 
+
+		}
+
+    }
+
+
+
+    this.setAlertSecurity = function(_jsonData){
+    $( "#alert-title" ).html( _jsonData["alert-title"] );
+
+		$( "#alert-description" ).html( _jsonData["alert-description"] );
+
+    }
+
+   this.junctionType=function(){
+	var url = getCurrentURL();
+	if(url.indexOf('elnodt')>=0) {
+		return { "index" : 1 , 
+			  "login-title" : "Login to eLNODT",
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/logout.htm", 
+ 			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded_elnod.html" 
+			};
+	} else if(url.indexOf('elnod')>=0){
+		return { "index" : 0 , 
+			  "login-title" : "Login to eLNOD", 
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/logout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded_elnod.html" 
+			};
+     	} else if(url.indexOf('lnod')>=0){
+		return { "index" : 2 , 
+			  "login-title" : "Login to LNOD", 
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/logout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded_elnod.html" 
+			};
+	} else if(url.indexOf('dts')>=0) {
+		return { "index" : 3 , 
+			  "login-title" : "Login to eDTS", 
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "/includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/logout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded_elnod.html" 
+			};	
+	} else if(url.indexOf('campuebank')>=0 || url.indexOf('cpeb')>=0 || url.indexOf('cplogin')>=0 || url.indexOf('cpmain')>=0 || url.indexOf('cpb')>=0 || url.indexOf('/cp')>=0) {	
+		return { "index" : 4 , 
+			  "login-title" : "Login to CPBeBank.com", 
+			  "bank-logo" : "/images/top_site_files/login_logo_cp.gif",
+			  "ebanking-logo" : "/images/login_cpeb.gif",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/cplogout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/cpunablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/cplogin_exceeded.html" 
+			};
+	} else if(url.indexOf('pblebank')>=0 || url.indexOf('pbllogin')>=0 || url.indexOf('pblmain')>=0 || url.indexOf('pbl')>=0  || url.indexOf('pblIBK')>=0 || url.indexOf('apppbl')>=0) {	
+		return { "index" : 5 , 
+			  "login-title" : "Login to PBLeBank.com", 
+			  "bank-logo" : "includes/images/pb_logo_pbl.png",
+		    "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/lblogout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/lbunablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/lblogin_exceeded.html"
+        
+			};
+  		
+	} else if(url.indexOf('mbroking')>=0) {
+		return { "index" : 6 , 
+			  "login-title" : "Login to mBroking", 
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/logout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded.html" 
+			};	
+
+	} else if(url.indexOf('hrms')>=0) {
+
+		return { "index" : 7 , 
+
+			  "login-title" : "Login to HRMS",      
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",     
+			  "popup-enable" : false,                          
+			  "logout-page" : "https://www2.pbebank.com/logout.htm",
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm",
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded.html"
+			};	
+	} else if(url.indexOf('ebae')>=0) {
+
+		return { "index" : 8 , 
+
+			  "login-title" : "Login to eBAE",                            
+			  "bank-logo" : "includes/images/pb_logo.png",                
+			  "ebanking-logo" : "includes/images/pbe_logo.png",           
+			  "bank-logo-href" : "http://www.pbebank.com",                
+			  "popup-enable" : false,                                     
+			  "logout-page" : "https://www2.pbebank.com/logout.htm",
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm",
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded.html" 
+
+			};
+  } else if(url.indexOf('laIBK')>=0 || url.indexOf('appla')>=0) {
+
+		
+		return { "index" : 9 , 
+
+			  "login-title" : "Login to PBe", 
+			  "bank-logo" : "includes/images/pb_logo_laos.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "https://www.publicbank.com.la",
+			  "popup-enable" : false,
+			  "logout-page" : "https://www2.pbebank.com/lalogout.htm", 
+			  "unable-login" : "https://www2.pbebank.com/launablelogin.htm", 
+			  "exceeded-login" : "https://www2.pbebank.com/lalogin_exceeded.html" 
+
+			};
+
+	} else {
+
+		return { "index" : -1 , 
+
+			  "login-title" : "Login to PBe",     
+			  "bank-logo" : "includes/images/pb_logo.png",
+			  "ebanking-logo" : "includes/images/pbe_logo.png",
+			  "bank-logo-href" : "http://www.pbebank.com",     
+			  "popup-enable" : false,                          
+			  "logout-page" : "https://www2.pbebank.com/logout.htm",
+			  "unable-login" : "https://www2.pbebank.com/unablelogin.htm",
+			  "exceeded-login" : "https://www2.pbebank.com/login_exceeded.html" 
+
+			};	
+
+	}
+
+    }
+    this.modalElementDisplay=function(_e, _f){
+
+	_e.style.display = (_f ? "" : "none");
+
+    }
+}    
+
+function openHref(_h){
+	window.open(_h, "_blank");
+}                           
+
+function openDialog(_d){
+
+  $( "#" + _d ).dialog({    
+       modal: true,         
+	width:'40%',              
+	height:'auto',            
+	resizable: false          
+    }).show();              
+  $(".ui-dialog-titlebar").hide();
+}
+                                  
+window.mobilecheck = function() { 
+	var check = false;              
+	(function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+	return check;        
+};                                                    
+/*********************************************************************************************************************************************/

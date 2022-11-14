@@ -1,0 +1,27 @@
+$('form').submit(function(event) {
+	$('input[type=submit],input[type=button],button[type=submit], button[type=button]').click(function() {
+		// Ajax request
+		$(this).prop('disabled', true);
+	});
+});
+
+$('input[type=submit], button[type=submit]').on('click', function(event) {
+	event.preventDefault();
+	var myForm = $("form");
+	var n = $(this).attr('name');
+	if (myForm) {
+		$(this).prop('disabled', true);
+		if (!$('#' + 'temp' + n).length) {
+			$('<input>').attr({
+				type : 'hidden',
+				name : n,
+				id : 'temp' + n
+			}).appendTo(myForm);
+		}
+		$(myForm).submit();
+	}
+});
+
+$(' input[type=button], button[type=button]').on('click', function(event) {
+	$(this).prop('disabled', true);
+});

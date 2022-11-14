@@ -1,0 +1,819 @@
+var horizontal_position = "right";
+var vosKBFillElementSize = 20;
+var inputField;
+var moveflag = false;
+var vosKBName = "vosKB"; 
+var vosKBShimName = "vosKBShim"; 
+var curr_LeftPosition;
+var curr_HeightPosition;
+var initialize = false;
+var vosKBForm;
+
+var thisBrowser;
+var win_IE=true;
+var compKBDisabled = true;
+var keyTrapped = false;
+var isReentry = false;
+var global_availWidth;
+var global_availHeight;
+var global_LeftPosition;
+var global_HeightPosition;
+function setBrowser()
+{
+  var userAgent = navigator.userAgent;
+  this.isIE    = false;
+  this.isNS    = false;
+  this.version = null;
+  if (userAgent.indexOf("MSIE") >= 0) 
+  {
+    this.isIE = true;
+    return;
+  }
+	if (userAgent.indexOf("Netscape6/") >= 0) 
+  {
+    this.isNS = true;
+    return;
+  }
+	if (userAgent.indexOf("Gecko") >= 0) 
+  {
+    this.isNS = true;
+    return;  	
+  }
+}
+thisBrowser = new setBrowser();
+function doClear(val)
+{
+  var elPtr;
+  elPtr = eval(vosKBFillElement);
+  elPtr.value = "";
+}
+function doDone()
+{
+  
+  var z = 2;
+  
+  /*parent.document.getElementById("Layer4a").style.zIndex = z;*/
+
+  if(inputField=='password')
+  {
+   // parent.document.getElementById("Layer4a").style.zIndex = z;
+    vosKBForm.password.readOnly=false;
+  }    
+  if(inputField == "oldPassword")
+  {
+     vosKBForm.OLD_PASSWORD.readOnly=false;
+  }   
+  if(inputField == "newPassword")
+  {
+    vosKBForm.PASSWORD.readOnly=false;
+  }   
+  if(inputField == "confirmNewPassword")
+  {
+    vosKBForm.CONFIRM_PASSWORD.readOnly=false;
+  } 
+  if(inputField == "pass1")
+  {
+    vosKBForm.pass1.readOnly=false;
+  } 
+  if(inputField == "pass2")
+  {
+    vosKBForm.pass2.readOnly=false;
+  } 
+  if(inputField == "pass3")
+  {
+    vosKBForm.pass3.readOnly=false;
+  } 
+  if(inputField == "pass4")
+  {
+   vosKBForm.pass4.readOnly=false;
+  } 
+  if(inputField == "pass5")
+  {
+    vosKBForm.pass5.readOnly=false;
+  } 
+   
+  //hideVosKB();
+  var m_objKeyboard = new PopupVirtualKeyboard();
+  m_objKeyboard.closeKeyBoard();
+}
+function doClose()
+{
+
+  var z = 1;
+  
+  
+  /*parent.document.getElementById("Layer4a").style.zIndex = --z;*/
+
+  if(inputField=='password')
+  {
+    parent.document.getElementById("Layer4a").style.zIndex = --z;
+    vosKBForm.password.readOnly=false;
+  }    
+  if(inputField == "oldPassword")
+  {
+     vosKBForm.OLD_PASSWORD.readOnly=false;
+  }   
+  if(inputField == "newPassword")
+  {
+    vosKBForm.PASSWORD.readOnly=false;
+  }   
+  if(inputField == "confirmNewPassword")
+  {
+    vosKBForm.CONFIRM_PASSWORD.readOnly=false;
+  } 
+  if(inputField == "pass1")
+  {
+    vosKBForm.pass1.readOnly=false;
+  } 
+  if(inputField == "pass2")
+  {
+    vosKBForm.pass2.readOnly=false;
+  } 
+  if(inputField == "pass3")
+  {
+    vosKBForm.pass3.readOnly=false;
+  } 
+  if(inputField == "pass4")
+  {
+   vosKBForm.pass4.readOnly=false;
+  } 
+  if(inputField == "pass5")
+  {
+    vosKBForm.pass5.readOnly=false;
+  } 
+
+  hideVosKB();
+}
+function keyPress(e) 
+{
+  try{
+	  if(compKBDisabled)
+	  {
+	    var currKey;
+	    var prevKey;
+	    if(thisBrowser.isIE)
+	      currKey = event.keyCode;
+	    else if (thisBrowser.isNS)
+	      currKey = e.which;
+	    else if (ns4)	 
+	    {
+	      currKey = e.which;
+	      if(currKey == prevKey)
+	      {
+	        currKey = 0;
+	        prevKey=-100;
+	      }
+	      else
+	      {
+	        prevKey=currKey;
+	      }
+	    }
+	    
+	    //alert(currKey);
+	    /* to enable the computer keyboard
+	    if(currKey != 0 && currKey != 8 && currKey != 17)
+	    {
+	      keyTrapped = true;
+	      alert("Please use the VOS Keyboard. Thank You.");
+	      return false;
+	    }
+	    */
+    	  }
+    } catch(ex){};
+}
+function doAdd(val)
+{
+  
+  if(keyTrapped)
+  {
+    keyTrapped = false;
+    return; 
+  }
+  
+  var elPtr;
+  var foundField = false;
+  if(foundField == false)
+  {
+    elPtr = eval(vosKBFillElement);
+    if(elPtr)
+    {
+      var focusValue = new String(elPtr.value);
+      /*
+      if((document.LoginForm)&&(document.LoginForm.password)&&(document.LoginForm.password.maxLength))
+      {
+        vosKBFillElementSize=document.LoginForm.password.maxLength;
+      }
+      */
+      
+      vosKBFillElementSize = "12";
+      
+      if(focusValue.length < vosKBFillElementSize)
+      {
+        elPtr.type = "password";
+        elPtr.value = focusValue + val;        
+      }
+      else
+      {
+         alert("Password must be between 8 to 12 characters");
+      }
+      foundField = true;
+    }
+  }
+  if(foundField == false)
+  {
+    alert('Focus Error !');
+  }
+}
+function doDelete()
+{
+  var elPtr;
+  var foundField = false;
+  if(foundField == false)
+  {
+    elPtr = eval(vosKBFillElement);
+    if(elPtr)
+    {
+      var focusValue = new String(elPtr.value);
+      if(focusValue.length > 0)
+      {
+        focusValue = focusValue.substring(0,focusValue.length-1);
+        elPtr.value = focusValue;
+      }
+      foundField = true;
+    }
+  }
+  if(foundField == false)
+  {
+    alert('Focus Error !');
+  }
+}
+var origMouseX, origMouseY;	
+var thisObj = new Object();
+function doMovevosKB(event, objID)
+{
+  if(objID)
+  {
+    if(document.getElementById)
+      thisObj.elNode = document.getElementById(objID);
+    else if(document.all)
+      thisObj.elNode = document.all[objID];
+  }
+  else
+  {
+    if (thisBrowser.isIE)
+      thisObj.elNode = window.event.srcElement;
+    else if (thisBrowser.isNS)
+      thisObj.elNode = event.target;
+  }
+  if (thisBrowser.isIE) 
+  {
+  origMouseX = window.event.clientX + document.documentElement.scrollLeft + document.body.scrollLeft;
+  origMouseY = window.event.clientY + document.documentElement.scrollTop + document.body.scrollTop;
+  }
+  
+  if (thisBrowser.isNS) 
+  {
+    origMouseX = event.clientX + window.scrollX;
+    origMouseY = event.clientY + window.scrollY;
+  }
+	
+  thisObj.cursorStartX = origMouseX;
+  thisObj.cursorStartY = origMouseY;
+  thisObj.elStartLeft  = parseInt(thisObj.elNode.style.left);
+  thisObj.elStartTop   = parseInt(thisObj.elNode.style.top);
+  
+  if (thisBrowser.isIE) 
+  { 
+    document.attachEvent("onmousemove", moveIt);
+    document.attachEvent("onmouseup",   stopMove);
+    window.event.cancelBubble = true;
+    window.event.returnValue = false;
+  }
+  if (thisBrowser.isNS) 
+  {      
+    document.addEventListener("mousemove", moveIt,   true);
+    document.addEventListener("mouseup",   stopMove, true);
+    event.preventDefault();
+  }
+}
+
+function moveIt(event)
+{
+  var mouseX;
+  var mouseY;
+  moveflag = true; 
+  if (thisBrowser.isIE) 
+  {
+    mouseX = window.event.clientX + document.documentElement.scrollLeft + document.body.scrollLeft;
+    mouseY = window.event.clientY + document.documentElement.scrollTop + document.body.scrollTop;
+  } 
+
+  if (thisBrowser.isNS) 
+  {
+    mouseX = event.clientX + window.scrollX;
+    mouseY = event.clientY + window.scrollY;
+  }
+  curr_LeftPosition =(thisObj.elStartLeft + mouseX - thisObj.cursorStartX);
+  curr_HeightPosition = (thisObj.elStartTop  + mouseY - thisObj.cursorStartY);
+  curr_LeftPosition = curr_LeftPosition < 0 ? 0 : curr_LeftPosition;
+  curr_HeightPosition = curr_HeightPosition < 0 ? 0 : curr_HeightPosition;
+  
+  curr_LeftPosition = curr_LeftPosition > 480 ? 300 : curr_LeftPosition; //tyc3
+  curr_HeightPosition = curr_HeightPosition > 80 ? 30 : curr_HeightPosition; //tyc3
+  
+  if(win_IE)
+  {
+    accessLayer(vosKBShimName).left = curr_LeftPosition; 
+    accessLayer(vosKBShimName).top = curr_HeightPosition;
+  }
+  
+  thisObj.elNode.style.left = curr_LeftPosition;
+  thisObj.elNode.style.top  = curr_HeightPosition;
+
+  if (thisBrowser.isIE)
+  {
+    window.event.cancelBubble = true;
+    window.event.returnValue = false;
+  }
+  
+  if (thisBrowser.isNS)
+  {  
+    event.preventDefault();
+  }
+}
+function stopMove(event)
+{
+ if (thisBrowser.isIE) 
+  {
+    document.detachEvent("onmousemove", moveIt);
+    document.detachEvent("onmouseup",   stopMove);
+  }
+  if (thisBrowser.isNS) 
+  {    
+    document.removeEventListener("mousemove", moveIt,   true);
+    document.removeEventListener("mouseup",   stopMove, true);
+  }
+}
+function fixinit_size()
+{
+  var temp_Lower_height;
+  var temp_Upper_height;
+  var temp_Lower_Limit;
+  var temp_Upper_Limit;
+  var height_randomFlag = "false";
+  var width_randomFlag = "false";
+  global_availWidth = document.body.clientWidth;
+  global_availHeight = document.body.clientHeight;
+  if(screen.width <= 800)
+  {
+    if(thisBrowser.isIE)
+    {
+      temp_Lower_Limit = global_availWidth - 490;
+      temp_Upper_Limit = global_availWidth - 470;
+      temp_Lower_height = global_availHeight / 4;
+      temp_Upper_height = global_availHeight / 3;
+    }
+    else
+    {
+      temp_Lower_Limit = global_availWidth - 150;
+      temp_Upper_Limit = global_availWidth - 140;
+      temp_Lower_height = global_availHeight - 200;
+      temp_Upper_height = global_availHeight - 150;
+      }
+      global_LeftPosition = Math.floor(Math.random() * (1 + temp_Upper_Limit - temp_Lower_Limit) + temp_Lower_Limit);      	
+      global_HeightPosition = Math.floor(Math.random() * (1 + temp_Upper_height - temp_Lower_height) + temp_Lower_height); 	
+    }
+    else
+    {
+    if(thisBrowser.isIE)
+    {
+      temp_Lower_Limit = global_availWidth - 500;
+      temp_Upper_Limit = global_availWidth - 450;
+      temp_Lower_height = global_availHeight / 4;
+      temp_Upper_height = global_availHeight / 3;
+    }
+    else
+    {
+      temp_Lower_Limit = global_availWidth - 250;
+      temp_Upper_Limit = global_availWidth - 200;
+      temp_Lower_height = global_availHeight / 2;
+      temp_Upper_height = global_availHeight /1.8;
+    }
+    global_LeftPosition=Math.floor(Math.random() * (1 + temp_Upper_Limit - temp_Lower_Limit) + temp_Lower_Limit);
+    global_HeightPosition=Math.floor(Math.random() * (1 + temp_Upper_height - temp_Lower_height) + temp_Lower_height);
+  }
+  if( (global_LeftPosition >= temp_Lower_Limit) && (global_LeftPosition <= temp_Upper_Limit) )
+  {
+    global_availWidth = global_LeftPosition;
+    width_randomFlag = "true";
+  }
+  else
+  {
+    width_randomFlag = "false";
+  }
+  if( (global_HeightPosition >= temp_Lower_height) && (global_HeightPosition <= temp_Upper_height) )
+  {
+    global_availHeight =global_HeightPosition;
+    height_randomFlag = "true";
+  }
+  else
+  {
+    height_randomFlag = "false";
+  }
+  if(screen.width <= 800)
+  {
+    if(width_randomFlag == "false")
+    {
+    if(thisBrowser.isIE)
+      global_availWidth=global_availWidth - 450;
+    else
+      global_availWidth=global_availWidth- 140;
+    }
+    if(height_randomFlag == "false")
+    {
+      if(thisBrowser.isIE)
+        global_availHeight = global_availHeight / 2;
+      else
+        global_availHeight = global_availHeight - 150;
+    }
+  }
+  else
+  {
+    if(width_randomFlag == "false")
+    {
+      if(thisBrowser.isIE)
+        global_availWidth=global_availWidth - 500;
+      else
+        global_availWidth=global_availWidth - 200;
+    }
+    if(height_randomFlag == "false")
+    {
+      if(thisBrowser.isIE)
+        global_availHeight = global_availHeight / 4;
+      else
+        global_availHeight = global_availHeight / 1.8;
+    }
+  }
+  initialize = true;
+}
+
+function showVosKB(fieldRef, fieldName)
+{
+   fixinit_size();
+   if(compKBDisabled){fieldRef.onkeypress=keyPress;}
+    vosKBFillElement = fieldRef;
+  var availWidth;
+  var availHeight;
+  var vosKBRef = accessLayer(vosKBName);
+  var pos = getAbsolutePosition(fieldRef);
+  if(vosKBRef.visibility == 'visible')
+  {
+    return;
+  }
+
+  if(!moveflag)
+  {
+    if(isReentry)
+    {
+      if(screen.width <= 800)
+      {
+        if(thisBrowser.isIE)
+        {
+          if(global_availWidth > pos.x + 100 && global_availWidth < pos.x + 200)
+            availWidth = global_availWidth;
+          else
+            availWidth = pos.x + 100;
+          if(global_availHeight < pos.y - 100 || global_availHeight > pos.y)
+            availHeight = pos.y - 100;
+        }
+        else
+        {
+          if(global_availWidth > pos.x + 100 && global_availWidth < pos.x + 200)
+            availWidth=global_availWidth;
+          else
+            availWidth = pos.x + 100;
+          if(global_availHeight<pos.y - 100 || global_availHeight > pos.y)
+            availHeight = pos.y - 100;
+        }
+      }
+      else
+      {
+        if(thisBrowser.isIE)
+        {        
+          if(global_availWidth > pos.x + 100 && global_availWidth < pos.x + 300)
+          {
+            availWidth = global_availWidth;
+          }
+          else
+          {
+            availWidth = pos.x + 100;
+          }
+          if(global_availHeight < pos.y - 100 || global_availHeight > pos.y)
+          {
+            availHeight = pos.y + 100;
+          }
+          else 
+          {
+            availHeight = global_availHeight;
+          }
+        }
+        else
+        {
+          if(global_availWidth > pos.x+100 && global_availWidth < pos.x + 200)
+          {
+            availWidth = global_availWidth;
+          }
+          else
+          {
+            availWidth = pos.x + 500;
+          }
+          if(global_availHeight < pos.y - 100)
+          {
+            availHeight = pos.y + 300;
+          }
+          else 
+          {
+            availHeight=global_availHeight;
+          }
+        }
+      }
+    }
+    else
+    {
+      //alert("global_availWidth 2" + global_availWidth);
+      //alert("global_availHeight 2" + global_availHeight);
+      availWidth = global_availWidth;
+      availHeight = global_availHeight;
+    }
+    if (thisBrowser.isIE && vosKBRef)
+    {    
+        if(screen.width <= 800)
+        {
+            
+          if(horizontal_position == "middle")
+          {
+            vosKBRef.left = availWidth / 3;
+          }
+          else if(horizontal_position == "left") /*left*/
+          {
+            vosKBRef.left = 0;  /*left*/
+          }
+          else
+          {
+            vosKBRef.left = availWidth; /*left*/
+          }
+        }
+        else
+        {
+          if(fieldName == "oldPassword")
+          {         
+            //alert("availWidth old=" + availWidth);            
+            vosKBRef.left = availWidth;                               
+          }
+          else if(fieldName == "newPassword")
+          {         
+            //alert("availWidth new=" + availWidth);
+            vosKBRef.left = availWidth;            
+          }
+          else if(fieldName == "confirmNewPassword")
+          {         
+            //alert("availWidth confirm=" + availWidth);
+            vosKBRef.left = availWidth;            
+          }
+          else if(fieldName == "password")
+          { 
+            vosKBRef.left = 302;            
+          }
+          else          
+          {
+             vosKBRef.left = availWidth;
+          }
+        }
+        if(screen.height <= 600 || availHeight <= 500)
+        {
+        
+          if(fieldName == "oldPassword")
+          {  
+             vosKBRef.top = availHeight / 2;
+          }
+          else if(fieldName == "newPassword")
+          {  
+             vosKBRef.top = (availHeight / 2);
+          }
+          else if(fieldName == "confirmNewPassword")
+          {  
+             vosKBRef.top = (availHeight / 2);
+          }
+          else          
+          {
+             vosKBRef.top = availHeight / 3;
+          }
+        }
+        else
+        {
+          //alert("availHeight2=" + availHeight);
+          if(fieldName == "oldPassword")
+          {  
+             vosKBRef.top = availHeight / 2;
+          }
+          else if(fieldName == "newPassword")
+          {  
+             vosKBRef.top = (availHeight / 2);
+          }
+          else if(fieldName == "confirmNewPassword")
+          {  
+             vosKBRef.top = (availHeight / 2);
+          }
+          else          
+          {
+             vosKBRef.top = availHeight / 3;
+          }
+        }
+      }
+      else if (thisBrowser.isNS && vosKBRef)
+      {      
+        if(screen.width <= 800)
+        {       
+          if(horizontal_position == "middle")
+          {
+            vosKBRef.left = availWidth / 3;
+          }
+          else if(horizontal_position == "left")
+          {
+            vosKBRef.left = 0;
+          }
+          else
+          {
+            vosKBRef.left = availWidth - 255;
+          }
+        }
+        else
+        {
+          vosKBRef.left = availWidth - 255;
+        }
+        if(screen.height <= 600 || availHeight <= 500)
+        {
+          vosKBRef.top = availHeight / 4;
+        }
+        else
+        {
+          vosKBRef.top = availHeight / 2;
+        }
+    }
+  }
+  else
+  {
+    vosKBRef.left = curr_LeftPosition;
+    vosKBRef.top = curr_HeightPosition;
+  }
+  if(vosKBRef)
+  {
+    if(win_IE)
+    {
+      var vosKBShimRef = accessLayer(vosKBShimName);
+      if(vosKBShimRef)
+      {
+        vosKBShimRef.top = vosKBRef.top;
+        vosKBShimRef.left = vosKBRef.left;
+        vosKBShimRef.visibility = 'visible';
+        vosKBShimRef.zIndex = 100;
+      }
+    }
+    vosKBRef.visibility = 'visible';
+    vosKBRef.zIndex = 100;
+  }
+}
+function hideVosKB()
+{
+  vosKBFillElement = "";
+  var vosKBRef = accessLayer(vosKBName);
+  if(win_IE)
+  {
+    var vosKBShimRef = accessLayer(vosKBShimName);
+    if(vosKBShimRef)
+    {
+      vosKBShimRef.visibility = 'hidden';
+      vosKBShimRef.zIndex = -1;
+    }
+  }
+  if(vosKBRef)
+  {
+    vosKBRef.visibility = 'hidden';
+    vosKBRef.zIndex = -1;
+  }
+}
+function accessLayer(layerID)
+{
+  if(document.getElementById && document.getElementById(layerID))
+    return document.getElementById(layerID).style;
+  else if(document.all && document.all[layerID])
+    return document.all[layerID].style;
+  else if(document.layers && document.layers[layerID])
+    return document.layers[layerID];
+}
+function getAbsolutePosition(element)
+{
+  var pos = new point();
+  for(; 
+        element && element != document.body;
+        pos.translate(element.offsetLeft, element.offsetTop), element = element.offsetParent
+	 );
+	// alert("getAbsolutePosition =" + pos);
+	// alert(element.offsetLeft)
+	// alert(element.offsetTop)
+  return pos;
+}
+
+function point(x,y)
+{
+  //alert("im at point");
+  this.x = x || 0;
+  this.y = y || 0;
+  this.toString = function(){
+      return '('+this.x+', '+this.y+')';
+  };
+  this.translate = function(dx, dy)
+  {
+      //alert("dx=" + dx);
+      //alert("dy=" + dy);
+      this.x += dx || 0;
+      this.y += dy || 0;
+  };
+  this.getX = function(){ return this.x; };
+  this.getY = function(){ return this.y; };
+  this.equals = function(anotherpoint){
+      //alert("this.x =" + this.x);
+      //alert("this.y =" + this.y);
+      return anotherpoint.x == this.x && anotherpoint.y == this.y;
+  };
+}
+function openVosKB(inField)
+{
+  var z = -1;
+  
+  /*parent.document.getElementById("Layer4a").style.zIndex = z;*/
+ 
+  inputField = inField;
+
+  //alert(vosKBForm);
+  /* for login */
+  if(inputField=="password")
+  {
+//    parent.document.getElementById("Layer4a").style.zIndex = z;
+    showVosKB(vosKBForm.password, "password");
+    vosKBForm.password.value = "";
+    //vosKBForm.password.readOnly = "true";
+  }
+  /* for future use */
+  /* for change password (existing password) */
+  if(inputField == "oldPassword")
+  {
+    showVosKB(vosKBForm.OLD_PASSWORD, "oldPassword");
+    vosKBForm.OLD_PASSWORD.value = "";
+    //vosKBForm.OLD_PASSWORD.readOnly = "true";
+  } 
+  /* for change password (new password) */
+  if(inputField == "newPassword")
+  {
+    showVosKB(vosKBForm.PASSWORD, "newPassword");
+    vosKBForm.PASSWORD.value = "";
+    //vosKBForm.PASSWORD.readOnly = "true";
+  } 
+  /* for change password (confirm new password) */
+  if(inputField == "confirmNewPassword")
+  {
+    showVosKB(vosKBForm.CONFIRM_PASSWORD, "confirmNewPassword");
+    vosKBForm.CONFIRM_PASSWORD.value = "";
+    //vosKBForm.CONFIRM_PASSWORD.readOnly = "true"; 
+  } 
+  if(inputField == "pass1")
+  {
+    showVosKB(vosKBForm.pass1, "pass1");
+    vosKBForm.pass1.value = "";
+    //vosKBForm.pass1.readOnly = "true"; 
+  } 
+  if(inputField == "pass2")
+  {
+    showVosKB(vosKBForm.pass2, "pass2");
+    vosKBForm.pass2.value = "";
+    //vosKBForm.pass2.readOnly = "true"; 
+  } 
+  if(inputField == "pass3")
+  {
+    showVosKB(vosKBForm.pass3, "pass3");
+    vosKBForm.pass3.value = "";
+    //vosKBForm.pass3.readOnly = "true"; 
+  } 
+    if(inputField == "pass4")
+  {
+    showVosKB(vosKBForm.pass4, "pass4");
+    vosKBForm.pass4.value = "";
+    //vosKBForm.pass4.readOnly = "true"; 
+  } 
+    if(inputField == "pass5")
+  {
+    showVosKB(vosKBForm.pass5, "pass5");
+    vosKBForm.pass5.value = "";
+    //vosKBForm.pass5.readOnly = "true"; 
+  } 
+}

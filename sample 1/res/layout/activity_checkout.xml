@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/toolbar" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_marginBottom="0.0dip" android:layout_above="@id/lyt_checkout" android:layout_below="@id/toolbar" android:fadeScrollbars="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/lytContent" android:paddingLeft="6.0dip" android:paddingTop="18.0dip" android:paddingRight="6.0dip" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:id="@id/edt_name" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:hint="@string/checkout_your_name" android:maxLines="1" android:singleLine="true" android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:id="@id/edt_email" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/checkout_email" android:maxLines="1" android:singleLine="true" android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:id="@id/edt_phone" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/checkout_phone_number" android:maxLines="1" android:singleLine="true" android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:gravity="top" android:id="@id/edt_address" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/checkout_address" android:lines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0sp" android:textColor="#ff9e9e9e" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:text="Booking Date Time" />
+                <LinearLayout android:background="#ffffffff" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="2.0">
+                    <EditText android:gravity="top" android:id="@id/edit_date" android:focusable="false" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="188.0dip" android:layout_height="wrap_content" android:hint="Booking Date" android:cursorVisible="false" />
+                    <EditText android:gravity="top" android:id="@id/editTime" android:focusable="false" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Booking Time" android:cursorVisible="false" />
+                </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12.0sp" android:textColor="#ff9e9e9e" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginBottom="3.0dip" android:text="@string/txt_shipping" />
+                    <Spinner android:id="@id/spinner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+                    <View android:background="#ff757575" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="14.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="14.0dip" />
+                    <EditText android:id="@id/edt_shipping" android:padding="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/checkout_shipping" android:maxLines="1" android:singleLine="true" android:inputType="text" />
+                </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:textColor="@color/black" android:gravity="center|left|top" android:id="@id/edt_order_list" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:hint="@string/checkout_order_list" android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:textColor="@color/hint" android:id="@id/edt_order_total" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginBottom="10.0dip" android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@id/lyt_checkout" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:layout_alignParentBottom="true">
+        <com.balysv.materialripple.MaterialRippleLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentRight="true" app:mrl_rippleAlpha="0.2" app:mrl_rippleColor="@color/ripple_color" app:mrl_rippleHover="true" app:mrl_rippleOverlay="true">
+            <Button android:textStyle="bold" android:textColor="@color/white" android:id="@id/btn_submit_order" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/btn_process_checkout" />
+        </com.balysv.materialripple.MaterialRippleLayout>
+    </RelativeLayout>
+</RelativeLayout>
